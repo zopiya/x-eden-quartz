@@ -1,23 +1,31 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { QuartzPluginData } from "./quartz/plugins/vfile"
 
-// components shared across all pages
+// 跨所有页面共享的组件
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      "Home": "https://www.7wate.com",
+      "Blog": "https://blog.7wate.com",
+      GitHub: "https://github.com/7wate",
     },
   }),
 }
 
-// components for pages that display a single page (e.g. a single note)
+// 单页显示的组件布局
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.Breadcrumbs(),
+    Component.Breadcrumbs({
+      spacerSymbol: "❯", // 面包屑符号
+      rootName: "Home", // 根元素名称
+      resolveFrontmatterTitle: true, // 解析前置数据标题
+      hideOnRoot: true, // 在根页面隐藏面包屑
+      showCurrentPage: true, // 显示当前页面
+    }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
@@ -28,15 +36,23 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.RecentNotes({
+      title: "博客",
+      limit: 3,
+      showTags: false,
+      filter: (data: QuartzPluginData) => {
+        return data.filePath ? data.filePath.startsWith('content/Personal/Blog') : false
+      }
+    })),
   ],
   right: [
     Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    Component.MobileOnly(Component.Explorer()),
   ],
 }
 
-// components for pages that display lists of pages  (e.g. tags or folders)
+// 列表页面显示的组件布局
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
