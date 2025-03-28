@@ -1,0 +1,55 @@
+name: Build and Deploy Quartz Site
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # 每天早上 6 点（UTC）执行一次定时任务
+  push:
+    branches:
+      - main  # 当 main 分支有新提交时触发工作流
+
+jobs:
+  build-and-deploy:
+    environment: default
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 运行环境
+    steps:
+      - name: Checkout Quartz Repository
+        uses: actions/checkout@v3  # 检出当前仓库的代码
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v3  # 设置 Node.js 环境
+        with:
+          node-version: '20'  # 使用 Node.js 20 版本
+
+      - name: Clone Wiki Repository and Clean Private Folders
+        run: |
+          # 克隆 Wiki 仓库到临时目录
+          git clone https://${{ secrets.GITEA_REPO_READ }}@git.7wate.org/zhouzhongping/wiki.git /tmp/wiki
+          # 删除私密文件夹（如 Personal 文件夹）
+          rm -rf /tmp/wiki/Personal
+          # 如果有其他私密文件夹，也可以在这里添加删除命令
+
+      - name: Prepare Content Directory
+        run: |
+          # 清理旧的 content 目录
+          rm -rf content
+          # 将 Wiki 仓库内容复制到 content 目录
+          cp -r /tmp/wiki content
+          # 将 README.md 重命名为 index.md
+          mv content/README.md content/index.md
+          # 删除 index.md 的第一行
+          sed -i '1d' content/index.md
+          # 在 index.md 的开头插入 YAML 前置元数据
+          sed -i '1i ---\ntitle: 数字花园\n---' content/index.md
+
+      - name: Install Dependencies and Build Site
+        run: |
+          # 安装依赖并构建 Quartz 静态网站
+          npm ci  # 使用 npm ci 安装依赖，确保一致性
+          npx quartz build  # 使用 Quartz 构建静态网站
+
+      - name: Deploy to HTML Branch
+        uses: peaceiris/actions-gh-pages@v3  # 使用 gh-pages Action 部署到 GitHub Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub Token 进行身份验证
+          publish_dir: ./public  # 指定构建输出目录
+          publish_branch: html  # 部署到 html 分支
