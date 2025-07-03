@@ -12,10 +12,10 @@ const config: QuartzConfig = {
     enableSPA: true, // 启用单页应用
     enablePopovers: true, // 启用弹出框
     analytics: {
-      provider: 'umami', host: 'https://umami.7wate.com/', websiteId: 'c061efdc-95dd-4d21-9d04-a1ffda0a85b9'
+      provider: 'umami', host: 'https://umami.7wate.org/', websiteId: 'a6fb0d88-e549-4a69-9859-7679a8a0c696'
     },
     locale: "zh-CN", // 语言区域
-    baseUrl: "wiki.7wate.com", // 基础 URL
+    baseUrl: "x-eden.zopiya.com", // 基础 URL
     ignorePatterns: ["Obsidian", ".obsidian"], // 忽略的模式
     defaultDateType: "created", // 默认日期类型
     theme: {

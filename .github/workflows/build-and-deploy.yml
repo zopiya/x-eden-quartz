@@ -2,14 +2,14 @@ name: Build and Deploy Quartz Site
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # 每天早上 6 点（UTC）执行一次定时任务
+    - cron: '0 6 * * 1'  # 每周一早上 6 点（UTC）执行一次定时任务
   push:
     branches:
       - main  # 当 main 分支有新提交时触发工作流
 
 jobs:
   build-and-deploy:
-    environment: default
+    environment: prod
     runs-on: ubuntu-latest  # 使用最新的 Ubuntu 运行环境
     steps:
       - name: Checkout Quartz Repository
@@ -23,7 +23,7 @@ jobs:
       - name: Clone Wiki Repository and Clean Private Folders
         run: |
           # 克隆 Wiki 仓库到临时目录
-          git clone https://${{ secrets.GITEA_REPO_READ }}@git.7wate.org/zhouzhongping/wiki.git /tmp/wiki
+          git clone "${{ secrets.GITEA_REPO_CLONE }}" /tmp/wiki
           # 删除私密文件夹（如 Personal 文件夹）
           rm -rf /tmp/wiki/Personal
           # 如果有其他私密文件夹，也可以在这里添加删除命令
@@ -47,9 +47,11 @@ jobs:
           npm ci  # 使用 npm ci 安装依赖，确保一致性
           npx quartz build  # 使用 Quartz 构建静态网站
 
-      - name: Deploy to HTML Branch
-        uses: peaceiris/actions-gh-pages@v3  # 使用 gh-pages Action 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub Token 进行身份验证
-          publish_dir: ./public  # 指定构建输出目录
-          publish_branch: html  # 部署到 html 分支
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          cname: x-eden.zopiya.com
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
