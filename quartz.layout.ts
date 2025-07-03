@@ -9,9 +9,9 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      "Home": "https://www.7wate.com",
-      "Blog": "https://blog.7wate.com",
-      GitHub: "https://github.com/7wate",
+      "文辑": "https://zopiya.com",
+      "片语": "https://memos.zopiya.com",
+      GitHub: "https://github.com/zopiya",
     },
   }),
 }
