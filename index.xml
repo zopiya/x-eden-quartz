@@ -10,61 +10,61 @@
     <link>https://x-eden.zopiya.com/</link>
     <guid>https://x-eden.zopiya.com/</guid>
     <description> Always For Freedom. 一个热衷于构建知识体系的探索者 💨 在此整理、沉淀多学科、多维度的知识与思考，愿对你有所启发。 📁 目录结构 . ├── Archive # 📦 归档内容 ├── FormalSciences # 📐 形式科学 │ ├── ComputerScience # 💻 计算机科学 │ │ ├── ComputerNetwork │ │ ├── ComputerSecurity │ │ ├── ComputerStorage │ │ ├── DataEngineering │ │ ├── DatabaseSystem │ │ ├── DevSecOps │ │ ├── GettingStarted │ │ ├── OperatingSystem │ │ ├── ProgrammingLanguage │ │ ├── SoftwareEngineering │ │ ├── StructuresAlgorithms │ │ └── WebDevelopment │ ├── InformationTheory # 信息论 │ ├── Logic # 逻辑学 │ ├── Mathematics # 数学 │ └── Statistics # 统计学 ├── NaturalSciences # 🌱 自然科学 │ ├── Astronomy # 天文学 │ ├── Biology # 生物学 │ ├── Chemistry # 化学 │ ├── Geology # 地质学 │ └── Physics # 物理学 ├── Obsidian # 🧩 Obsidian 配置与资源 │ ├── Canvas # 可视化画布 │ ├── Excalidraw # 手绘图工具 │ ├── Marp # 幻灯片样式与配置 │ ├── References # 参考文献与规范 │ ├── Static # 静态 JS 工具（天气、诗句等） │ └── Templates # 模板集合（日志、博客、阅读等） ├── Personal # 👤 个人空间 │ ├── Blog # 博客文章（按年份归档） │ ├── Book # 读书笔记（分类整理） │ ├── Finance # 财务与理财记录 │ ├── Journal # 日志记录（年度归档） │ ├── Life # 生活杂记与反思 │ ├── Mail # 邮件归档 │ ├── Photo # 摄影素材与图像收集 │ └── Writing # 自由写作与创作 ├── Professional # 🧠 职业发展 │ ├── 1.RoadMap # 职业路线图与发展规划 │ ├── 2.Skills # 技术与技能体系 │ ├── 3.JobSearch # 求职与面试准备 │ ├── 4.Workplace # 职场技巧与经验 │ └── 5.Company # 公司调研与行业趋势 ├── SocialSciences # 🌍 社会科学 │ ├── Anthropology # 人类学 │ ├── CulturalStudies # 文化研究 │ ├── Economics # 经济学 │ ├── Geography # 地理学 │ ├── InternationalRelations # 国际关系 │ ├── Linguistics # 语言学 │ │ └── English # 英语语言学习 │ ├── NationalStudies # 国别研究 │ │ └── 中国 # 中国研究 │ ├── Politics # 政治学 │ └── Sociology # 社会学 └── README.md 🧪 分支策略 main # 稳定主分支 dev # 日常推送分支 🤝 贡献说明 欢迎批判性反馈与知识纠错。若有意共建，请先提交 issue 或 PR。 📜 协议说明 所有原创代码采用 GPL-3.0 协议。 所有原创非代码内容采用 CC BY-SA 4.0 许可协议。 所有引用内容仅供学术研究使用，著作权归原作者所有。若涉及侵权，请 邮件联系 及时处理。 🙏 特别致谢 感谢所有知识创作者、开源贡献者及社区同行，正是你们的无私奉献，构成了这个持续演化的知识宇宙。.</description>
-    <pubDate>Mon, 07 Jul 2025 06:05:46 GMT</pubDate>
+    <pubDate>Mon, 14 Jul 2025 06:06:05 GMT</pubDate>
   </item><item>
     <title>简历原则</title>
     <link>https://x-eden.zopiya.com/Professional/3.JobSearch/Interview/%E7%AE%80%E5%8E%86%E5%8E%9F%E5%88%99</link>
     <guid>https://x-eden.zopiya.com/Professional/3.JobSearch/Interview/%E7%AE%80%E5%8E%86%E5%8E%9F%E5%88%99</guid>
     <description>简历原则.</description>
-    <pubDate>Mon, 07 Jul 2025 06:05:46 GMT</pubDate>
-  </item><item>
-    <title>websockets</title>
-    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%8E%E9%80%9A%E4%BF%A1/websockets</link>
-    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%8E%E9%80%9A%E4%BF%A1/websockets</guid>
-    <description></description>
-    <pubDate>Mon, 07 Jul 2025 06:05:46 GMT</pubDate>
-  </item><item>
-    <title>glob</title>
-    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/glob</link>
-    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/glob</guid>
-    <description></description>
-    <pubDate>Mon, 07 Jul 2025 06:05:46 GMT</pubDate>
-  </item><item>
-    <title>pathlib</title>
-    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/pathlib</link>
-    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/pathlib</guid>
-    <description></description>
-    <pubDate>Mon, 07 Jul 2025 06:05:46 GMT</pubDate>
+    <pubDate>Mon, 14 Jul 2025 06:06:05 GMT</pubDate>
   </item><item>
     <title>psutil</title>
     <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/psutil</link>
     <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/psutil</guid>
     <description></description>
-    <pubDate>Mon, 07 Jul 2025 06:05:46 GMT</pubDate>
+    <pubDate>Mon, 14 Jul 2025 06:06:05 GMT</pubDate>
   </item><item>
     <title>shutil</title>
     <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/shutil</link>
     <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/shutil</guid>
     <description></description>
-    <pubDate>Mon, 07 Jul 2025 06:05:46 GMT</pubDate>
+    <pubDate>Mon, 14 Jul 2025 06:06:05 GMT</pubDate>
   </item><item>
     <title>watchdog</title>
     <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/watchdog</link>
     <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/watchdog</guid>
     <description></description>
-    <pubDate>Mon, 07 Jul 2025 06:05:46 GMT</pubDate>
+    <pubDate>Mon, 14 Jul 2025 06:06:05 GMT</pubDate>
   </item><item>
     <title>BeautifulSoup</title>
     <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/BeautifulSoup</link>
     <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/BeautifulSoup</guid>
     <description></description>
-    <pubDate>Mon, 07 Jul 2025 06:05:46 GMT</pubDate>
+    <pubDate>Mon, 14 Jul 2025 06:06:05 GMT</pubDate>
   </item><item>
     <title>Selenium</title>
     <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/Selenium</link>
     <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/Selenium</guid>
     <description></description>
-    <pubDate>Mon, 07 Jul 2025 06:05:46 GMT</pubDate>
+    <pubDate>Mon, 14 Jul 2025 06:06:05 GMT</pubDate>
+  </item><item>
+    <title>html.parser</title>
+    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/html.parser</link>
+    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/html.parser</guid>
+    <description></description>
+    <pubDate>Mon, 14 Jul 2025 06:06:05 GMT</pubDate>
+  </item><item>
+    <title>lxml</title>
+    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/lxml</link>
+    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/lxml</guid>
+    <description></description>
+    <pubDate>Mon, 14 Jul 2025 06:06:05 GMT</pubDate>
+  </item><item>
+    <title>xml.etree.ElementTree</title>
+    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/xml.etree.ElementTree</link>
+    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%8A%93%E5%8F%96/xml.etree.ElementTree</guid>
+    <description></description>
+    <pubDate>Mon, 14 Jul 2025 06:06:05 GMT</pubDate>
   </item>
     </channel>
   </rss>
