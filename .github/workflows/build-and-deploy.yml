@@ -20,32 +20,62 @@ jobs:
         with:
           node-version: '20'  # 使用 Node.js 20 版本
 
-      - name: Clone Wiki Repository and Clean Private Folders
+      - name: Clone x-eden Repository
         run: |
-          # 克隆 Wiki 仓库到临时目录
-          git clone "${{ secrets.GITEA_REPO_CLONE }}" /tmp/wiki
-          # 删除私密文件夹（如 Personal 文件夹）
-          rm -rf /tmp/wiki/Personal
-          # 如果有其他私密文件夹，也可以在这里添加删除命令
+          # 克隆 x-eden 仓库到临时目录
+          git clone "${{ secrets.GITEA_REPO_CLONE }}" /tmp/x-eden
 
-      - name: Prepare Content Directory
+      - name: Prepare Content Directory (simple allowlist copy)
         run: |
-          # 清理旧的 content 目录
+          set -euo pipefail
           rm -rf content
-          # 将 Wiki 仓库内容复制到 content 目录
-          cp -r /tmp/wiki content
-          # 将 README.md 重命名为 index.md
-          mv content/README.md content/index.md
-          # 删除 index.md 的第一行
-          sed -i '1d' content/index.md
-          # 在 index.md 的开头插入 YAML 前置元数据
-          sed -i '1i ---\ntitle: 数字花园\n---' content/index.md
+          mkdir -p content
+
+          # 仅拷贝允许公开的目录（不存在就跳过，不报错）
+          for dir in \
+            "00-knowledge" \
+            "10-formal-sciences" \
+            "16-computer-science" \
+            "20-natural-sciences" \
+            "30-social-sciences" \
+            "40-professional" \
+            "60-writing" \
+            "70-future" 
+          do
+            if [ -d "/tmp/x-eden/$dir" ]; then
+              cp -r "/tmp/x-eden/$dir" "content/"
+            fi
+          done
+
+          # 单文件：README.md -> index.md，并插入 frontmatter
+          if [ -f /tmp/x-eden/README.md ]; then
+            cp /tmp/x-eden/README.md content/index.md
+            sed -i '1d' content/index.md || true
+            sed -i '1i ---\ntitle: 数字花园\n---' content/index.md || true
+          fi
+
+      - name: Sanity Check (ensure nothing private slipped in)
+        run: |
+          set -euo pipefail
+          # 这些目录永远不应出现在 content 中
+          bad_paths=$(ls -d \
+            content/50-personal \
+            content/80-project \
+            content/90-obsidian \
+            content/91-attachments \
+            content/92-archive \
+            content/99-inbox \
+            2>/dev/null || true)
+          if [ -n "$bad_paths" ]; then
+            echo "ERROR: Found private folders in content:"
+            echo "$bad_paths"
+            exit 1
+          fi
 
       - name: Install Dependencies and Build Site
         run: |
-          # 安装依赖并构建 Quartz 静态网站
-          npm ci  # 使用 npm ci 安装依赖，确保一致性
-          npx quartz build  # 使用 Quartz 构建静态网站
+          npm ci
+          npx quartz build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
