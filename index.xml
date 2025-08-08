@@ -9,62 +9,62 @@
     <title>数字花园</title>
     <link>https://x-eden.zopiya.com/</link>
     <guid>https://x-eden.zopiya.com/</guid>
-    <description> Always For Freedom. 一个热衷于构建知识体系的探索者 💨 在此整理、沉淀多学科、多维度的知识与思考，愿对你有所启发。 📁 目录结构 . ├── Archive # 📦 归档内容 ├── FormalSciences # 📐 形式科学 │ ├── ComputerScience # 💻 计算机科学 │ │ ├── ComputerNetwork │ │ ├── ComputerSecurity │ │ ├── ComputerStorage │ │ ├── DataEngineering │ │ ├── DatabaseSystem │ │ ├── DevSecOps │ │ ├── GettingStarted │ │ ├── OperatingSystem │ │ ├── ProgrammingLanguage │ │ ├── SoftwareEngineering │ │ ├── StructuresAlgorithms │ │ └── WebDevelopment │ ├── InformationTheory # 信息论 │ ├── Logic # 逻辑学 │ ├── Mathematics # 数学 │ └── Statistics # 统计学 ├── NaturalSciences # 🌱 自然科学 │ ├── Astronomy # 天文学 │ ├── Biology # 生物学 │ ├── Chemistry # 化学 │ ├── Geology # 地质学 │ └── Physics # 物理学 ├── Obsidian # 🧩 Obsidian 配置与资源 │ ├── Canvas # 可视化画布 │ ├── Excalidraw # 手绘图工具 │ ├── Marp # 幻灯片样式与配置 │ ├── References # 参考文献与规范 │ ├── Static # 静态 JS 工具（天气、诗句等） │ └── Templates # 模板集合（日志、博客、阅读等） ├── Personal # 👤 个人空间 │ ├── Blog # 博客文章（按年份归档） │ ├── Book # 读书笔记（分类整理） │ ├── Finance # 财务与理财记录 │ ├── Journal # 日志记录（年度归档） │ ├── Life # 生活杂记与反思 │ ├── Mail # 邮件归档 │ ├── Photo # 摄影素材与图像收集 │ └── Writing # 自由写作与创作 ├── Professional # 🧠 职业发展 │ ├── 1.RoadMap # 职业路线图与发展规划 │ ├── 2.Skills # 技术与技能体系 │ ├── 3.JobSearch # 求职与面试准备 │ ├── 4.Workplace # 职场技巧与经验 │ └── 5.Company # 公司调研与行业趋势 ├── SocialSciences # 🌍 社会科学 │ ├── Anthropology # 人类学 │ ├── CulturalStudies # 文化研究 │ ├── Economics # 经济学 │ ├── Geography # 地理学 │ ├── InternationalRelations # 国际关系 │ ├── Linguistics # 语言学 │ │ └── English # 英语语言学习 │ ├── NationalStudies # 国别研究 │ │ └── 中国 # 中国研究 │ ├── Politics # 政治学 │ └── Sociology # 社会学 └── README.md 🧪 分支策略 main # 稳定主分支 dev # 日常推送分支 🤝 贡献说明 欢迎批判性反馈与知识纠错。若有意共建，请先提交 issue 或 PR。 📜 协议说明 所有原创代码采用 GPL-3.0 协议。 所有原创非代码内容采用 CC BY-SA 4.0 许可协议。 所有引用内容仅供学术研究使用，著作权归原作者所有。若涉及侵权，请 邮件联系 及时处理。 🙏 特别致谢 感谢所有知识创作者、开源贡献者及社区同行，正是你们的无私奉献，构成了这个持续演化的知识宇宙。.</description>
-    <pubDate>Mon, 04 Aug 2025 06:08:54 GMT</pubDate>
+    <description> Always For Freedom. 一个热衷于构建知识体系的探索者。 在此整理、沉淀多学科、多维度的知识与思考，愿对你有所启发。 目录总览 . ├── 00-knowledge/ # 🧠 通用知识 │ ├── governance/ │ ├── methodology/ │ ├── information-literacy/ │ ├── glossary/ │ └── style-guide/ ├── 10-formal-sciences/ # 📐 形式科学 │ ├── mathematics/ │ ├── logic/ │ ├── information-theory/ │ ├── statistics/ │ └── cryptography/ ├── 16-computer-science/ # 💻 计算机科学 │ ├── getting-started/ │ ├── programming-language/ │ ├── structures-algorithms/ │ ├── operating-system/ │ ├── computer-storage/ │ ├── database-system/ │ ├── computer-network/ │ ├── computer-security/ │ ├── software-engineering/ │ ├── web-development/ │ ├── devsecops/ │ └── data-engineering/ ├── 20-natural-sciences/ # 🌱 自然科学 │ ├── physics/ │ ├── chemistry/ │ ├── biology/ │ ├── geology/ │ ├── astronomy/ │ ├── environmental-science/ │ └── oceanography/ ├── 30-social-sciences/ # 🌍 社会科学 │ ├── anthropology/ │ ├── cultural-studies/ │ ├── linguistics/ │ ├── sociology/ │ ├── economics/ │ ├── politics/ │ ├── international-relations/ │ ├── geography/ │ ├── national-studies/ │ ├── psychology/ │ ├── law/ │ └── education/ ├── 40-professional/ # 💼 职业发展 │ ├── roadmap/ │ ├── skills/ │ ├── job-search/ │ ├── workplace/ │ └── company/ ├── 50-personal/ # 👤 个人空间 │ ├── journal/ │ ├── health/ │ ├── life/ │ └── finance/ ├── 60-writing/ # ✍️ 写作区 │ ├── blog/ │ ├── papers/ │ ├── proposals/ │ ├── notes/ │ ├── book/ │ └── published/ ├── 70-future/ # 🔮 前沿探索 │ ├── ai/ │ └── web3/ ├── 80-project/ # 🗂️ 项目实践 ├── 90-obsidian/ # 🧩 Obsidian │ ├── marp/ │ └── templates/ ├── 91-attachments/ # 📦 外部附件 │ ├── audio/ │ ├── documents/ │ ├── drawings/ │ ├── images/ │ └── videos/ ├── 92-archive/ # 🗄️ 历史归档 ├── 99-inbox/ # 📥 临时收集箱 └── README.md 分支策略 main # 稳定发布 / 线上版本 dev # 日常推送 自动化：GitHub Actions 每周 main 触发 CI，生成静态站点并部署到 Pages。 协议说明 内容类型许可证原创代码GPL‑3.0原创非代码CC BY‑SA 4.0引用资料仅供学术研究，版权归原作者。如涉侵权请 邮件联系 处理 特别致谢 感谢所有知识创作者、开源贡献者与社区同行，正是你们的无私奉献构成了这个持续演化的知识宇宙。.</description>
+    <pubDate>Fri, 08 Aug 2025 09:56:02 GMT</pubDate>
   </item><item>
     <title>简历原则</title>
-    <link>https://x-eden.zopiya.com/Professional/3.JobSearch/Interview/%E7%AE%80%E5%8E%86%E5%8E%9F%E5%88%99</link>
-    <guid>https://x-eden.zopiya.com/Professional/3.JobSearch/Interview/%E7%AE%80%E5%8E%86%E5%8E%9F%E5%88%99</guid>
+    <link>https://x-eden.zopiya.com/40-professional/03-job/01-interview/%E7%AE%80%E5%8E%86%E5%8E%9F%E5%88%99</link>
+    <guid>https://x-eden.zopiya.com/40-professional/03-job/01-interview/%E7%AE%80%E5%8E%86%E5%8E%9F%E5%88%99</guid>
     <description>简历原则.</description>
-    <pubDate>Mon, 04 Aug 2025 06:08:54 GMT</pubDate>
+    <pubDate>Fri, 08 Aug 2025 09:56:02 GMT</pubDate>
   </item><item>
-    <title>email</title>
-    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%8E%E9%80%9A%E4%BF%A1/email</link>
-    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%8E%E9%80%9A%E4%BF%A1/email</guid>
+    <title>02-Terraform在云中的应用</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/02-Terraform%E5%9C%A8%E4%BA%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/02-Terraform%E5%9C%A8%E4%BA%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8</guid>
     <description></description>
-    <pubDate>Mon, 04 Aug 2025 06:08:54 GMT</pubDate>
+    <pubDate>Fri, 08 Aug 2025 09:56:02 GMT</pubDate>
   </item><item>
-    <title>http.server</title>
-    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%8E%E9%80%9A%E4%BF%A1/http.server</link>
-    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%8E%E9%80%9A%E4%BF%A1/http.server</guid>
+    <title>03-AWS CloudFormation实战</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/03-AWS-CloudFormation%E5%AE%9E%E6%88%98</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/03-AWS-CloudFormation%E5%AE%9E%E6%88%98</guid>
     <description></description>
-    <pubDate>Mon, 04 Aug 2025 06:08:54 GMT</pubDate>
+    <pubDate>Fri, 08 Aug 2025 09:56:02 GMT</pubDate>
   </item><item>
-    <title>paramiko</title>
-    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%8E%E9%80%9A%E4%BF%A1/paramiko</link>
-    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%8E%E9%80%9A%E4%BF%A1/paramiko</guid>
+    <title>04-跨云环境中的IaC实现</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/04-%E8%B7%A8%E4%BA%91%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84IaC%E5%AE%9E%E7%8E%B0</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/04-%E8%B7%A8%E4%BA%91%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84IaC%E5%AE%9E%E7%8E%B0</guid>
     <description></description>
-    <pubDate>Mon, 04 Aug 2025 06:08:54 GMT</pubDate>
+    <pubDate>Fri, 08 Aug 2025 09:56:02 GMT</pubDate>
   </item><item>
-    <title>websockets</title>
-    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%8E%E9%80%9A%E4%BF%A1/websockets</link>
-    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%B8%8E%E9%80%9A%E4%BF%A1/websockets</guid>
+    <title>05-案例研究：IaC的多云实践</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/05-%E6%A1%88%E4%BE%8B%E7%A0%94%E7%A9%B6%EF%BC%9AIaC%E7%9A%84%E5%A4%9A%E4%BA%91%E5%AE%9E%E8%B7%B5</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/05-%E6%A1%88%E4%BE%8B%E7%A0%94%E7%A9%B6%EF%BC%9AIaC%E7%9A%84%E5%A4%9A%E4%BA%91%E5%AE%9E%E8%B7%B5</guid>
     <description></description>
-    <pubDate>Mon, 04 Aug 2025 06:08:54 GMT</pubDate>
+    <pubDate>Fri, 08 Aug 2025 09:56:02 GMT</pubDate>
   </item><item>
-    <title>traceback</title>
-    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B0%83%E8%AF%95/traceback</link>
-    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B0%83%E8%AF%95/traceback</guid>
+    <title>01-AI与机器学习在DevSecOps中的应用</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/01-AI%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9C%A8DevSecOps%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/01-AI%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9C%A8DevSecOps%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8</guid>
     <description></description>
-    <pubDate>Mon, 04 Aug 2025 06:08:54 GMT</pubDate>
+    <pubDate>Fri, 08 Aug 2025 09:56:02 GMT</pubDate>
   </item><item>
-    <title>unittest</title>
-    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B0%83%E8%AF%95/unittest</link>
-    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B0%83%E8%AF%95/unittest</guid>
+    <title>02-无服务器架构中的安全与DevSecOps</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/02-%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%E4%B8%AD%E7%9A%84%E5%AE%89%E5%85%A8%E4%B8%8EDevSecOps</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/02-%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%E4%B8%AD%E7%9A%84%E5%AE%89%E5%85%A8%E4%B8%8EDevSecOps</guid>
     <description></description>
-    <pubDate>Mon, 04 Aug 2025 06:08:54 GMT</pubDate>
+    <pubDate>Fri, 08 Aug 2025 09:56:02 GMT</pubDate>
   </item><item>
-    <title>glob</title>
-    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/glob</link>
-    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/glob</guid>
+    <title>03-边缘计算中的DevSecOps</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/03-%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84DevSecOps</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/03-%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84DevSecOps</guid>
     <description></description>
-    <pubDate>Mon, 04 Aug 2025 06:08:54 GMT</pubDate>
+    <pubDate>Fri, 08 Aug 2025 09:56:02 GMT</pubDate>
   </item><item>
-    <title>pathlib</title>
-    <link>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/pathlib</link>
-    <guid>https://x-eden.zopiya.com/FormalSciences/ComputerScience/ProgrammingLanguage/Python/3.Libraires/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E4%B8%8E%E4%BA%A4%E4%BA%92/pathlib</guid>
+    <title>04-DevSecOps中的自动化与智能化</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/04-DevSecOps%E4%B8%AD%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E4%B8%8E%E6%99%BA%E8%83%BD%E5%8C%96</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/04-DevSecOps%E4%B8%AD%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E4%B8%8E%E6%99%BA%E8%83%BD%E5%8C%96</guid>
     <description></description>
-    <pubDate>Mon, 04 Aug 2025 06:08:54 GMT</pubDate>
+    <pubDate>Fri, 08 Aug 2025 09:56:02 GMT</pubDate>
   </item>
     </channel>
   </rss>
