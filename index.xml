@@ -10,61 +10,61 @@
     <link>https://x-eden.zopiya.com/</link>
     <guid>https://x-eden.zopiya.com/</guid>
     <description> 永远为自由而思考与创造。 一个热衷于构建知识体系的探索者。 在此整理、沉淀多学科、多维度的知识与思考，愿对你有所启发。 🗂️ 目录 X·Eden 是一个以「知识架构化、学习系统化、思维模型化」为核心目标的多学科知识库。它汇聚了从形式科学到社会科学、从计算机科学到个人成长 的知识体系。 . ├── 00-knowledge/ # 🧠 通用知识 ├── 10-formal-sciences/ # 📐 形式科学 ├── 16-computer-science/ # 💻 计算机科学 ├── 20-natural-sciences/ # 🌱 自然科学 ├── 30-social-sciences/ # 🌍 社会科学 ├── 40-professional/ # 💼 职业发展 ├── 50-personal/ # 👤 个人空间 ├── 60-writing/ # ✍️ 写作区 ├── 70-future/ # 🔮 前沿探索 ├── 80-project/ # 🗂️ 项目实践 ├── 90-obsidian/ # 🧩 工具与模板 ├── 91-attachments/ # 📦 外部附件 ├── 92-archive/ # 🗄️ 历史归档 └── 99-inbox/ # 📥 临时收集箱 🌿 分支 main # 稳定发布 / 线上版本 dev # 日常推送 / 内容演化 自动化流程 GitHub Actions 每周自动触发 main 分支 CI，构建静态站点并部署至 GitHub Pages。 ⚖️ 许可证 内容类型许可证原创代码GPL-3.0原创非代码CC BY-SA 4.0引用资料仅供学术研究使用，版权归原作者。如涉侵权请 邮件联系 处理。 🙏 特别致谢 感谢所有知识创作者、开源贡献者与社区同行。 正是你们的无私分享，构筑了这个不断演化的知识宇宙。.</description>
-    <pubDate>Mon, 03 Nov 2025 06:06:13 GMT</pubDate>
+    <pubDate>Mon, 10 Nov 2025 06:06:03 GMT</pubDate>
   </item><item>
     <title>简历原则</title>
     <link>https://x-eden.zopiya.com/40-professional/03-job/01-interview/%E7%AE%80%E5%8E%86%E5%8E%9F%E5%88%99</link>
     <guid>https://x-eden.zopiya.com/40-professional/03-job/01-interview/%E7%AE%80%E5%8E%86%E5%8E%9F%E5%88%99</guid>
     <description>简历原则.</description>
-    <pubDate>Mon, 03 Nov 2025 06:06:13 GMT</pubDate>
+    <pubDate>Mon, 10 Nov 2025 06:06:03 GMT</pubDate>
   </item><item>
-    <title>07-多云架构与安全策略</title>
-    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/10-cloud-service/07-%E5%A4%9A%E4%BA%91%E6%9E%B6%E6%9E%84%E4%B8%8E%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5</link>
-    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/10-cloud-service/07-%E5%A4%9A%E4%BA%91%E6%9E%B6%E6%9E%84%E4%B8%8E%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5</guid>
+    <title>02-无服务器架构中的安全与DevSecOps</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/02-%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%E4%B8%AD%E7%9A%84%E5%AE%89%E5%85%A8%E4%B8%8EDevSecOps</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/02-%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%E4%B8%AD%E7%9A%84%E5%AE%89%E5%85%A8%E4%B8%8EDevSecOps</guid>
     <description></description>
-    <pubDate>Mon, 03 Nov 2025 06:06:13 GMT</pubDate>
+    <pubDate>Mon, 10 Nov 2025 06:06:03 GMT</pubDate>
   </item><item>
-    <title>08-案例研究：DevSecOps在云中的实践</title>
-    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/10-cloud-service/08-%E6%A1%88%E4%BE%8B%E7%A0%94%E7%A9%B6%EF%BC%9ADevSecOps%E5%9C%A8%E4%BA%91%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5</link>
-    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/10-cloud-service/08-%E6%A1%88%E4%BE%8B%E7%A0%94%E7%A9%B6%EF%BC%9ADevSecOps%E5%9C%A8%E4%BA%91%E4%B8%AD%E7%9A%84%E5%AE%9E%E8%B7%B5</guid>
+    <title>03-边缘计算中的DevSecOps</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/03-%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84DevSecOps</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/03-%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84DevSecOps</guid>
     <description></description>
-    <pubDate>Mon, 03 Nov 2025 06:06:13 GMT</pubDate>
+    <pubDate>Mon, 10 Nov 2025 06:06:03 GMT</pubDate>
   </item><item>
-    <title>01-Overview</title>
-    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/01-Overview</link>
-    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/01-Overview</guid>
+    <title>04-DevSecOps中的自动化与智能化</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/04-DevSecOps%E4%B8%AD%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E4%B8%8E%E6%99%BA%E8%83%BD%E5%8C%96</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/04-DevSecOps%E4%B8%AD%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E4%B8%8E%E6%99%BA%E8%83%BD%E5%8C%96</guid>
     <description></description>
-    <pubDate>Mon, 03 Nov 2025 06:06:13 GMT</pubDate>
+    <pubDate>Mon, 10 Nov 2025 06:06:03 GMT</pubDate>
   </item><item>
-    <title>02-Terraform在云中的应用</title>
-    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/02-Terraform%E5%9C%A8%E4%BA%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8</link>
-    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/02-Terraform%E5%9C%A8%E4%BA%91%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8</guid>
+    <title>05-量子计算对DevSecOps的潜在影响</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/05-%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97%E5%AF%B9DevSecOps%E7%9A%84%E6%BD%9C%E5%9C%A8%E5%BD%B1%E5%93%8D</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/05-%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97%E5%AF%B9DevSecOps%E7%9A%84%E6%BD%9C%E5%9C%A8%E5%BD%B1%E5%93%8D</guid>
     <description></description>
-    <pubDate>Mon, 03 Nov 2025 06:06:13 GMT</pubDate>
+    <pubDate>Mon, 10 Nov 2025 06:06:03 GMT</pubDate>
   </item><item>
-    <title>03-AWS CloudFormation实战</title>
-    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/03-AWS-CloudFormation%E5%AE%9E%E6%88%98</link>
-    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/03-AWS-CloudFormation%E5%AE%9E%E6%88%98</guid>
+    <title>06-前沿趋势：未来的DevSecOps发展方向</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/06-%E5%89%8D%E6%B2%BF%E8%B6%8B%E5%8A%BF%EF%BC%9A%E6%9C%AA%E6%9D%A5%E7%9A%84DevSecOps%E5%8F%91%E5%B1%95%E6%96%B9%E5%90%91</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/06-%E5%89%8D%E6%B2%BF%E8%B6%8B%E5%8A%BF%EF%BC%9A%E6%9C%AA%E6%9D%A5%E7%9A%84DevSecOps%E5%8F%91%E5%B1%95%E6%96%B9%E5%90%91</guid>
     <description></description>
-    <pubDate>Mon, 03 Nov 2025 06:06:13 GMT</pubDate>
+    <pubDate>Mon, 10 Nov 2025 06:06:03 GMT</pubDate>
   </item><item>
-    <title>04-跨云环境中的IaC实现</title>
-    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/04-%E8%B7%A8%E4%BA%91%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84IaC%E5%AE%9E%E7%8E%B0</link>
-    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/04-%E8%B7%A8%E4%BA%91%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84IaC%E5%AE%9E%E7%8E%B0</guid>
+    <title>01-应用安全</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/09-security/01-%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/09-security/01-%E5%BA%94%E7%94%A8%E5%AE%89%E5%85%A8</guid>
     <description></description>
-    <pubDate>Mon, 03 Nov 2025 06:06:13 GMT</pubDate>
+    <pubDate>Mon, 10 Nov 2025 06:06:03 GMT</pubDate>
   </item><item>
-    <title>05-案例研究：IaC的多云实践</title>
-    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/05-%E6%A1%88%E4%BE%8B%E7%A0%94%E7%A9%B6%EF%BC%9AIaC%E7%9A%84%E5%A4%9A%E4%BA%91%E5%AE%9E%E8%B7%B5</link>
-    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/11-iac-on-cloud/05-%E6%A1%88%E4%BE%8B%E7%A0%94%E7%A9%B6%EF%BC%9AIaC%E7%9A%84%E5%A4%9A%E4%BA%91%E5%AE%9E%E8%B7%B5</guid>
+    <title>02-基础设施安全</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/09-security/02-%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%AE%89%E5%85%A8</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/09-security/02-%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%AE%89%E5%85%A8</guid>
     <description></description>
-    <pubDate>Mon, 03 Nov 2025 06:06:13 GMT</pubDate>
+    <pubDate>Mon, 10 Nov 2025 06:06:03 GMT</pubDate>
   </item><item>
-    <title>01-AI与机器学习在DevSecOps中的应用</title>
-    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/01-AI%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9C%A8DevSecOps%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8</link>
-    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/12-advanced-topics/01-AI%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%9C%A8DevSecOps%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8</guid>
+    <title>03-身份与访问管理（IAM）</title>
+    <link>https://x-eden.zopiya.com/16-computer-science/11-devsecops/09-security/03-%E8%BA%AB%E4%BB%BD%E4%B8%8E%E8%AE%BF%E9%97%AE%E7%AE%A1%E7%90%86%EF%BC%88IAM%EF%BC%89</link>
+    <guid>https://x-eden.zopiya.com/16-computer-science/11-devsecops/09-security/03-%E8%BA%AB%E4%BB%BD%E4%B8%8E%E8%AE%BF%E9%97%AE%E7%AE%A1%E7%90%86%EF%BC%88IAM%EF%BC%89</guid>
     <description></description>
-    <pubDate>Mon, 03 Nov 2025 06:06:13 GMT</pubDate>
+    <pubDate>Mon, 10 Nov 2025 06:06:03 GMT</pubDate>
   </item>
     </channel>
   </rss>
