@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh"><head><title>02-构建ai代理军团</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Noto Serif Simplified Chinese:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="02-构建ai代理军团"/><meta property="og:description" content="第二章：生产力引擎 - 构建你的 AI 代理军团 彻底重构工作流，从 ” 出卖 8 小时劳动 ” 的线性产出，进化为 “2 小时深度决策 + 6 小时 AI 规模化执行 ” 的指数级增长。 开篇质问：你是在 ” 工作 “，还是在 ” 空转 ”？ 让我们来解剖一下大多数职场人真实的 ” 朝九晚六 ”： 09:00 - 10:00：在一堆无关紧要的邮件和未读消息中开启一天； ..."/><meta property="og:image" content="https://x-eden.zopiya.com/static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../../../static/icon.png"/><meta name="description" content="第二章：生产力引擎 - 构建你的 AI 代理军团 彻底重构工作流，从 ” 出卖 8 小时劳动 ” 的线性产出，进化为 “2 小时深度决策 + 6 小时 AI 规模化执行 ” 的指数级增长。 开篇质问：你是在 ” 工作 “，还是在 ” 空转 ”？ 让我们来解剖一下大多数职场人真实的 ” 朝九晚六 ”： 09:00 - 10:00：在一堆无关紧要的邮件和未读消息中开启一天； ..."/><meta name="generator" content="Quartz"/><link href="../../../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="40-professional/46-workplace/career/02-构建ai代理军团"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../..">🪴 X·Eden</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>搜索</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="搜索些什么" placeholder="搜索些什么"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button><div class="explorer desktop-only"><button type="button" id="explorer" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-tree="[{&quot;path&quot;:&quot;40-professional&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/41-roles&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/42-timeline&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/44-skills&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/45-roadmap&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/46-workplace&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/46-workplace/career&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/46-workplace/offer&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2018&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2020&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2021&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2022&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2023&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2024&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2025&quot;,&quot;collapsed&quot;:true}]" aria-controls="explorer-content" aria-expanded="false"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-content"><ul class="overflow" id="explorer-ul"><li><div class="folder-outer open"><ul style="padding-left:0;" class="content" data-folderul><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional"><button class="folder-button"><span class="folder-title">40-professional</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/41-roles"><button class="folder-button"><span class="folder-title">41-roles</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/41-roles"><li><a href="../../../40-professional/41-roles/周中平" data-for="40-professional/41-roles/周中平">周中平</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/42-timeline"><button class="folder-button"><span class="folder-title">42-timeline</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/42-timeline"><li><a href="../../../40-professional/42-timeline/2017.09-2019.07-河南牧业经济学院-软件技术" data-for="40-professional/42-timeline/2017.09-2019.07-河南牧业经济学院-软件技术">2017.09-2019.07-河南牧业经济学院-软件技术</a></li><li><a href="../../../40-professional/42-timeline/2019.07-2020.01-杭州好橙-Java开发实习" data-for="40-professional/42-timeline/2019.07-2020.01-杭州好橙-Java开发实习">2019.07-2020.01-杭州好橙-Java开发实习</a></li><li><a href="../../../40-professional/42-timeline/2020.02-2021.02-艳阳牧业-饲养员" data-for="40-professional/42-timeline/2020.02-2021.02-艳阳牧业-饲养员">2020.02-2021.02-艳阳牧业-饲养员</a></li><li><a href="../../../40-professional/42-timeline/2021.03-2023.03-九州通-技术支持工程师" data-for="40-professional/42-timeline/2021.03-2023.03-九州通-技术支持工程师">2021.03-2023.03-九州通-技术支持工程师</a></li><li><a href="../../../40-professional/42-timeline/2022.03-2024.07-河南财经政法大学-计算机科学与技术" data-for="40-professional/42-timeline/2022.03-2024.07-河南财经政法大学-计算机科学与技术">2022.03-2024.07-河南财经政法大学-计算机科学与技术</a></li><li><a href="../../../40-professional/42-timeline/2023.03-至今-九州通-运维开发工程师" data-for="40-professional/42-timeline/2023.03-至今-九州通-运维开发工程师">2023.03-至今-九州通-运维开发工程师</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/44-skills"><button class="folder-button"><span class="folder-title">44-skills</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/44-skills"><li><a href="../../../40-professional/44-skills/技能矩阵" data-for="40-professional/44-skills/技能矩阵">技能矩阵</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/45-roadmap"><button class="folder-button"><span class="folder-title">45-roadmap</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/45-roadmap"><li><a href="../../../40-professional/45-roadmap/AI时代工程师的生存指南" data-for="40-professional/45-roadmap/AI时代工程师的生存指南">AI 时代工程师的生存指南</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/46-workplace"><button class="folder-button"><span class="folder-title">46-workplace</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/46-workplace"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/46-workplace/career"><button class="folder-button"><span class="folder-title">career</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/46-workplace/career"><li><a href="../../../40-professional/46-workplace/career/01-新手村ai速通法" data-for="40-professional/46-workplace/career/01-新手村ai速通法">01-新手村ai速通法</a></li><li><a href="../../../40-professional/46-workplace/career/02-构建ai代理军团" data-for="40-professional/46-workplace/career/02-构建ai代理军团">02-构建ai代理军团</a></li><li><a href="../../../40-professional/46-workplace/career/03-从隐形人到行业kol" data-for="40-professional/46-workplace/career/03-从隐形人到行业kol">03-从隐形人到行业kol</a></li><li><a href="../../../40-professional/46-workplace/career/04-硬核维权铁律" data-for="40-professional/46-workplace/career/04-硬核维权铁律">04-硬核维权铁律</a></li><li><a href="../../../40-professional/46-workplace/career/05-反内卷终极形态" data-for="40-professional/46-workplace/career/05-反内卷终极形态">05-反内卷终极形态</a></li><li><a href="../../../40-professional/46-workplace/career/06-复利人生商业闭环" data-for="40-professional/46-workplace/career/06-复利人生商业闭环">06-复利人生商业闭环</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/46-workplace/offer"><button class="folder-button"><span class="folder-title">offer</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/46-workplace/offer"><li><a href="../../../40-professional/46-workplace/offer/01-面试理念与原则" data-for="40-professional/46-workplace/offer/01-面试理念与原则">01-面试理念与原则</a></li><li><a href="../../../40-professional/46-workplace/offer/02-简历原则与实践" data-for="40-professional/46-workplace/offer/02-简历原则与实践">02-简历原则与实践</a></li><li><a href="../../../40-professional/46-workplace/offer/03-面试流程全解析" data-for="40-professional/46-workplace/offer/03-面试流程全解析">03-面试流程全解析</a></li><li><a href="../../../40-professional/46-workplace/offer/04-面试10大经典问题" data-for="40-professional/46-workplace/offer/04-面试10大经典问题">04-面试10大经典问题</a></li><li><a href="../../../40-professional/46-workplace/offer/05-技术面试核心点" data-for="40-professional/46-workplace/offer/05-技术面试核心点">05-技术面试核心点</a></li><li><a href="../../../40-professional/46-workplace/offer/06-反向面试要点" data-for="40-professional/46-workplace/offer/06-反向面试要点">06-反向面试要点</a></li><li><a href="../../../40-professional/46-workplace/offer/07-薪资谈判艺术" data-for="40-professional/46-workplace/offer/07-薪资谈判艺术">07-薪资谈判艺术</a></li><li><a href="../../../40-professional/46-workplace/offer/08-offer评估决策" data-for="40-professional/46-workplace/offer/08-offer评估决策">08-offer评估决策</a></li><li><a href="../../../40-professional/46-workplace/offer/09-入职准备" data-for="40-professional/46-workplace/offer/09-入职准备">09-入职准备</a></li><li><a href="../../../40-professional/46-workplace/offer/10-试用期生存" data-for="40-professional/46-workplace/offer/10-试用期生存">10-试用期生存</a></li><li><a href="../../../40-professional/46-workplace/offer/11-持续成长" data-for="40-professional/46-workplace/offer/11-持续成长">11-持续成长</a></li></ul></div></li></ul></div></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing"><button class="folder-button"><span class="folder-title">60-writing</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog"><button class="folder-button"><span class="folder-title">61-blog</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2018"><button class="folder-button"><span class="folder-title">2018</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2018"><li><a href="../../../60-writing/61-blog/2018/11月28日晚-星期三-霾" data-for="60-writing/61-blog/2018/11月28日晚-星期三-霾">11月28日 晚 星期三 霾</a></li><li><a href="../../../60-writing/61-blog/2018/BombSquad-炸弹人小分队" data-for="60-writing/61-blog/2018/BombSquad-炸弹人小分队">BombSquad-炸弹人小分队</a></li><li><a href="../../../60-writing/61-blog/2018/如何免费创建一个属于自己的网站" data-for="60-writing/61-blog/2018/如何免费创建一个属于自己的网站">如何免费创建一个属于自己的网站</a></li><li><a href="../../../60-writing/61-blog/2018/英雄联盟-S8-全球总决赛" data-for="60-writing/61-blog/2018/英雄联盟-S8-全球总决赛">英雄联盟 S8 全球总决赛</a></li><li><a href="../../../60-writing/61-blog/2018/螺蛳粉" data-for="60-writing/61-blog/2018/螺蛳粉">螺蛳粉</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2020"><button class="folder-button"><span class="folder-title">2020</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2020"><li><a href="../../../60-writing/61-blog/2020/Don`t-Starve-饥荒" data-for="60-writing/61-blog/2020/Don`t-Starve-饥荒">Don't Starve-饥荒</a></li><li><a href="../../../60-writing/61-blog/2020/中国传统历法" data-for="60-writing/61-blog/2020/中国传统历法">中国传统历法</a></li><li><a href="../../../60-writing/61-blog/2020/初号机，起飞！" data-for="60-writing/61-blog/2020/初号机，起飞！">初号机，起飞！</a></li><li><a href="../../../60-writing/61-blog/2020/吉普赛满天星" data-for="60-writing/61-blog/2020/吉普赛满天星">吉普赛满天星</a></li><li><a href="../../../60-writing/61-blog/2020/夏日花记" data-for="60-writing/61-blog/2020/夏日花记">夏日花记</a></li><li><a href="../../../60-writing/61-blog/2020/幸福的事情都是需要等待的" data-for="60-writing/61-blog/2020/幸福的事情都是需要等待的">幸福的事情都是需要等待的</a></li><li><a href="../../../60-writing/61-blog/2020/开源软件之道" data-for="60-writing/61-blog/2020/开源软件之道">开源软件之道</a></li><li><a href="../../../60-writing/61-blog/2020/我的小羊肖恩" data-for="60-writing/61-blog/2020/我的小羊肖恩">我的小羊肖恩</a></li><li><a href="../../../60-writing/61-blog/2020/数据恢复杂谈" data-for="60-writing/61-blog/2020/数据恢复杂谈">数据恢复杂谈</a></li><li><a href="../../../60-writing/61-blog/2020/注定不平凡的一年" data-for="60-writing/61-blog/2020/注定不平凡的一年">注定不平凡的一年</a></li><li><a href="../../../60-writing/61-blog/2020/浅谈个人服务器架构" data-for="60-writing/61-blog/2020/浅谈个人服务器架构">浅谈个人服务器架构</a></li><li><a href="../../../60-writing/61-blog/2020/球鞋日记" data-for="60-writing/61-blog/2020/球鞋日记">球鞋日记</a></li><li><a href="../../../60-writing/61-blog/2020/記拾月" data-for="60-writing/61-blog/2020/記拾月">記拾月</a></li><li><a href="../../../60-writing/61-blog/2020/长安游记" data-for="60-writing/61-blog/2020/长安游记">长安游记</a></li><li><a href="../../../60-writing/61-blog/2020/骑行在路上" data-for="60-writing/61-blog/2020/骑行在路上">骑行在路上</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2021"><button class="folder-button"><span class="folder-title">2021</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2021"><li><a href="../../../60-writing/61-blog/2021/2021" data-for="60-writing/61-blog/2021/2021">2021</a></li><li><a href="../../../60-writing/61-blog/2021/VIVO-IQOO-Neo3-开箱测评" data-for="60-writing/61-blog/2021/VIVO-IQOO-Neo3-开箱测评">VIVO IQOO Neo3 开箱测评</a></li><li><a href="../../../60-writing/61-blog/2021/上有天堂、下有苏杭" data-for="60-writing/61-blog/2021/上有天堂、下有苏杭">上有天堂、下有苏杭</a></li><li><a href="../../../60-writing/61-blog/2021/我开发的第一款软件" data-for="60-writing/61-blog/2021/我开发的第一款软件">我开发的第一款软件</a></li><li><a href="../../../60-writing/61-blog/2021/我站立的地方是中国" data-for="60-writing/61-blog/2021/我站立的地方是中国">我站立的地方是中国</a></li><li><a href="../../../60-writing/61-blog/2021/我还在……" data-for="60-writing/61-blog/2021/我还在……">我还在……</a></li><li><a href="../../../60-writing/61-blog/2021/星光不问赶路人" data-for="60-writing/61-blog/2021/星光不问赶路人">星光不问赶路人</a></li><li><a href="../../../60-writing/61-blog/2021/济南呀济南的泰山之旅" data-for="60-writing/61-blog/2021/济南呀济南的泰山之旅">济南呀济南的泰山之旅</a></li><li><a href="../../../60-writing/61-blog/2021/涝疫结合" data-for="60-writing/61-blog/2021/涝疫结合">涝疫结合</a></li><li><a href="../../../60-writing/61-blog/2021/申请-Jetbrains-开源项目授权" data-for="60-writing/61-blog/2021/申请-Jetbrains-开源项目授权">申请 Jetbrains 开源项目授权</a></li><li><a href="../../../60-writing/61-blog/2021/真·长安游记" data-for="60-writing/61-blog/2021/真·长安游记">真·长安游记</a></li><li><a href="../../../60-writing/61-blog/2021/记拾月" data-for="60-writing/61-blog/2021/记拾月">记拾月</a></li><li><a href="../../../60-writing/61-blog/2021/贰号机、落幕" data-for="60-writing/61-blog/2021/贰号机、落幕">贰号机、落幕</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2022"><button class="folder-button"><span class="folder-title">2022</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2022"><li><a href="../../../60-writing/61-blog/2022/「引用」博客的本质是电线杆子" data-for="60-writing/61-blog/2022/「引用」博客的本质是电线杆子">「引用」博客的本质是电线杆子</a></li><li><a href="../../../60-writing/61-blog/2022/2022" data-for="60-writing/61-blog/2022/2022">2022</a></li><li><a href="../../../60-writing/61-blog/2022/Halo-主题-Redemption-首发版" data-for="60-writing/61-blog/2022/Halo-主题-Redemption-首发版">Halo 主题 Redemption 首发版</a></li><li><a href="../../../60-writing/61-blog/2022/Redemption" data-for="60-writing/61-blog/2022/Redemption">Redemption</a></li><li><a href="../../../60-writing/61-blog/2022/Redemption-主题-0.2.1-版本" data-for="60-writing/61-blog/2022/Redemption-主题-0.2.1-版本">Redemption 主题 0.2.1 版本</a></li><li><a href="../../../60-writing/61-blog/2022/一线城市拥有一亩三分地是什么体验" data-for="60-writing/61-blog/2022/一线城市拥有一亩三分地是什么体验">一线城市拥有一亩三分地是什么体验</a></li><li><a href="../../../60-writing/61-blog/2022/三步为你博客文章分析情感关键字" data-for="60-writing/61-blog/2022/三步为你博客文章分析情感关键字">三步为你博客文章分析情感关键字</a></li><li><a href="../../../60-writing/61-blog/2022/不要在饿的时候吃螺蛳粉！" data-for="60-writing/61-blog/2022/不要在饿的时候吃螺蛳粉！">不要在饿的时候吃螺蛳粉！</a></li><li><a href="../../../60-writing/61-blog/2022/习惯养成第一步" data-for="60-writing/61-blog/2022/习惯养成第一步">习惯养成第一步</a></li><li><a href="../../../60-writing/61-blog/2022/人在囧途——青海湖" data-for="60-writing/61-blog/2022/人在囧途——青海湖">人在囧途——青海湖</a></li><li><a href="../../../60-writing/61-blog/2022/人格类型测试" data-for="60-writing/61-blog/2022/人格类型测试">人格类型测试</a></li><li><a href="../../../60-writing/61-blog/2022/你还记得曾经的梦想么？" data-for="60-writing/61-blog/2022/你还记得曾经的梦想么？">你还记得曾经的梦想么？</a></li><li><a href="../../../60-writing/61-blog/2022/使用-Docusaurus-搭建优秀个人wiki" data-for="60-writing/61-blog/2022/使用-Docusaurus-搭建优秀个人wiki">使用 Docusaurus 搭建优秀个人wiki</a></li><li><a href="../../../60-writing/61-blog/2022/关于感情的事情" data-for="60-writing/61-blog/2022/关于感情的事情">关于感情的事情</a></li><li><a href="../../../60-writing/61-blog/2022/关于花" data-for="60-writing/61-blog/2022/关于花">关于花</a></li><li><a href="../../../60-writing/61-blog/2022/关于郑州的互联网记忆" data-for="60-writing/61-blog/2022/关于郑州的互联网记忆">关于郑州的互联网记忆</a></li><li><a href="../../../60-writing/61-blog/2022/再游嵩山" data-for="60-writing/61-blog/2022/再游嵩山">再游嵩山</a></li><li><a href="../../../60-writing/61-blog/2022/最近在折腾什么……" data-for="60-writing/61-blog/2022/最近在折腾什么……">最近在折腾什么……</a></li><li><a href="../../../60-writing/61-blog/2022/最近的生活" data-for="60-writing/61-blog/2022/最近的生活">最近的生活</a></li><li><a href="../../../60-writing/61-blog/2022/写十万字的博客是一种什么感觉" data-for="60-writing/61-blog/2022/写十万字的博客是一种什么感觉">写十万字的博客是一种什么感觉</a></li><li><a href="../../../60-writing/61-blog/2022/写博客的正确姿势---先行版" data-for="60-writing/61-blog/2022/写博客的正确姿势---先行版">写博客的正确姿势 - 先行版</a></li><li><a href="../../../60-writing/61-blog/2022/写博客的正确姿势---测试版" data-for="60-writing/61-blog/2022/写博客的正确姿势---测试版">写博客的正确姿势 - 测试版</a></li><li><a href="../../../60-writing/61-blog/2022/原点" data-for="60-writing/61-blog/2022/原点">原点</a></li><li><a href="../../../60-writing/61-blog/2022/如何免费获得-Jetbrains-正版授权" data-for="60-writing/61-blog/2022/如何免费获得-Jetbrains-正版授权">如何免费获得 Jetbrains 正版授权</a></li><li><a href="../../../60-writing/61-blog/2022/我是关系户" data-for="60-writing/61-blog/2022/我是关系户">我是关系户</a></li><li><a href="../../../60-writing/61-blog/2022/我要拔智齿！！！" data-for="60-writing/61-blog/2022/我要拔智齿！！！">我要拔智齿！！！</a></li><li><a href="../../../60-writing/61-blog/2022/数字文化遗产" data-for="60-writing/61-blog/2022/数字文化遗产">数字文化遗产</a></li><li><a href="../../../60-writing/61-blog/2022/新冠笔记" data-for="60-writing/61-blog/2022/新冠笔记">新冠笔记</a></li><li><a href="../../../60-writing/61-blog/2022/新手村村长" data-for="60-writing/61-blog/2022/新手村村长">新手村村长</a></li><li><a href="../../../60-writing/61-blog/2022/是微风、是晚霞、是来日方长" data-for="60-writing/61-blog/2022/是微风、是晚霞、是来日方长">是微风、是晚霞、是来日方长</a></li><li><a href="../../../60-writing/61-blog/2022/月季到了" data-for="60-writing/61-blog/2022/月季到了">月季到了</a></li><li><a href="../../../60-writing/61-blog/2022/浅谈一下自己折腾的网站" data-for="60-writing/61-blog/2022/浅谈一下自己折腾的网站">浅谈一下自己折腾的网站</a></li><li><a href="../../../60-writing/61-blog/2022/番茄开花啦-~" data-for="60-writing/61-blog/2022/番茄开花啦-~">番茄开花啦 ~</a></li><li><a href="../../../60-writing/61-blog/2022/种下了一些瓜果蔬菜" data-for="60-writing/61-blog/2022/种下了一些瓜果蔬菜">种下了一些瓜果蔬菜</a></li><li><a href="../../../60-writing/61-blog/2022/罪恶应该被遗传么" data-for="60-writing/61-blog/2022/罪恶应该被遗传么">罪恶应该被遗传么？</a></li><li><a href="../../../60-writing/61-blog/2022/自律的痛苦······" data-for="60-writing/61-blog/2022/自律的痛苦······">自律的痛苦······</a></li><li><a href="../../../60-writing/61-blog/2022/论成年人的睡眠" data-for="60-writing/61-blog/2022/论成年人的睡眠">论成年人的睡眠</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」">谈谈我的「数字文具盒」</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---NextCloud" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---NextCloud">谈谈我的「数字文具盒」 - NextCloud</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---Obsidian" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---Obsidian">谈谈我的「数字文具盒」 - Obsidian</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---心得体会" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---心得体会">谈谈我的「数字文具盒」 - 心得体会</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---数字基建" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---数字基建">谈谈我的「数字文具盒」 - 数字基建</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（上）" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（上）">谈谈我的「数字文具盒」 - 生产力工具（上）</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（下）" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（下）">谈谈我的「数字文具盒」 - 生产力工具（下）</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---番外篇" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---番外篇">谈谈我的「数字文具盒」 - 番外篇</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---运行平台" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---运行平台">谈谈我的「数字文具盒」 - 运行平台</a></li><li><a href="../../../60-writing/61-blog/2022/这个周末" data-for="60-writing/61-blog/2022/这个周末">这个周末</a></li><li><a href="../../../60-writing/61-blog/2022/通货膨胀的猪" data-for="60-writing/61-blog/2022/通货膨胀的猪">通货膨胀的猪</a></li><li><a href="../../../60-writing/61-blog/2022/闭门锁网" data-for="60-writing/61-blog/2022/闭门锁网">闭门锁网</a></li><li><a href="../../../60-writing/61-blog/2022/非黑即白" data-for="60-writing/61-blog/2022/非黑即白">非黑即白</a></li><li><a href="../../../60-writing/61-blog/2022/首页加载速度优化方案" data-for="60-writing/61-blog/2022/首页加载速度优化方案">首页加载速度优化方案</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2023"><button class="folder-button"><span class="folder-title">2023</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2023"><li><a href="../../../60-writing/61-blog/2023/2023-年度微信读书报告" data-for="60-writing/61-blog/2023/2023-年度微信读书报告">2023 年度微信读书报告</a></li><li><a href="../../../60-writing/61-blog/2023/Docusaurus-搭建" data-for="60-writing/61-blog/2023/Docusaurus-搭建">Docusaurus 搭建</a></li><li><a href="../../../60-writing/61-blog/2023/Obsidian-使用-Templater-插件的个性化脚本" data-for="60-writing/61-blog/2023/Obsidian-使用-Templater-插件的个性化脚本">Obsidian 使用 Templater 插件的个性化脚本</a></li><li><a href="../../../60-writing/61-blog/2023/YubiKey-漂流记" data-for="60-writing/61-blog/2023/YubiKey-漂流记">YubiKey 历险记</a></li><li><a href="../../../60-writing/61-blog/2023/不要把幸福建立在别人的痛苦之上" data-for="60-writing/61-blog/2023/不要把幸福建立在别人的痛苦之上">不要把幸福建立在别人的痛苦之上</a></li><li><a href="../../../60-writing/61-blog/2023/为什么不推开那扇门？" data-for="60-writing/61-blog/2023/为什么不推开那扇门？">为什么不推开那扇门？</a></li><li><a href="../../../60-writing/61-blog/2023/你愿意嫁给自己么？" data-for="60-writing/61-blog/2023/你愿意嫁给自己么？">你愿意嫁给自己么</a></li><li><a href="../../../60-writing/61-blog/2023/最近半年的生活" data-for="60-writing/61-blog/2023/最近半年的生活">最近半年的生活</a></li><li><a href="../../../60-writing/61-blog/2023/写博客的正确姿势" data-for="60-writing/61-blog/2023/写博客的正确姿势">写博客的正确姿势</a></li><li><a href="../../../60-writing/61-blog/2023/唯有热爱可抵岁月漫长" data-for="60-writing/61-blog/2023/唯有热爱可抵岁月漫长">唯有热爱、可抵岁月漫长</a></li><li><a href="../../../60-writing/61-blog/2023/回首-2022-展望-2023" data-for="60-writing/61-blog/2023/回首-2022-展望-2023">回首 2022 展望 2023</a></li><li><a href="../../../60-writing/61-blog/2023/大学回忆录" data-for="60-writing/61-blog/2023/大学回忆录">大学回忆录</a></li><li><a href="../../../60-writing/61-blog/2023/如何不写错别字！" data-for="60-writing/61-blog/2023/如何不写错别字！">如何不写错别字！</a></li><li><a href="../../../60-writing/61-blog/2023/如何拍好一张照片" data-for="60-writing/61-blog/2023/如何拍好一张照片">如何拍好一张照片</a></li><li><a href="../../../60-writing/61-blog/2023/家里的三块地" data-for="60-writing/61-blog/2023/家里的三块地">家里的三块地</a></li><li><a href="../../../60-writing/61-blog/2023/岁月是把猪饲料，把我喂的嘎嘎胖" data-for="60-writing/61-blog/2023/岁月是把猪饲料，把我喂的嘎嘎胖">岁月是把猪饲料，把我喂的嘎嘎胖</a></li><li><a href="../../../60-writing/61-blog/2023/拾月游记" data-for="60-writing/61-blog/2023/拾月游记">拾月游记</a></li><li><a href="../../../60-writing/61-blog/2023/揭晓你的博客一年之最，尽在-EndOfYear！" data-for="60-writing/61-blog/2023/揭晓你的博客一年之最，尽在-EndOfYear！">揭晓你的博客一年之最，尽在 EndOfYear！</a></li><li><a href="../../../60-writing/61-blog/2023/早起、阅读、写作、运动、冥想" data-for="60-writing/61-blog/2023/早起、阅读、写作、运动、冥想">早起、冥想、阅读、写作、运动</a></li><li><a href="../../../60-writing/61-blog/2023/浅尝-Gitea-的-Actions" data-for="60-writing/61-blog/2023/浅尝-Gitea-的-Actions">浅尝 Gitea 的 Actions</a></li><li><a href="../../../60-writing/61-blog/2023/独立生活能力清单" data-for="60-writing/61-blog/2023/独立生活能力清单">独立生活能力清单</a></li><li><a href="../../../60-writing/61-blog/2023/电脑坏了，我换了-Ubuntu" data-for="60-writing/61-blog/2023/电脑坏了，我换了-Ubuntu">电脑坏了，我换了 Ubuntu</a></li><li><a href="../../../60-writing/61-blog/2023/看-V2Ex-的-ChatGPT-老哥浅谈办公室政治" data-for="60-writing/61-blog/2023/看-V2Ex-的-ChatGPT-老哥浅谈办公室政治">看 V2Ex 的 ChatGPT 老哥浅谈办公室政治</a></li><li><a href="../../../60-writing/61-blog/2023/破万卷书，行万里路！" data-for="60-writing/61-blog/2023/破万卷书，行万里路！">破万卷书，行万里路！</a></li><li><a href="../../../60-writing/61-blog/2023/谈谈我的「数字文具盒」---个人工作流" data-for="60-writing/61-blog/2023/谈谈我的「数字文具盒」---个人工作流">谈谈我的「数字文具盒」 - 个人工作流</a></li><li><a href="../../../60-writing/61-blog/2023/长安三万里" data-for="60-writing/61-blog/2023/长安三万里">长安三万里</a></li><li><a href="../../../60-writing/61-blog/2023/黄山归来不看岳" data-for="60-writing/61-blog/2023/黄山归来不看岳">黄山归来不看岳</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2024"><button class="folder-button"><span class="folder-title">2024</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2024"><li><a href="../../../60-writing/61-blog/2024/「救赎之路」更名「向阳而生」" data-for="60-writing/61-blog/2024/「救赎之路」更名「向阳而生」">「救赎之路」更名「向阳而生」</a></li><li><a href="../../../60-writing/61-blog/2024/回顾-2023" data-for="60-writing/61-blog/2024/回顾-2023">2023 年终总结</a></li><li><a href="../../../60-writing/61-blog/2024/2023-年终问答" data-for="60-writing/61-blog/2024/2023-年终问答">2023 年终问答</a></li><li><a href="../../../60-writing/61-blog/2024/CityWalk——公车挑战" data-for="60-writing/61-blog/2024/CityWalk——公车挑战">CityWalk——公车挑战：探索未知的城市</a></li><li><a href="../../../60-writing/61-blog/2024/Python-项目终极部署解决方案" data-for="60-writing/61-blog/2024/Python-项目终极部署解决方案">Python 项目终极部署解决方案</a></li><li><a href="../../../60-writing/61-blog/2024/一命二运三风水" data-for="60-writing/61-blog/2024/一命二运三风水">一命二运三风水</a></li><li><a href="../../../60-writing/61-blog/2024/乌兰哈达火山银河之旅" data-for="60-writing/61-blog/2024/乌兰哈达火山银河之旅">乌兰哈达火山银河之旅</a></li><li><a href="../../../60-writing/61-blog/2024/冰箱，让你我错过了多少新鲜的生活？" data-for="60-writing/61-blog/2024/冰箱，让你我错过了多少新鲜的生活？">冰箱，让你我错过了多少新鲜的生活？</a></li><li><a href="../../../60-writing/61-blog/2024/夜泊西湖听雨声" data-for="60-writing/61-blog/2024/夜泊西湖听雨声">夜泊西湖听雨声</a></li><li><a href="../../../60-writing/61-blog/2024/如何开好一场会？" data-for="60-writing/61-blog/2024/如何开好一场会？">如何开好一场会？</a></li><li><a href="../../../60-writing/61-blog/2024/如何打破信息茧房？" data-for="60-writing/61-blog/2024/如何打破信息茧房？">如何打破信息茧房？</a></li><li><a href="../../../60-writing/61-blog/2024/富人的红灯与穷人的绿灯" data-for="60-writing/61-blog/2024/富人的红灯与穷人的绿灯">富人的红灯与穷人的绿灯</a></li><li><a href="../../../60-writing/61-blog/2024/师从-ChatGPT" data-for="60-writing/61-blog/2024/师从-ChatGPT">师从 ChatGPT</a></li><li><a href="../../../60-writing/61-blog/2024/我又从-Ubunut-换成了-Fedora" data-for="60-writing/61-blog/2024/我又从-Ubunut-换成了-Fedora">我又从 Ubunut 换成了 Fedora</a></li><li><a href="../../../60-writing/61-blog/2024/我的一天" data-for="60-writing/61-blog/2024/我的一天">我的一天</a></li><li><a href="../../../60-writing/61-blog/2024/打工三年记" data-for="60-writing/61-blog/2024/打工三年记">打工三年记</a></li><li><a href="../../../60-writing/61-blog/2024/新奇的-HR-经历" data-for="60-writing/61-blog/2024/新奇的-HR-经历">新奇的 HR 经历</a></li><li><a href="../../../60-writing/61-blog/2024/穷则独善其身，达则兼济天下" data-for="60-writing/61-blog/2024/穷则独善其身，达则兼济天下">穷则独善其身，达则兼济天下</a></li><li><a href="../../../60-writing/61-blog/2024/继续开荒我那一亩三分地" data-for="60-writing/61-blog/2024/继续开荒我那一亩三分地">继续开荒我那一亩三分地</a></li><li><a href="../../../60-writing/61-blog/2024/記伍月" data-for="60-writing/61-blog/2024/記伍月">記伍月</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2025"><button class="folder-button"><span class="folder-title">2025</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2025"><li><a href="../../../60-writing/61-blog/2025/盲人摸象非象" data-for="60-writing/61-blog/2025/盲人摸象非象">盲人摸象非象</a></li></ul></div></li></ul></div></li></ul></div></li><li><div class="folder-outer "><ul style="padding-left:0;" class="content" data-folderul></ul></div></li></ul></div></li><li id="explorer-end"></li></ul></div></div><div class="recent-notes desktop-only"><h3>博客</h3><ul class="recent-ul"></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../40-professional/">40 professional</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../40-professional/46-workplace/">46 workplace</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../40-professional/46-workplace/career/">career</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>02-构建ai代理军团</a></div></nav><h1 class="article-title">02-构建ai代理军团</h1><p show-comma="true" class="content-meta"><span>2025年12月15日</span><span>32分钟阅读</span></p><ul class="tags"><li><a href="../../../tags/method/hands-on" class="internal tag-link">method/hands-on</a></li><li><a href="../../../tags/topic/career-development" class="internal tag-link">topic/career-development</a></li><li><a href="../../../tags/topic/knowledge-management" class="internal tag-link">topic/knowledge-management</a></li><li><a href="../../../tags/topic/productivity" class="internal tag-link">topic/productivity</a></li><li><a href="../../../tags/type/tutorial" class="internal tag-link">type/tutorial</a></li></ul></div></div><article class="popover-hint"><h2 id="第二章生产力引擎---构建你的-ai-代理军团">第二章：生产力引擎 - 构建你的 AI 代理军团<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#第二章生产力引擎---构建你的-ai-代理军团" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>彻底重构工作流，从 ” 出卖 8 小时劳动 ” 的线性产出，进化为 “2 小时深度决策 + 6 小时 AI 规模化执行 ” 的指数级增长。</p>
+<h3 id="开篇质问你是在--工作-还是在--空转-">开篇质问：你是在 ” 工作 “，还是在 ” 空转 ”？<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#开篇质问你是在--工作-还是在--空转-" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>让我们来解剖一下大多数职场人真实的 ” 朝九晚六 ”：</p>
+<ul>
+<li><strong>09:00 - 10:00</strong>：在一堆无关紧要的邮件和未读消息中开启一天；</li>
+<li><strong>10:00 - 11:30</strong>：被拉进各种会议，充当无需发言的 ” 背景板 ”；</li>
+<li><strong>11:30 - 13:00</strong>：午餐间隙的碎片化闲聊；</li>
+<li><strong>13:00 - 15:00</strong>：机械地填写表格、更新进度、撰写千篇一律的周报；</li>
+<li><strong>15:00 - 16:00</strong>：又一场消磨耐心的会议；</li>
+<li><strong>16:00 - 18:00</strong>：在疲惫中终于开始处理 ” 真正的工作 ”；</li>
+<li><strong>18:00 - 20:00</strong>：被迫加班，因为白天的时间都被琐事吞噬了。</li>
+</ul>
+<p><strong>残酷的现实是</strong>：在你忙碌的 8 到 10 小时里，真正产生核心价值的工作，往往不足 2 小时。</p>
+<p><strong>更令人不安的真相是</strong>：在 AI 时代，即便是这仅存的 2 小时 ” 价值工作 “，也正面临被算法替代的风险。</p>
+<p>因此，摆在我们面前的真命题，从来不是 ” 如何更努力地工作 “，而是：</p>
+<p><strong>如何构建一套系统，让 AI 接管那 6-8 小时的低价值消耗，从而将你的认知带宽 100% 聚焦于那些 “AI 无法触达 ” 的高价值决策上？</strong></p>
+<p>这正是本章致力于解决的核心命题。</p>
+<h3 id="21-ai-agent-团队的组建与管理">2.1 AI Agent 团队的组建与管理<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#21-ai-agent-团队的组建与管理" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="核心理念你是架构师而非搬砖工">核心理念：你是架构师，而非搬砖工<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#核心理念你是架构师而非搬砖工" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>传统的职场规训教导我们要 ” 勤奋 “：多揽活、少抱怨、以加班时长论英雄。</p>
+<p><strong>但在 AI 时代，规则变了</strong>：盲目的勤奋正在贬值，而懂得 ” 聪明偷懒 ” 的人正在掌握主动权。</p>
+<p>这里的 ” 偷懒 “，并非消极躺平，而是<strong>极致的自动化思维</strong>——将一切可标准化的工作坚决外包给 AI。</p>
+<p>试想这样一种工作状态：</p>
+<ul>
+<li><strong>专属秘书</strong>：24 小时待命，为你挡掉所有琐碎的邮件与日程干扰；</li>
+<li><strong>首席分析师</strong>：瞬间处理海量数据，呈上精准的商业洞察；</li>
+<li><strong>御用撰稿人</strong>：随时为你起草高水准的文档草稿；</li>
+<li><strong>私人研究员</strong>：不知疲倦地为你扫描行业动态。</li>
+</ul>
+<p><strong>这不是科幻小说，这是 2025 年高阶职场人的基本配置。</strong></p>
+<p>唯一的门槛在于：大多数人习惯了当兵，还没学会如何当一名 “AI 军团的指挥官 “。</p>
+<h4 id="211-你的虚拟员工配置清单">2.1.1 你的虚拟员工配置清单<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#211-你的虚拟员工配置清单" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>关键问题</strong>：我需要组建一支怎样的 AI 战队？</p>
+<p>虽然具体配置因人而异，但以下四个角色，是支撑高效工作的<strong>通用基石</strong>：</p>
+<h5 id="ai-员工-1行政秘书executive-assistant">AI 员工 #1：行政秘书（Executive Assistant）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ai-员工-1行政秘书executive-assistant" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p><strong>核心职责</strong>：接管所有 ” 必须要做、但毫无技术含量 ” 的事务性工作，释放你的注意力。</p>
+<p><strong>能力画像</strong>：</p>
+<ol>
+<li><strong>邮件分拣</strong>：精准识别轻重缓急，像守门员一样拦截噪音。</li>
+<li><strong>日程调度</strong>：在复杂的冲突中计算出最优时间表。</li>
+<li><strong>会议外脑</strong>：实时转录，精准提炼行动项（Action Items）。</li>
+<li><strong>智能提醒</strong>：比你自己更关注 Deadline。</li>
+</ol>
+<p><strong>工具选型参考</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>场景</th><th>推荐工具</th><th>月费估算</th><th>核心优势</th></tr></thead><tbody><tr><td>邮件管理</td><td>Gmail + Claude Projects</td><td>$20</td><td>卓越的上下文理解能力</td></tr><tr><td>日程管理</td><td>Motion / Reclaim.ai</td><td>$34</td><td>算法自动优化碎片时间</td></tr><tr><td>会议纪要</td><td>Otter.ai / 讯飞听见</td><td>$17</td><td>实时转录 + 多语言支持</td></tr><tr><td>综合自动化</td><td>Zapier / Make</td><td>$30</td><td>连接万物的 ” 胶水 ”</td></tr></tbody></table></div>
+<p><strong>实战配置：打造 ” 零噪音 ” 邮件系统</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="markdown" data-theme="github-light github-dark"><code data-language="markdown" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">场景痛点：每天面对 50+ 封未读邮件，耗费 2 小时逐一点击，有效信息密度极低。</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">AI 破局方案（一次配置，永久自动化）：</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 1：构建标签体系（在 Gmail 中设定）</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">紧急</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]：需 1 小时内响应（如老板召唤、线上故障）</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">重要</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]：需今日清零（如跨部门协作、决策审批）</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">待办</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]：本周内处理即可</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">参考</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]：仅供阅览（如行业资讯、周报抄送）</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">垃圾</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]：直接归档（如营销、系统通知）</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 2：注入 AI 灵魂（Claude Projects / GPT）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">创建一个名为“邮件助理”的 Project，并植入 System Prompt：</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;你就是我的首席邮件助理。你的任务是根据以下逻辑，对所有邮件进行无情分类：</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 发件人是直属领导或关键客户 → [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">紧急</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 正文包含 'urgent', 'deadline', 'asap' → [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">紧急</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 需要我做出决策或提供资源 → [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">重要</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 项目例行同步 → [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">待办</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> ...</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">对于 [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">紧急</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">] 和 [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">重要</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">] 邮件，请输出：</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">1.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 一句话核心摘要</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">2.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 发件人的真实意图</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">3.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 我需要采取的行动</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">4.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 建议回复草稿（如需）&quot;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 3：闭环自动化（Zapier）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">配置自动化流：</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">收到新邮件 → 提取内容 → 投喂给 Claude API → 获取分类标签与摘要 →</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(若是紧急邮件) 推送钉钉/Slack 通知到手机 →</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">(每日下午 5 点) 汇总生成“今日邮件简报”发至私人邮箱</span></span></code></pre></figure>
+<p><strong>效能跃迁</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>指标</th><th>传统人工模式</th><th>AI 托管模式</th><th>提升幅度</th></tr></thead><tbody><tr><td>每日耗时</td><td>120 分钟</td><td>5 分钟</td><td><strong>24 倍</strong></td></tr><tr><td>漏读率</td><td>20%</td><td>0%</td><td>质变</td></tr><tr><td>响应速度</td><td>4 小时 +</td><td>30 分钟内</td><td>8 倍</td></tr></tbody></table></div>
+<p><strong>真实案例</strong>：一位产品经理部署该系统三个月后，不仅将每天处理邮件的时间压缩到 10 分钟，更因为对关键邮件的 ” 秒回 ” 和精准处理，被领导评价为 ” 响应最靠谱的 PM”。<strong>洞察</strong>：AI 没有情绪，不会疲劳，它比最尽职的人类秘书更严谨。</p>
+<h5 id="ai-员工-2数据分析师data-analyst">AI 员工 #2：数据分析师（Data Analyst）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ai-员工-2数据分析师data-analyst" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p><strong>核心职责</strong>：负责 ” 数据采集 - 清洗 - 分析 - 可视化 ” 全链路，将原始数据炼金为决策依据。</p>
+<p><strong>能力画像</strong>：</p>
+<ol>
+<li><strong>情报搜集</strong>：全网抓取竞品动态、市场趋势。</li>
+<li><strong>业务洞察</strong>：深度挖掘用户行为与销售数据背后的逻辑。</li>
+<li><strong>自动化报告</strong>：一键生成周报、月报、复盘报告。</li>
+<li><strong>可视化表达</strong>：输出咨询公司级别的专业图表。</li>
+</ol>
+<p><strong>工具选型参考</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>场景</th><th>推荐工具</th><th>月费估算</th><th>核心优势</th></tr></thead><tbody><tr><td>数据抓取</td><td>Apify / Octoparse</td><td>$49</td><td>可视化配置，无需写爬虫代码</td></tr><tr><td>数据分析</td><td>Claude + Code Interpreter</td><td>$20</td><td>用自然语言对话完成复杂分析</td></tr><tr><td>可视化</td><td>Tableau / Power BI</td><td>$70</td><td>工业级图表渲染</td></tr><tr><td>Excel 增强</td><td>Microsoft Copilot</td><td>$30</td><td>公式与透视表的自动化</td></tr></tbody></table></div>
+<p><strong>实战配置：竞品动态监控系统</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="markdown" data-theme="github-light github-dark"><code data-language="markdown" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">场景痛点：每月需撰写“竞品分析报告”，传统方式需耗时 2 天手动搜集信息，且容易遗漏。</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">AI 破局方案：</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 1：部署全网侦查兵（Apify）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">配置抓取任务，覆盖：</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 竞品官网（监控产品上新、新闻稿）</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 应用商店（监控评分波动、用户差评）</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 社交媒体（监控营销活动、公关动态）</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 工商平台（监控投融资、股权变更）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">设定：每周一早 8:00 自动执行。</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 2：启用 AI 智囊团（Claude）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Prompt：</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;这是竞品 A、B、C 本周的全网数据快照：</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">[</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">自动插入抓取结果</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">请以资深商业分析师的视角进行解读：</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">1.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 战略动作：他们做了什么新尝试？意图是什么？</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">2.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 舆情风向：用户在骂什么？夸什么？核心痛点在哪？</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">3.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 威胁评估：这对我们意味着机会还是危机？</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">4.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 应对策略：建议我们下周采取什么行动？</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">输出结构：执行摘要 + 深度拆解 + 战略建议。&quot;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 3：一键生成 PPT（Claude + Canva）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Prompt：</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;请将上述分析逻辑转化为一份 10 页的 PPT 大纲，要求商务简约风格，配色采用蓝灰冷色调。</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">页面规划：</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">P1 封面；P2 目录；P3 市场全景；P4-6 竞品深挖；P7 数据对标；P8 战略建议...&quot;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 4：自动化交付（Zapier）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Apify (抓取) → Claude (分析) → Canva (生成) → 邮件 (发送)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">结果：每周一早 9:00，一份热气腾腾的报告已躺在你的收件箱里。</span></span></code></pre></figure>
+<p><strong>效能跃迁</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>指标</th><th>传统人工模式</th><th>AI 托管模式</th><th>提升幅度</th></tr></thead><tbody><tr><td>制作周期</td><td>2 天</td><td>2 小时 (仅首次配置)</td><td><strong>8 倍 +</strong></td></tr><tr><td>维护成本</td><td>高 (每次都要重来)</td><td>零 (完全自动)</td><td>∞</td></tr><tr><td>信息颗粒度</td><td>粗糙 (易漏掉细节)</td><td>精细 (全网覆盖)</td><td>1.4 倍</td></tr></tbody></table></div>
+<p><strong>真实案例</strong>：某 PM 利用此系统，不仅节省了每周的重复劳动，还因多次提前预警竞品的新动作，被提拔为高级经理。他的秘诀是：<strong>不需要精通 Python 爬虫，只需要懂得如何向 AI 提问。</strong></p>
+<h5 id="ai-员工-3写作助手content-writer">AI 员工 #3：写作助手（Content Writer）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ai-员工-3写作助手content-writer" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p><strong>核心职责</strong>：承担所有文档的 ” 初稿起草 ” 工作，让你只做 ” 主编 ”。</p>
+<p><strong>能力画像</strong>：</p>
+<ol>
+<li><strong>自动汇报</strong>：基于碎片化记录生成结构化周报。</li>
+<li><strong>技术文档</strong>：自动生成 API 文档、设计方案。</li>
+<li><strong>方案撰写</strong>：快速产出项目需求文档（PRD）。</li>
+<li><strong>沟通润色</strong>：生成高情商的邮件回复与话术。</li>
+</ol>
+<p><strong>工具选型参考</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>场景</th><th>推荐工具</th><th>月费估算</th><th>核心优势</th></tr></thead><tbody><tr><td>通用写作</td><td>Claude Sonnet 3.5/4</td><td>$20</td><td>长文本逻辑最强，更像人话</td></tr><tr><td>技术文档</td><td>Cursor + Claude</td><td>$20</td><td>代码与文档无缝联动</td></tr><tr><td>知识库集成</td><td>Notion AI</td><td>$10</td><td>基于已有知识库进行创作</td></tr><tr><td>多语言</td><td>DeepL Write</td><td>$10</td><td>翻译精准，润色地道</td></tr></tbody></table></div>
+<p><strong>实战配置：痛苦周报终结者</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="markdown" data-theme="github-light github-dark"><code data-language="markdown" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">场景痛点：每到周五下午就陷入“周报焦虑”，花 1 小时回忆这周到底干了啥，写出来的还是流水账。</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">AI 破局方案：</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 1：零存（日常碎片记录）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">利用 Notion 或语音备忘录，每天下班前花 5 分钟“无脑”记录：</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 做了啥（Task）</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 卡在哪（Blocker）</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 想到了啥（Idea）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">甚至可以直接语音输入：“今天开了两个会，定下来 XX 方案，改了个 XX Bug，晚上研究了一下 K8s...”</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 2：整取（周五一键生成）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Prompt：</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;这是我本周 5 天的碎片工作日志：</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">[</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">粘贴日志</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">请帮我重构为一份高水准的周报，要求：</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">1.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 成果导向：不要列动作，要列产出（数据支撑）。</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">2.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 结构清晰：分为【本周高光】、【产出清单】、【协作贡献】、【成长沉淀】、【下周规划】。</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">3.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 展现主动性：突出对他人的支持和对问题的思考。</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">4.</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 风格：简洁有力，拒绝流水账。字数控制在 400 字以内。&quot;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 3：人脑注入灵魂（10 分钟）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">AI 完成了 80% 的工作（结构+初稿），你只需要：</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 修正事实细节；</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 调整语气，加入个人风格；</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 剔除“AI 味”较重的连接词。</span></span></code></pre></figure>
+<p><strong>效能跃迁</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>指标</th><th>传统人工模式</th><th>AI 托管模式</th><th>提升幅度</th></tr></thead><tbody><tr><td>耗时</td><td>60 分钟</td><td>35 分钟 (含日常记录)</td><td>1.7 倍</td></tr><tr><td>质量</td><td>70 分 (流水账)</td><td>90 分 (结构化、数据化)</td><td><strong>质变</strong></td></tr><tr><td>心理负担</td><td>高 (焦虑)</td><td>低 (掌控感)</td><td>-</td></tr></tbody></table></div>
+<p><strong>进阶技巧：克隆你的文风</strong> 觉得 AI 写得太生硬？喂给它 20 篇你过去写的优质文档，让它分析并模仿你的用词习惯、句式结构和语气。经过几次微调，它就能成为你的 ” 影子写手 “。</p>
+<h5 id="ai-员工-4学习教练learning-coach">AI 员工 #4：学习教练（Learning Coach）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ai-员工-4学习教练learning-coach" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p><strong>核心职责</strong>：管理你的知识资产，提供苏格拉底式的辅导，将学习效率最大化。</p>
+<p><strong>能力画像</strong>：</p>
+<ol>
+<li><strong>知识管家</strong>：自动摘要、打标签、建立知识关联。</li>
+<li><strong>概念降维</strong>：用 ELI5 (Explain Like I’m 5) 通俗解释复杂概念。</li>
+<li><strong>启发式提问</strong>：通过反问帮你查漏补缺。</li>
+<li><strong>路径规划</strong>：定制从入门到精通的最优学习路线。</li>
+</ol>
+<p><strong>工具选型参考</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>场景</th><th>推荐工具</th><th>月费估算</th><th>核心优势</th></tr></thead><tbody><tr><td>知识库</td><td>Notion + AI / Obsidian</td><td>$10</td><td>双向链接 + AI 辅助整理</td></tr><tr><td>深度问答</td><td>Claude Projects</td><td>$20</td><td>超长上下文，适合研读大部头</td></tr><tr><td>路径规划</td><td>ChatGPT / Claude</td><td>$20</td><td>生成结构化大纲</td></tr><tr><td>精准检索</td><td>Perplexity Pro</td><td>$20</td><td>联网搜索 + 来源引用</td></tr></tbody></table></div>
+<p><strong>实战案例：Kubernetes 极速入门</strong></p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="markdown" data-theme="github-light github-dark"><code data-language="markdown" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">场景痛点：需要掌握 K8s 这一复杂技术，传统方式是找视频看书，耗时 30+ 小时且容易从入门到放弃。</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">AI 破局方案（10 小时速通）：</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 1：定制导航图</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Prompt：</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;我是 [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">当前职位/背景</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]，需要快速掌握 Kubernetes 用于 [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">具体场景</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]。</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">请为我设计一个 3 天（每天 3 小时）的高强度学习计划：</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> Day 1：核心概念解构（Pod, Service, Deployment）</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> Day 2：实战部署演练</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> Day 3：进阶排错与网络存储</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">要求：给出最优学习路径、推荐最优质的文档/视频资源、设计配套的实战练习题。&quot;</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 2：苏格拉底式对话</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">拒绝死记硬背，遇到不懂的概念直接问：</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;请用我在 [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">熟悉领域</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">] 中的概念，类比解释一下什么是 Pod？&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">AI 回答：&quot;Pod 就像一个轻量级的虚拟机...&quot;（精准类比，秒懂）</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 3：实战陪练</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">报错了？直接把错误日志丢给 AI：</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;部署时报错了 [</span><span style="--shiki-light:#032F62;--shiki-dark:#DBEDFF;--shiki-light-text-decoration:underline;--shiki-dark-text-decoration:underline;">粘贴日志</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]，请告诉我：1. 原因是什么？2. 怎么解决？3. 以后怎么避免？&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">这比搜 Google 翻帖子快 10 倍。</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">Step 4：生成外脑卡片</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">学完后，让 AI 帮你打包知识：</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">&quot;请生成一份 K8s 速查手册，包含 Top 20 常用命令、5 个高频故障排查流程、上线检查清单。格式为 Markdown。&quot;</span></span></code></pre></figure>
+<p><strong>效能跃迁</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th><strong>指标</strong></th><th><strong>传统学习模式</strong></th><th><strong>AI 教练模式</strong></th><th><strong>提升幅度</strong></th></tr></thead><tbody><tr><td>总耗时</td><td>33 小时</td><td>10 小时</td><td><strong>3.3 倍</strong></td></tr><tr><td>路径</td><td>盲目摸索</td><td>最优规划</td><td>-</td></tr><tr><td>卡顿解决</td><td>半天 (搜不到答案)</td><td>秒解 (含原理解释)</td><td>10 倍 +</td></tr><tr><td>知识留存</td><td>3 个月忘光</td><td>形成外脑，随时调用</td><td>∞</td></tr></tbody></table></div>
+<p><strong>洞察</strong>：AI 不是来替代你学习的，而是来<strong>加速</strong>你从 ” 理解 ” 到 ” 应用 ” 的过程。</p>
+<hr/>
+<h4 id="212-ai-工作流的三层架构">2.1.2 AI 工作流的三层架构<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#212-ai-工作流的三层架构" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>核心问题</strong>：AI 不应仅仅是一个被动问答的聊天框，它应当是一套自动运转的系统。</p>
+<p>高阶玩家与普通用户的分水岭，在于是否构建了**“AI 工作流 ”**。我们将这套体系分为三个层级：</p>
+<hr/>
+<h5 id="第一层辅助级ai-as-assistant">第一层：辅助级（AI as Assistant）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#第一层辅助级ai-as-assistant" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>定义：AI 是你的副驾驶，你发指令，它执行，你把关。</p>
+<p>场景：GitHub Copilot 代码补全、Notion AI 润色文档、DeepL 辅助翻译。</p>
+<p>特点：点对点交互，需人工实时触发，效率提升 30%-50%。</p>
+<p>评价：简单易用，但仍需人工介入，无法规模化。</p>
+<h5 id="第二层流程级ai-as-workflow">第二层：流程级（AI as Workflow）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#第二层流程级ai-as-workflow" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>定义：你设计好一套 SOP（标准作业程序），AI 自动跑完整个流程，你只在关键节点审核。</p>
+<p>场景：</p>
+<ul>
+<li>会议结束 → 录音自动上传 → AI 转写摘要 → 自动生成 To-do → 发送给相关人。</li>
+<li>网页收藏 → AI 自动提取核心观点 → 自动打标签 → 存入 Notion 知识库。
+特点：一次配置，长期受益，效率提升 200%-500%。
+评价：这是拉开差距的关键，你的角色从 ” 执行者 ” 升级为 ” 流程设计师 “。</li>
+</ul>
+<h5 id="第三层自治级ai-as-autonomous-agent">第三层：自治级（AI as Autonomous Agent）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#第三层自治级ai-as-autonomous-agent" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h5>
+<p>定义：设定目标和边界，AI 自主监测、决策、执行，形成闭环。</p>
+<p>场景：</p>
+<ul>
+<li><strong>行业雷达</strong>：全天候监控 50 个信息源，发现重大动态自动生成报告并预警。</li>
+<li>竞品哨兵：自动追踪竞品价格变动或功能更新，触发应对策略建议。
+特点：完全自动化，几乎零人工介入，效率提升 1000%+。
+评价：这是终极形态，你构建了一个为你工作的 ” 系统 “。</li>
+</ul>
+<hr/>
+<h4 id="213-从零到一搭建你的第一个-ai-工作流">2.1.3 从零到一搭建你的第一个 AI 工作流<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#213-从零到一搭建你的第一个-ai-工作流" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>新手建议</strong>：不要试图一口吃成胖子，从一个高频、痛点明显的场景切入。</p>
+<p><strong>实战演练：30 分钟搭建 ” 智能邮件分拣系统 ”</strong></p>
+<ol>
+<li>
+<p><strong>准备弹药</strong>：Gmail 账号、Claude/OpenAI API Key、Zapier 账号。</p>
+</li>
+<li>
+<p><strong>设定触发器 (Trigger)</strong>：在 Zapier 中设置 ” 当 Gmail 收到新邮件时 ”。</p>
+</li>
+<li>
+<p><strong>编写指令 (Action)</strong>：调用 Claude API，System Prompt 设定为 ” 分析邮件内容，提取发件人意图，判断优先级（紧急/重要/垃圾），并生成一句话摘要 ”。</p>
+</li>
+<li>
+<p><strong>执行动作 (Action)</strong>：</p>
+<ul>
+<li>若 ” 紧急 ” → 触发 Slack/短信通知；</li>
+<li>若 ” 垃圾 ” → 自动归档；</li>
+<li>其他 → 将摘要写入 Google Sheets 或发送汇总邮件。</li>
+</ul>
+</li>
+<li>
+<p><strong>测试运行</strong>：给自己发几封测试邮件，跑通流程。</p>
+</li>
+</ol>
+<p><strong>成果</strong>：投入 30 分钟配置，换来未来每一天邮件处理效率 80% 的提升。</p>
+<hr/>
+<h3 id="22-深度工作-20ai-时代的专注力护城河">2.2 深度工作 2.0：AI 时代的专注力护城河<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#22-深度工作-20ai-时代的专注力护城河" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="核心悖论工具越多专注越难">核心悖论：工具越多，专注越难<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#核心悖论工具越多专注越难" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>反直觉的事实</strong>：AI 本意是提升效率，但泛滥的工具链反而成了注意力的粉碎机。</p>
+<ul>
+<li><strong>决策疲劳</strong>：面对 ChatGPT, Claude, Gemini, Copilot，每次都要想 ” 该用哪个？“，消耗了宝贵的认知资源。</li>
+<li><strong>虚假繁荣</strong>：一天生成了 10 份文档、50 张图，看起来硕果累累，但缺乏深度的思考内核。</li>
+<li><strong>碎片化</strong>：在各种 AI 工具和 prompt 之间频繁切换，思维难以连贯。</li>
+</ul>
+<p><strong>真相</strong>：在 AI 能够无限生成内容的时代，<strong>人类的深度专注力成了最稀缺的硬通货。</strong></p>
+<hr/>
+<h4 id="221-注意力管理的铁律">2.2.1 注意力管理的铁律<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#221-注意力管理的铁律" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>铁律 1：工具极简主义（3-5 法则）</strong></p>
+<p>问题：患上 ” 工具囤积症 “，看到新 AI 就想试，结果装了 20 个，每个都只用了皮毛。</p>
+<p>解法：如无必要，勿增实体。只保留 3-5 个覆盖 95% 场景的核心工具。</p>
+<p><strong>推荐配置</strong>：</p>
+<ol>
+<li><strong>重型思考</strong>：Claude Sonnet (长文本、逻辑分析)</li>
+<li><strong>知识外脑</strong>：Notion AI (文档、笔记管理)</li>
+<li><strong>垂直领域</strong>：Cursor (编程) / Midjourney (绘图)</li>
+<li><strong>连接器</strong>：Zapier (自动化)</li>
+<li><strong>搜索</strong>：Perplexity (精准检索)</li>
+</ol>
+<p><strong>铁律 2：警惕隐性切换成本</strong></p>
+<p>数据：研究表明，任务切换后平均需要 23 分钟 才能重新进入心流状态。</p>
+<p>陷阱：写代码 → 切浏览器问 ChatGPT → 切回 IDE。这一来一回，思维早就断了。</p>
+<p>解法：工具内嵌化。</p>
+<ul>
+<li>能用 Cursor 就在 IDE 里问 AI，别切浏览器。</li>
+<li>能用 Notion AI 就在文档里生成，别切 ChatGPT。</li>
+</ul>
+<p><strong>铁律 3：AI 守门员机制</strong></p>
+<p>痛点：时间被低价值会议和琐碎邮件撕碎。</p>
+<p>解法：让 AI 做坏人，帮你拒绝。</p>
+<ul>
+<li><strong>会议过滤器</strong>：收到邀请，让 AI 判断 ” 我是决策者吗？我是主讲人吗？” 如果都不是，自动拒绝并回复 ” 请会后同步纪要 ”。</li>
+<li><strong>分身参会</strong>：对于非必须出席的会议，派 Otter.ai 进去录音，自己只看 AI 生成的 3 分钟摘要。</li>
+</ul>
+<hr/>
+<h4 id="222-顺应生物节律的日程设计">2.2.2 顺应生物节律的日程设计<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#222-顺应生物节律的日程设计" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>核心问题</strong>：不要试图在低谷期做高峰期的事。人的精力不是匀速释放的电池，而是有波峰波谷的。</p>
+<p><strong>实战配置：能量管理日程表</strong></p>
+<ol>
+<li>
+<p><strong>黄金时段 (9:00-11:00)</strong>：<strong>深度工作区</strong>。</p>
+<ul>
+<li>做什么：最烧脑、最具创造性的工作（战略规划、核心代码、复杂方案）。</li>
+<li>规则：手机飞行模式，关闭 IM，AI 提前准备好素材，单线程工作。</li>
+</ul>
+</li>
+<li>
+<p><strong>白银时段 (14:00-16:00)</strong>：<strong>次级深度区</strong>。</p>
+<ul>
+<li>做什么：推进进度、撰写文档、协同开发。</li>
+</ul>
+</li>
+<li>
+<p><strong>青铜时段 (11:00-12:00, 16:00-17:00)</strong>：<strong>浅度工作区</strong>。</p>
+<ul>
+<li>做什么：回邮件、回消息、处理杂事。</li>
+<li>辅助：AI 批量处理回复，快速清理积压。</li>
+</ul>
+</li>
+<li>
+<p><strong>垃圾时段 (13:00-14:00, 17:00 以后)</strong>：<strong>低能耗区</strong>。</p>
+<ul>
+<li>做什么：整理文件、浏览资讯、机械性操作。</li>
+<li>禁忌：强行做深度思考，效率极低且容易出错。</li>
+</ul>
+</li>
+</ol>
+<p>真实案例：</p>
+<p>某架构师将写代码的时间严格锁定在上午 9-11 点，此时产出的代码质量是下午的 3 倍。下午低谷期只用来开会和看技术视频。他不加班，但产出却是同事的 1.5 倍。</p>
+<hr/>
+<h4 id="223-对抗--注意力黑洞-">2.2.3 对抗 ” 注意力黑洞 ”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#223-对抗--注意力黑洞-" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>策略：数字极简主义</strong></p>
+<ol>
+<li><strong>物理隔离</strong>：工作时，手机不仅要静音，更要<strong>放在视线之外</strong>（抽屉里或另一个房间）。</li>
+<li><strong>增加摩擦</strong>：删掉手机上的抖音、微博、知乎。如果工作需要，只在电脑端登录，且每次用完退出登录。</li>
+<li><strong>环境重塑</strong>：用 Cold Turkey 等工具强制屏蔽干扰网站，把分心的门槛提得高高的。</li>
+</ol>
+<hr/>
+<h3 id="23-kpiokr-的-ai-降维打击">2.3 KPI/OKR 的 AI 降维打击<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#23-kpiokr-的-ai-降维打击" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="核心真相绩效考核的博弈论">核心真相：绩效考核的博弈论<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#核心真相绩效考核的博弈论" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>传统观念：绩效是干出来的，越努力分越高。</p>
+<p>现实真相：绩效是 <strong>” 做出来 ”+” 秀出来 ”</strong> 的。很多时候，你做了 100 分，领导只看到 60 分；而有人做了 80 分，却能展示出 120 分的效果。</p>
+<p>在 AI 时代，我们要用技术手段修正这种信息不对称。</p>
+<h4 id="231-用-ai-破解-kpi-游戏">2.3.1 用 AI 破解 KPI 游戏<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#231-用-ai-破解-kpi-游戏" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>策略 1：寻找最优解路径</strong></p>
+<p>不要拿到 KPI 就埋头苦干，先让 AI 帮你做个 ” 体检 ”。</p>
+<p>Prompt：</p>
+<p>” 我的 KPI 是每月完成 10 个需求。请帮我分析：这个指标的漏洞在哪？如何用最小的成本达成？如何在达成的同时还能积累我的核心竞争力（而不只是凑数）？”</p>
+<p>AI 可能会告诉你：不要只接大需求，要合理搭配 ” 短平快 ” 的小需求来保量；利用 AI 编码工具提升 50% 的开发速度，省下的时间去重构核心代码，这才是你的长期价值。</p>
+<p><strong>策略 2：生成 ” 降维打击 ” 的汇报材料</strong></p>
+<p>痛点：干得辛苦，汇报像流水账，没有记忆点。</p>
+<p>解法：用 AI 将 ” 苦劳 ” 转化为 ” 功劳 ”。</p>
+<p>Step 1：数据提炼</p>
+<p>” 这是我本月的工作流水，请提取所有可量化的成果（节省了多少时间？提升了多少效率？避免了多少损失？）。”</p>
+<p>Step 2：价值升维</p>
+<p>” 请基于上述数据，写一份汇报材料。要求：</p>
+<ol>
+<li>使用 ‘Before vs After’ 的对比结构，突出变化。</li>
+<li>将我的个人工作关联到团队甚至公司的战略目标。</li>
+<li>语言简练、自信、有感染力。”</li>
+</ol>
+<p><strong>效果</strong>：从 ” 本月修复了 10 个 Bug” 变成了 ” 通过重构核心模块，将系统稳定性提升了 30%，预计为公司规避了 XX 万元的潜在损失 “。<strong>这就是总监视角的汇报。</strong></p>
+<h4 id="232-ai-辅助-okr-制定">2.3.2 AI 辅助 OKR 制定<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#232-ai-辅助-okr-制定" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>痛点</strong>：目标模糊（” 提升技术影响力 ” 怎么衡量？），或者执行路径不清晰。</p>
+<p><strong>AI 辅助流程</strong>：</p>
+<ol>
+<li><strong>具体化</strong>：让 AI 把模糊的 O 拆解为可量化的 KR。（例如：技术影响力 <span>→</span> 博客阅读量 10w+，开源项目 Star 500+）。</li>
+<li><strong>路径规划</strong>：让 AI 生成季度执行地图，精确到周。</li>
+<li><strong>进度追踪</strong>：每月把工作记录丢给 AI，让它评估 KR 完成度，并给出纠偏建议。</li>
+</ol>
+<hr/>
+<h3 id="24-知识管理从--硬盘模式--升级为-cpu-模式-">2.4 知识管理：从 ” 硬盘模式 ” 升级为 “CPU 模式 “<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#24-知识管理从--硬盘模式--升级为-cpu-模式-" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="核心转变打造你的--第二大脑-">核心转变：打造你的 ” 第二大脑 ”<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#核心转变打造你的--第二大脑-" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>传统模式：大脑是硬盘，试图记住所有知识。结果是：学了忘，忘了学，知识孤岛化。</p>
+<p>AI 模式：大脑是 CPU，只负责思考和处理。知识全部外包给**” 第二大脑 ”**。</p>
+<h4 id="241-构建--第二大脑--building-a-second-brain">2.4.1 构建 ” 第二大脑 ” (Building a Second Brain)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#241-构建--第二大脑--building-a-second-brain" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>实战配置 (Notion 为例)</strong>：</p>
+<ol>
+<li><strong>Inbox (收集箱)</strong>：所有灵感、文章、碎片信息的临时停机坪。</li>
+<li><strong>Projects (项目)</strong>：正在进行的任务，关联相关文档。</li>
+<li><strong>Knowledge Base (知识库)</strong>：沉淀下来的结构化知识（技术笔记、行业 SOP）。</li>
+<li><strong>AI 增强</strong>：
+<ul>
+<li><strong>自动摘要</strong>：存入文章时，AI 自动生成 3 行总结。</li>
+<li><strong>智能标签</strong>：AI 自动打上 tag，便于检索。</li>
+<li><strong>知识关联</strong>：AI 提示 ” 这个概念和你之前学的 XX 有联系 ”。</li>
+</ul>
+</li>
+</ol>
+<p><strong>效能对比</strong>：</p>
+<ul>
+<li><strong>检索速度</strong>：从 ” 翻箱倒柜找 10 分钟 ” 变成 “AI 秒级调取 ”。</li>
+<li><strong>知识复用</strong>：从 ” 每次从零开始 ” 变成 ” 站在自己的肩膀上创新 “。</li>
+</ul>
+<h4 id="242-知识的生命周期输入---处理---输出">2.4.2 知识的生命周期：输入 - 处理 - 输出<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#242-知识的生命周期输入---处理---输出" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>关键在于 ” 流动 ”</strong>：</p>
+<ol>
+<li><strong>输入</strong>：阅读、参会、交流。</li>
+<li><strong>处理</strong>：<strong>这是关键</strong>。用 AI 进行提炼、总结、结构化，而不是简单地 Copy/Paste。</li>
+<li><strong>存储</strong>：存入第二大脑。</li>
+<li><strong>输出</strong>：在工作中调用。</li>
+<li><strong>迭代</strong>：根据反馈，更新知识库。</li>
+</ol>
+<p>真实案例：</p>
+<p>某工程师在学习 Kubernetes 时，经历了 ” 理解概念 <span>→</span> 实战部署 <span>→</span> 故障排查 ” 的循环。每一次，他都利用 AI 完善笔记。半年后，这份笔记成了全团队人手一份的 “K8s 避坑指南 “。知识不再是死板的文字，而是持续增值的资产。</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>关系图谱</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#第二章生产力引擎---构建你的-ai-代理军团" data-for="第二章生产力引擎---构建你的-ai-代理军团">第二章：生产力引擎 - 构建你的 AI 代理军团</a></li><li class="depth-1"><a href="#开篇质问你是在--工作-还是在--空转-" data-for="开篇质问你是在--工作-还是在--空转-">开篇质问：你是在 ” 工作 “，还是在 ” 空转 ”？</a></li><li class="depth-1"><a href="#21-ai-agent-团队的组建与管理" data-for="21-ai-agent-团队的组建与管理">2.1 AI Agent 团队的组建与管理</a></li><li class="depth-1"><a href="#22-深度工作-20ai-时代的专注力护城河" data-for="22-深度工作-20ai-时代的专注力护城河">2.2 深度工作 2.0：AI 时代的专注力护城河</a></li><li class="depth-1"><a href="#23-kpiokr-的-ai-降维打击" data-for="23-kpiokr-的-ai-降维打击">2.3 KPI/OKR 的 AI 降维打击</a></li><li class="depth-1"><a href="#24-知识管理从--硬盘模式--升级为-cpu-模式-" data-for="24-知识管理从--硬盘模式--升级为-cpu-模式-">2.4 知识管理：从 ” 硬盘模式 ” 升级为 “CPU 模式 “</a></li></ul></div></div><div class="explorer mobile-only"><button type="button" id="explorer" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-tree="[{&quot;path&quot;:&quot;40-professional&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/41-roles&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/42-timeline&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/44-skills&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/45-roadmap&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/46-workplace&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/46-workplace/career&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/46-workplace/offer&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2018&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2020&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2021&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2022&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2023&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2024&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2025&quot;,&quot;collapsed&quot;:true}]" aria-controls="explorer-content" aria-expanded="false"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-content"><ul class="overflow" id="explorer-ul"><li><div class="folder-outer open"><ul style="padding-left:0;" class="content" data-folderul><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional"><button class="folder-button"><span class="folder-title">40-professional</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/41-roles"><button class="folder-button"><span class="folder-title">41-roles</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/41-roles"><li><a href="../../../40-professional/41-roles/周中平" data-for="40-professional/41-roles/周中平">周中平</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/42-timeline"><button class="folder-button"><span class="folder-title">42-timeline</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/42-timeline"><li><a href="../../../40-professional/42-timeline/2017.09-2019.07-河南牧业经济学院-软件技术" data-for="40-professional/42-timeline/2017.09-2019.07-河南牧业经济学院-软件技术">2017.09-2019.07-河南牧业经济学院-软件技术</a></li><li><a href="../../../40-professional/42-timeline/2019.07-2020.01-杭州好橙-Java开发实习" data-for="40-professional/42-timeline/2019.07-2020.01-杭州好橙-Java开发实习">2019.07-2020.01-杭州好橙-Java开发实习</a></li><li><a href="../../../40-professional/42-timeline/2020.02-2021.02-艳阳牧业-饲养员" data-for="40-professional/42-timeline/2020.02-2021.02-艳阳牧业-饲养员">2020.02-2021.02-艳阳牧业-饲养员</a></li><li><a href="../../../40-professional/42-timeline/2021.03-2023.03-九州通-技术支持工程师" data-for="40-professional/42-timeline/2021.03-2023.03-九州通-技术支持工程师">2021.03-2023.03-九州通-技术支持工程师</a></li><li><a href="../../../40-professional/42-timeline/2022.03-2024.07-河南财经政法大学-计算机科学与技术" data-for="40-professional/42-timeline/2022.03-2024.07-河南财经政法大学-计算机科学与技术">2022.03-2024.07-河南财经政法大学-计算机科学与技术</a></li><li><a href="../../../40-professional/42-timeline/2023.03-至今-九州通-运维开发工程师" data-for="40-professional/42-timeline/2023.03-至今-九州通-运维开发工程师">2023.03-至今-九州通-运维开发工程师</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/44-skills"><button class="folder-button"><span class="folder-title">44-skills</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/44-skills"><li><a href="../../../40-professional/44-skills/技能矩阵" data-for="40-professional/44-skills/技能矩阵">技能矩阵</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/45-roadmap"><button class="folder-button"><span class="folder-title">45-roadmap</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/45-roadmap"><li><a href="../../../40-professional/45-roadmap/AI时代工程师的生存指南" data-for="40-professional/45-roadmap/AI时代工程师的生存指南">AI 时代工程师的生存指南</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/46-workplace"><button class="folder-button"><span class="folder-title">46-workplace</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/46-workplace"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/46-workplace/career"><button class="folder-button"><span class="folder-title">career</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/46-workplace/career"><li><a href="../../../40-professional/46-workplace/career/01-新手村ai速通法" data-for="40-professional/46-workplace/career/01-新手村ai速通法">01-新手村ai速通法</a></li><li><a href="../../../40-professional/46-workplace/career/02-构建ai代理军团" data-for="40-professional/46-workplace/career/02-构建ai代理军团">02-构建ai代理军团</a></li><li><a href="../../../40-professional/46-workplace/career/03-从隐形人到行业kol" data-for="40-professional/46-workplace/career/03-从隐形人到行业kol">03-从隐形人到行业kol</a></li><li><a href="../../../40-professional/46-workplace/career/04-硬核维权铁律" data-for="40-professional/46-workplace/career/04-硬核维权铁律">04-硬核维权铁律</a></li><li><a href="../../../40-professional/46-workplace/career/05-反内卷终极形态" data-for="40-professional/46-workplace/career/05-反内卷终极形态">05-反内卷终极形态</a></li><li><a href="../../../40-professional/46-workplace/career/06-复利人生商业闭环" data-for="40-professional/46-workplace/career/06-复利人生商业闭环">06-复利人生商业闭环</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/46-workplace/offer"><button class="folder-button"><span class="folder-title">offer</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/46-workplace/offer"><li><a href="../../../40-professional/46-workplace/offer/01-面试理念与原则" data-for="40-professional/46-workplace/offer/01-面试理念与原则">01-面试理念与原则</a></li><li><a href="../../../40-professional/46-workplace/offer/02-简历原则与实践" data-for="40-professional/46-workplace/offer/02-简历原则与实践">02-简历原则与实践</a></li><li><a href="../../../40-professional/46-workplace/offer/03-面试流程全解析" data-for="40-professional/46-workplace/offer/03-面试流程全解析">03-面试流程全解析</a></li><li><a href="../../../40-professional/46-workplace/offer/04-面试10大经典问题" data-for="40-professional/46-workplace/offer/04-面试10大经典问题">04-面试10大经典问题</a></li><li><a href="../../../40-professional/46-workplace/offer/05-技术面试核心点" data-for="40-professional/46-workplace/offer/05-技术面试核心点">05-技术面试核心点</a></li><li><a href="../../../40-professional/46-workplace/offer/06-反向面试要点" data-for="40-professional/46-workplace/offer/06-反向面试要点">06-反向面试要点</a></li><li><a href="../../../40-professional/46-workplace/offer/07-薪资谈判艺术" data-for="40-professional/46-workplace/offer/07-薪资谈判艺术">07-薪资谈判艺术</a></li><li><a href="../../../40-professional/46-workplace/offer/08-offer评估决策" data-for="40-professional/46-workplace/offer/08-offer评估决策">08-offer评估决策</a></li><li><a href="../../../40-professional/46-workplace/offer/09-入职准备" data-for="40-professional/46-workplace/offer/09-入职准备">09-入职准备</a></li><li><a href="../../../40-professional/46-workplace/offer/10-试用期生存" data-for="40-professional/46-workplace/offer/10-试用期生存">10-试用期生存</a></li><li><a href="../../../40-professional/46-workplace/offer/11-持续成长" data-for="40-professional/46-workplace/offer/11-持续成长">11-持续成长</a></li></ul></div></li></ul></div></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing"><button class="folder-button"><span class="folder-title">60-writing</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog"><button class="folder-button"><span class="folder-title">61-blog</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2018"><button class="folder-button"><span class="folder-title">2018</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2018"><li><a href="../../../60-writing/61-blog/2018/11月28日晚-星期三-霾" data-for="60-writing/61-blog/2018/11月28日晚-星期三-霾">11月28日 晚 星期三 霾</a></li><li><a href="../../../60-writing/61-blog/2018/BombSquad-炸弹人小分队" data-for="60-writing/61-blog/2018/BombSquad-炸弹人小分队">BombSquad-炸弹人小分队</a></li><li><a href="../../../60-writing/61-blog/2018/如何免费创建一个属于自己的网站" data-for="60-writing/61-blog/2018/如何免费创建一个属于自己的网站">如何免费创建一个属于自己的网站</a></li><li><a href="../../../60-writing/61-blog/2018/英雄联盟-S8-全球总决赛" data-for="60-writing/61-blog/2018/英雄联盟-S8-全球总决赛">英雄联盟 S8 全球总决赛</a></li><li><a href="../../../60-writing/61-blog/2018/螺蛳粉" data-for="60-writing/61-blog/2018/螺蛳粉">螺蛳粉</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2020"><button class="folder-button"><span class="folder-title">2020</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2020"><li><a href="../../../60-writing/61-blog/2020/Don`t-Starve-饥荒" data-for="60-writing/61-blog/2020/Don`t-Starve-饥荒">Don't Starve-饥荒</a></li><li><a href="../../../60-writing/61-blog/2020/中国传统历法" data-for="60-writing/61-blog/2020/中国传统历法">中国传统历法</a></li><li><a href="../../../60-writing/61-blog/2020/初号机，起飞！" data-for="60-writing/61-blog/2020/初号机，起飞！">初号机，起飞！</a></li><li><a href="../../../60-writing/61-blog/2020/吉普赛满天星" data-for="60-writing/61-blog/2020/吉普赛满天星">吉普赛满天星</a></li><li><a href="../../../60-writing/61-blog/2020/夏日花记" data-for="60-writing/61-blog/2020/夏日花记">夏日花记</a></li><li><a href="../../../60-writing/61-blog/2020/幸福的事情都是需要等待的" data-for="60-writing/61-blog/2020/幸福的事情都是需要等待的">幸福的事情都是需要等待的</a></li><li><a href="../../../60-writing/61-blog/2020/开源软件之道" data-for="60-writing/61-blog/2020/开源软件之道">开源软件之道</a></li><li><a href="../../../60-writing/61-blog/2020/我的小羊肖恩" data-for="60-writing/61-blog/2020/我的小羊肖恩">我的小羊肖恩</a></li><li><a href="../../../60-writing/61-blog/2020/数据恢复杂谈" data-for="60-writing/61-blog/2020/数据恢复杂谈">数据恢复杂谈</a></li><li><a href="../../../60-writing/61-blog/2020/注定不平凡的一年" data-for="60-writing/61-blog/2020/注定不平凡的一年">注定不平凡的一年</a></li><li><a href="../../../60-writing/61-blog/2020/浅谈个人服务器架构" data-for="60-writing/61-blog/2020/浅谈个人服务器架构">浅谈个人服务器架构</a></li><li><a href="../../../60-writing/61-blog/2020/球鞋日记" data-for="60-writing/61-blog/2020/球鞋日记">球鞋日记</a></li><li><a href="../../../60-writing/61-blog/2020/記拾月" data-for="60-writing/61-blog/2020/記拾月">記拾月</a></li><li><a href="../../../60-writing/61-blog/2020/长安游记" data-for="60-writing/61-blog/2020/长安游记">长安游记</a></li><li><a href="../../../60-writing/61-blog/2020/骑行在路上" data-for="60-writing/61-blog/2020/骑行在路上">骑行在路上</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2021"><button class="folder-button"><span class="folder-title">2021</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2021"><li><a href="../../../60-writing/61-blog/2021/2021" data-for="60-writing/61-blog/2021/2021">2021</a></li><li><a href="../../../60-writing/61-blog/2021/VIVO-IQOO-Neo3-开箱测评" data-for="60-writing/61-blog/2021/VIVO-IQOO-Neo3-开箱测评">VIVO IQOO Neo3 开箱测评</a></li><li><a href="../../../60-writing/61-blog/2021/上有天堂、下有苏杭" data-for="60-writing/61-blog/2021/上有天堂、下有苏杭">上有天堂、下有苏杭</a></li><li><a href="../../../60-writing/61-blog/2021/我开发的第一款软件" data-for="60-writing/61-blog/2021/我开发的第一款软件">我开发的第一款软件</a></li><li><a href="../../../60-writing/61-blog/2021/我站立的地方是中国" data-for="60-writing/61-blog/2021/我站立的地方是中国">我站立的地方是中国</a></li><li><a href="../../../60-writing/61-blog/2021/我还在……" data-for="60-writing/61-blog/2021/我还在……">我还在……</a></li><li><a href="../../../60-writing/61-blog/2021/星光不问赶路人" data-for="60-writing/61-blog/2021/星光不问赶路人">星光不问赶路人</a></li><li><a href="../../../60-writing/61-blog/2021/济南呀济南的泰山之旅" data-for="60-writing/61-blog/2021/济南呀济南的泰山之旅">济南呀济南的泰山之旅</a></li><li><a href="../../../60-writing/61-blog/2021/涝疫结合" data-for="60-writing/61-blog/2021/涝疫结合">涝疫结合</a></li><li><a href="../../../60-writing/61-blog/2021/申请-Jetbrains-开源项目授权" data-for="60-writing/61-blog/2021/申请-Jetbrains-开源项目授权">申请 Jetbrains 开源项目授权</a></li><li><a href="../../../60-writing/61-blog/2021/真·长安游记" data-for="60-writing/61-blog/2021/真·长安游记">真·长安游记</a></li><li><a href="../../../60-writing/61-blog/2021/记拾月" data-for="60-writing/61-blog/2021/记拾月">记拾月</a></li><li><a href="../../../60-writing/61-blog/2021/贰号机、落幕" data-for="60-writing/61-blog/2021/贰号机、落幕">贰号机、落幕</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2022"><button class="folder-button"><span class="folder-title">2022</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2022"><li><a href="../../../60-writing/61-blog/2022/「引用」博客的本质是电线杆子" data-for="60-writing/61-blog/2022/「引用」博客的本质是电线杆子">「引用」博客的本质是电线杆子</a></li><li><a href="../../../60-writing/61-blog/2022/2022" data-for="60-writing/61-blog/2022/2022">2022</a></li><li><a href="../../../60-writing/61-blog/2022/Halo-主题-Redemption-首发版" data-for="60-writing/61-blog/2022/Halo-主题-Redemption-首发版">Halo 主题 Redemption 首发版</a></li><li><a href="../../../60-writing/61-blog/2022/Redemption" data-for="60-writing/61-blog/2022/Redemption">Redemption</a></li><li><a href="../../../60-writing/61-blog/2022/Redemption-主题-0.2.1-版本" data-for="60-writing/61-blog/2022/Redemption-主题-0.2.1-版本">Redemption 主题 0.2.1 版本</a></li><li><a href="../../../60-writing/61-blog/2022/一线城市拥有一亩三分地是什么体验" data-for="60-writing/61-blog/2022/一线城市拥有一亩三分地是什么体验">一线城市拥有一亩三分地是什么体验</a></li><li><a href="../../../60-writing/61-blog/2022/三步为你博客文章分析情感关键字" data-for="60-writing/61-blog/2022/三步为你博客文章分析情感关键字">三步为你博客文章分析情感关键字</a></li><li><a href="../../../60-writing/61-blog/2022/不要在饿的时候吃螺蛳粉！" data-for="60-writing/61-blog/2022/不要在饿的时候吃螺蛳粉！">不要在饿的时候吃螺蛳粉！</a></li><li><a href="../../../60-writing/61-blog/2022/习惯养成第一步" data-for="60-writing/61-blog/2022/习惯养成第一步">习惯养成第一步</a></li><li><a href="../../../60-writing/61-blog/2022/人在囧途——青海湖" data-for="60-writing/61-blog/2022/人在囧途——青海湖">人在囧途——青海湖</a></li><li><a href="../../../60-writing/61-blog/2022/人格类型测试" data-for="60-writing/61-blog/2022/人格类型测试">人格类型测试</a></li><li><a href="../../../60-writing/61-blog/2022/你还记得曾经的梦想么？" data-for="60-writing/61-blog/2022/你还记得曾经的梦想么？">你还记得曾经的梦想么？</a></li><li><a href="../../../60-writing/61-blog/2022/使用-Docusaurus-搭建优秀个人wiki" data-for="60-writing/61-blog/2022/使用-Docusaurus-搭建优秀个人wiki">使用 Docusaurus 搭建优秀个人wiki</a></li><li><a href="../../../60-writing/61-blog/2022/关于感情的事情" data-for="60-writing/61-blog/2022/关于感情的事情">关于感情的事情</a></li><li><a href="../../../60-writing/61-blog/2022/关于花" data-for="60-writing/61-blog/2022/关于花">关于花</a></li><li><a href="../../../60-writing/61-blog/2022/关于郑州的互联网记忆" data-for="60-writing/61-blog/2022/关于郑州的互联网记忆">关于郑州的互联网记忆</a></li><li><a href="../../../60-writing/61-blog/2022/再游嵩山" data-for="60-writing/61-blog/2022/再游嵩山">再游嵩山</a></li><li><a href="../../../60-writing/61-blog/2022/最近在折腾什么……" data-for="60-writing/61-blog/2022/最近在折腾什么……">最近在折腾什么……</a></li><li><a href="../../../60-writing/61-blog/2022/最近的生活" data-for="60-writing/61-blog/2022/最近的生活">最近的生活</a></li><li><a href="../../../60-writing/61-blog/2022/写十万字的博客是一种什么感觉" data-for="60-writing/61-blog/2022/写十万字的博客是一种什么感觉">写十万字的博客是一种什么感觉</a></li><li><a href="../../../60-writing/61-blog/2022/写博客的正确姿势---先行版" data-for="60-writing/61-blog/2022/写博客的正确姿势---先行版">写博客的正确姿势 - 先行版</a></li><li><a href="../../../60-writing/61-blog/2022/写博客的正确姿势---测试版" data-for="60-writing/61-blog/2022/写博客的正确姿势---测试版">写博客的正确姿势 - 测试版</a></li><li><a href="../../../60-writing/61-blog/2022/原点" data-for="60-writing/61-blog/2022/原点">原点</a></li><li><a href="../../../60-writing/61-blog/2022/如何免费获得-Jetbrains-正版授权" data-for="60-writing/61-blog/2022/如何免费获得-Jetbrains-正版授权">如何免费获得 Jetbrains 正版授权</a></li><li><a href="../../../60-writing/61-blog/2022/我是关系户" data-for="60-writing/61-blog/2022/我是关系户">我是关系户</a></li><li><a href="../../../60-writing/61-blog/2022/我要拔智齿！！！" data-for="60-writing/61-blog/2022/我要拔智齿！！！">我要拔智齿！！！</a></li><li><a href="../../../60-writing/61-blog/2022/数字文化遗产" data-for="60-writing/61-blog/2022/数字文化遗产">数字文化遗产</a></li><li><a href="../../../60-writing/61-blog/2022/新冠笔记" data-for="60-writing/61-blog/2022/新冠笔记">新冠笔记</a></li><li><a href="../../../60-writing/61-blog/2022/新手村村长" data-for="60-writing/61-blog/2022/新手村村长">新手村村长</a></li><li><a href="../../../60-writing/61-blog/2022/是微风、是晚霞、是来日方长" data-for="60-writing/61-blog/2022/是微风、是晚霞、是来日方长">是微风、是晚霞、是来日方长</a></li><li><a href="../../../60-writing/61-blog/2022/月季到了" data-for="60-writing/61-blog/2022/月季到了">月季到了</a></li><li><a href="../../../60-writing/61-blog/2022/浅谈一下自己折腾的网站" data-for="60-writing/61-blog/2022/浅谈一下自己折腾的网站">浅谈一下自己折腾的网站</a></li><li><a href="../../../60-writing/61-blog/2022/番茄开花啦-~" data-for="60-writing/61-blog/2022/番茄开花啦-~">番茄开花啦 ~</a></li><li><a href="../../../60-writing/61-blog/2022/种下了一些瓜果蔬菜" data-for="60-writing/61-blog/2022/种下了一些瓜果蔬菜">种下了一些瓜果蔬菜</a></li><li><a href="../../../60-writing/61-blog/2022/罪恶应该被遗传么" data-for="60-writing/61-blog/2022/罪恶应该被遗传么">罪恶应该被遗传么？</a></li><li><a href="../../../60-writing/61-blog/2022/自律的痛苦······" data-for="60-writing/61-blog/2022/自律的痛苦······">自律的痛苦······</a></li><li><a href="../../../60-writing/61-blog/2022/论成年人的睡眠" data-for="60-writing/61-blog/2022/论成年人的睡眠">论成年人的睡眠</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」">谈谈我的「数字文具盒」</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---NextCloud" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---NextCloud">谈谈我的「数字文具盒」 - NextCloud</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---Obsidian" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---Obsidian">谈谈我的「数字文具盒」 - Obsidian</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---心得体会" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---心得体会">谈谈我的「数字文具盒」 - 心得体会</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---数字基建" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---数字基建">谈谈我的「数字文具盒」 - 数字基建</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（上）" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（上）">谈谈我的「数字文具盒」 - 生产力工具（上）</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（下）" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（下）">谈谈我的「数字文具盒」 - 生产力工具（下）</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---番外篇" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---番外篇">谈谈我的「数字文具盒」 - 番外篇</a></li><li><a href="../../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---运行平台" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---运行平台">谈谈我的「数字文具盒」 - 运行平台</a></li><li><a href="../../../60-writing/61-blog/2022/这个周末" data-for="60-writing/61-blog/2022/这个周末">这个周末</a></li><li><a href="../../../60-writing/61-blog/2022/通货膨胀的猪" data-for="60-writing/61-blog/2022/通货膨胀的猪">通货膨胀的猪</a></li><li><a href="../../../60-writing/61-blog/2022/闭门锁网" data-for="60-writing/61-blog/2022/闭门锁网">闭门锁网</a></li><li><a href="../../../60-writing/61-blog/2022/非黑即白" data-for="60-writing/61-blog/2022/非黑即白">非黑即白</a></li><li><a href="../../../60-writing/61-blog/2022/首页加载速度优化方案" data-for="60-writing/61-blog/2022/首页加载速度优化方案">首页加载速度优化方案</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2023"><button class="folder-button"><span class="folder-title">2023</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2023"><li><a href="../../../60-writing/61-blog/2023/2023-年度微信读书报告" data-for="60-writing/61-blog/2023/2023-年度微信读书报告">2023 年度微信读书报告</a></li><li><a href="../../../60-writing/61-blog/2023/Docusaurus-搭建" data-for="60-writing/61-blog/2023/Docusaurus-搭建">Docusaurus 搭建</a></li><li><a href="../../../60-writing/61-blog/2023/Obsidian-使用-Templater-插件的个性化脚本" data-for="60-writing/61-blog/2023/Obsidian-使用-Templater-插件的个性化脚本">Obsidian 使用 Templater 插件的个性化脚本</a></li><li><a href="../../../60-writing/61-blog/2023/YubiKey-漂流记" data-for="60-writing/61-blog/2023/YubiKey-漂流记">YubiKey 历险记</a></li><li><a href="../../../60-writing/61-blog/2023/不要把幸福建立在别人的痛苦之上" data-for="60-writing/61-blog/2023/不要把幸福建立在别人的痛苦之上">不要把幸福建立在别人的痛苦之上</a></li><li><a href="../../../60-writing/61-blog/2023/为什么不推开那扇门？" data-for="60-writing/61-blog/2023/为什么不推开那扇门？">为什么不推开那扇门？</a></li><li><a href="../../../60-writing/61-blog/2023/你愿意嫁给自己么？" data-for="60-writing/61-blog/2023/你愿意嫁给自己么？">你愿意嫁给自己么</a></li><li><a href="../../../60-writing/61-blog/2023/最近半年的生活" data-for="60-writing/61-blog/2023/最近半年的生活">最近半年的生活</a></li><li><a href="../../../60-writing/61-blog/2023/写博客的正确姿势" data-for="60-writing/61-blog/2023/写博客的正确姿势">写博客的正确姿势</a></li><li><a href="../../../60-writing/61-blog/2023/唯有热爱可抵岁月漫长" data-for="60-writing/61-blog/2023/唯有热爱可抵岁月漫长">唯有热爱、可抵岁月漫长</a></li><li><a href="../../../60-writing/61-blog/2023/回首-2022-展望-2023" data-for="60-writing/61-blog/2023/回首-2022-展望-2023">回首 2022 展望 2023</a></li><li><a href="../../../60-writing/61-blog/2023/大学回忆录" data-for="60-writing/61-blog/2023/大学回忆录">大学回忆录</a></li><li><a href="../../../60-writing/61-blog/2023/如何不写错别字！" data-for="60-writing/61-blog/2023/如何不写错别字！">如何不写错别字！</a></li><li><a href="../../../60-writing/61-blog/2023/如何拍好一张照片" data-for="60-writing/61-blog/2023/如何拍好一张照片">如何拍好一张照片</a></li><li><a href="../../../60-writing/61-blog/2023/家里的三块地" data-for="60-writing/61-blog/2023/家里的三块地">家里的三块地</a></li><li><a href="../../../60-writing/61-blog/2023/岁月是把猪饲料，把我喂的嘎嘎胖" data-for="60-writing/61-blog/2023/岁月是把猪饲料，把我喂的嘎嘎胖">岁月是把猪饲料，把我喂的嘎嘎胖</a></li><li><a href="../../../60-writing/61-blog/2023/拾月游记" data-for="60-writing/61-blog/2023/拾月游记">拾月游记</a></li><li><a href="../../../60-writing/61-blog/2023/揭晓你的博客一年之最，尽在-EndOfYear！" data-for="60-writing/61-blog/2023/揭晓你的博客一年之最，尽在-EndOfYear！">揭晓你的博客一年之最，尽在 EndOfYear！</a></li><li><a href="../../../60-writing/61-blog/2023/早起、阅读、写作、运动、冥想" data-for="60-writing/61-blog/2023/早起、阅读、写作、运动、冥想">早起、冥想、阅读、写作、运动</a></li><li><a href="../../../60-writing/61-blog/2023/浅尝-Gitea-的-Actions" data-for="60-writing/61-blog/2023/浅尝-Gitea-的-Actions">浅尝 Gitea 的 Actions</a></li><li><a href="../../../60-writing/61-blog/2023/独立生活能力清单" data-for="60-writing/61-blog/2023/独立生活能力清单">独立生活能力清单</a></li><li><a href="../../../60-writing/61-blog/2023/电脑坏了，我换了-Ubuntu" data-for="60-writing/61-blog/2023/电脑坏了，我换了-Ubuntu">电脑坏了，我换了 Ubuntu</a></li><li><a href="../../../60-writing/61-blog/2023/看-V2Ex-的-ChatGPT-老哥浅谈办公室政治" data-for="60-writing/61-blog/2023/看-V2Ex-的-ChatGPT-老哥浅谈办公室政治">看 V2Ex 的 ChatGPT 老哥浅谈办公室政治</a></li><li><a href="../../../60-writing/61-blog/2023/破万卷书，行万里路！" data-for="60-writing/61-blog/2023/破万卷书，行万里路！">破万卷书，行万里路！</a></li><li><a href="../../../60-writing/61-blog/2023/谈谈我的「数字文具盒」---个人工作流" data-for="60-writing/61-blog/2023/谈谈我的「数字文具盒」---个人工作流">谈谈我的「数字文具盒」 - 个人工作流</a></li><li><a href="../../../60-writing/61-blog/2023/长安三万里" data-for="60-writing/61-blog/2023/长安三万里">长安三万里</a></li><li><a href="../../../60-writing/61-blog/2023/黄山归来不看岳" data-for="60-writing/61-blog/2023/黄山归来不看岳">黄山归来不看岳</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2024"><button class="folder-button"><span class="folder-title">2024</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2024"><li><a href="../../../60-writing/61-blog/2024/「救赎之路」更名「向阳而生」" data-for="60-writing/61-blog/2024/「救赎之路」更名「向阳而生」">「救赎之路」更名「向阳而生」</a></li><li><a href="../../../60-writing/61-blog/2024/回顾-2023" data-for="60-writing/61-blog/2024/回顾-2023">2023 年终总结</a></li><li><a href="../../../60-writing/61-blog/2024/2023-年终问答" data-for="60-writing/61-blog/2024/2023-年终问答">2023 年终问答</a></li><li><a href="../../../60-writing/61-blog/2024/CityWalk——公车挑战" data-for="60-writing/61-blog/2024/CityWalk——公车挑战">CityWalk——公车挑战：探索未知的城市</a></li><li><a href="../../../60-writing/61-blog/2024/Python-项目终极部署解决方案" data-for="60-writing/61-blog/2024/Python-项目终极部署解决方案">Python 项目终极部署解决方案</a></li><li><a href="../../../60-writing/61-blog/2024/一命二运三风水" data-for="60-writing/61-blog/2024/一命二运三风水">一命二运三风水</a></li><li><a href="../../../60-writing/61-blog/2024/乌兰哈达火山银河之旅" data-for="60-writing/61-blog/2024/乌兰哈达火山银河之旅">乌兰哈达火山银河之旅</a></li><li><a href="../../../60-writing/61-blog/2024/冰箱，让你我错过了多少新鲜的生活？" data-for="60-writing/61-blog/2024/冰箱，让你我错过了多少新鲜的生活？">冰箱，让你我错过了多少新鲜的生活？</a></li><li><a href="../../../60-writing/61-blog/2024/夜泊西湖听雨声" data-for="60-writing/61-blog/2024/夜泊西湖听雨声">夜泊西湖听雨声</a></li><li><a href="../../../60-writing/61-blog/2024/如何开好一场会？" data-for="60-writing/61-blog/2024/如何开好一场会？">如何开好一场会？</a></li><li><a href="../../../60-writing/61-blog/2024/如何打破信息茧房？" data-for="60-writing/61-blog/2024/如何打破信息茧房？">如何打破信息茧房？</a></li><li><a href="../../../60-writing/61-blog/2024/富人的红灯与穷人的绿灯" data-for="60-writing/61-blog/2024/富人的红灯与穷人的绿灯">富人的红灯与穷人的绿灯</a></li><li><a href="../../../60-writing/61-blog/2024/师从-ChatGPT" data-for="60-writing/61-blog/2024/师从-ChatGPT">师从 ChatGPT</a></li><li><a href="../../../60-writing/61-blog/2024/我又从-Ubunut-换成了-Fedora" data-for="60-writing/61-blog/2024/我又从-Ubunut-换成了-Fedora">我又从 Ubunut 换成了 Fedora</a></li><li><a href="../../../60-writing/61-blog/2024/我的一天" data-for="60-writing/61-blog/2024/我的一天">我的一天</a></li><li><a href="../../../60-writing/61-blog/2024/打工三年记" data-for="60-writing/61-blog/2024/打工三年记">打工三年记</a></li><li><a href="../../../60-writing/61-blog/2024/新奇的-HR-经历" data-for="60-writing/61-blog/2024/新奇的-HR-经历">新奇的 HR 经历</a></li><li><a href="../../../60-writing/61-blog/2024/穷则独善其身，达则兼济天下" data-for="60-writing/61-blog/2024/穷则独善其身，达则兼济天下">穷则独善其身，达则兼济天下</a></li><li><a href="../../../60-writing/61-blog/2024/继续开荒我那一亩三分地" data-for="60-writing/61-blog/2024/继续开荒我那一亩三分地">继续开荒我那一亩三分地</a></li><li><a href="../../../60-writing/61-blog/2024/記伍月" data-for="60-writing/61-blog/2024/記伍月">記伍月</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2025"><button class="folder-button"><span class="folder-title">2025</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2025"><li><a href="../../../60-writing/61-blog/2025/盲人摸象非象" data-for="60-writing/61-blog/2025/盲人摸象非象">盲人摸象非象</a></li></ul></div></li></ul></div></li></ul></div></li><li><div class="folder-outer "><ul style="padding-left:0;" class="content" data-folderul></ul></div></li></ul></div></li><li id="explorer-end"></li></ul></div></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.3.1</a> © 2025</p><ul><li><a href="https://zopiya.com">文辑</a></li><li><a href="https://memos.zopiya.com">片语</a></li><li><a href="https://github.com/zopiya">GitHub</a></li></ul></footer></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../../../postscript.js" type="module"></script></html>

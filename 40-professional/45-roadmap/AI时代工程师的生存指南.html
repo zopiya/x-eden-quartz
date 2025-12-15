@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh"><head><title>AI 时代工程师的生存指南</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM Plex Mono&amp;family=Noto Serif Simplified Chinese:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta property="og:title" content="AI 时代工程师的生存指南"/><meta property="og:description" content="前言：被重构的职业生态 2024 至 2025 年间，技术工程师职业市场正经历着显著的两极分化。基于对 80 余份权威数据源的整合分析，本文旨在客观呈现当前行业现状，深入探讨 AI 时代背景下技术从业者的职业决策策略。 graph LR A[2024-2025技术市场] --&amp;gt; B[机遇] A --&amp;gt; C[挑战] B --&amp;gt; ..."/><meta property="og:image" content="https://x-eden.zopiya.com/static/og-image.png"/><meta property="og:width" content="1200"/><meta property="og:height" content="675"/><link rel="icon" href="../../static/icon.png"/><meta name="description" content="前言：被重构的职业生态 2024 至 2025 年间，技术工程师职业市场正经历着显著的两极分化。基于对 80 余份权威数据源的整合分析，本文旨在客观呈现当前行业现状，深入探讨 AI 时代背景下技术从业者的职业决策策略。 graph LR A[2024-2025技术市场] --&amp;gt; B[机遇] A --&amp;gt; C[挑战] B --&amp;gt; ..."/><meta name="generator" content="Quartz"/><link href="../../index.css" rel="stylesheet" type="text/css" spa-preserve/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script></head><body data-slug="40-professional/45-roadmap/AI时代工程师的生存指南"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../..">🪴 X·Eden</a></h2><div class="spacer mobile-only"></div><div class="search"><button class="search-button" id="search-button"><p>搜索</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div id="search-container"><div id="search-space"><input autocomplete="off" id="search-bar" name="search" type="text" aria-label="搜索些什么" placeholder="搜索些什么"/><div id="search-layout" data-preview="true"></div></div></div></div><button class="darkmode" id="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="暗色模式"><title>暗色模式</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="亮色模式"><title>亮色模式</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button><div class="explorer desktop-only"><button type="button" id="explorer" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-tree="[{&quot;path&quot;:&quot;40-professional&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/41-roles&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/42-timeline&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/44-skills&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/45-roadmap&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/46-workplace&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/46-workplace/career&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/46-workplace/offer&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2018&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2020&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2021&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2022&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2023&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2024&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2025&quot;,&quot;collapsed&quot;:true}]" aria-controls="explorer-content" aria-expanded="false"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-content"><ul class="overflow" id="explorer-ul"><li><div class="folder-outer open"><ul style="padding-left:0;" class="content" data-folderul><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional"><button class="folder-button"><span class="folder-title">40-professional</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/41-roles"><button class="folder-button"><span class="folder-title">41-roles</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/41-roles"><li><a href="../../40-professional/41-roles/周中平" data-for="40-professional/41-roles/周中平">周中平</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/42-timeline"><button class="folder-button"><span class="folder-title">42-timeline</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/42-timeline"><li><a href="../../40-professional/42-timeline/2017.09-2019.07-河南牧业经济学院-软件技术" data-for="40-professional/42-timeline/2017.09-2019.07-河南牧业经济学院-软件技术">2017.09-2019.07-河南牧业经济学院-软件技术</a></li><li><a href="../../40-professional/42-timeline/2019.07-2020.01-杭州好橙-Java开发实习" data-for="40-professional/42-timeline/2019.07-2020.01-杭州好橙-Java开发实习">2019.07-2020.01-杭州好橙-Java开发实习</a></li><li><a href="../../40-professional/42-timeline/2020.02-2021.02-艳阳牧业-饲养员" data-for="40-professional/42-timeline/2020.02-2021.02-艳阳牧业-饲养员">2020.02-2021.02-艳阳牧业-饲养员</a></li><li><a href="../../40-professional/42-timeline/2021.03-2023.03-九州通-技术支持工程师" data-for="40-professional/42-timeline/2021.03-2023.03-九州通-技术支持工程师">2021.03-2023.03-九州通-技术支持工程师</a></li><li><a href="../../40-professional/42-timeline/2022.03-2024.07-河南财经政法大学-计算机科学与技术" data-for="40-professional/42-timeline/2022.03-2024.07-河南财经政法大学-计算机科学与技术">2022.03-2024.07-河南财经政法大学-计算机科学与技术</a></li><li><a href="../../40-professional/42-timeline/2023.03-至今-九州通-运维开发工程师" data-for="40-professional/42-timeline/2023.03-至今-九州通-运维开发工程师">2023.03-至今-九州通-运维开发工程师</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/44-skills"><button class="folder-button"><span class="folder-title">44-skills</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/44-skills"><li><a href="../../40-professional/44-skills/技能矩阵" data-for="40-professional/44-skills/技能矩阵">技能矩阵</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/45-roadmap"><button class="folder-button"><span class="folder-title">45-roadmap</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/45-roadmap"><li><a href="../../40-professional/45-roadmap/AI时代工程师的生存指南" data-for="40-professional/45-roadmap/AI时代工程师的生存指南">AI 时代工程师的生存指南</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/46-workplace"><button class="folder-button"><span class="folder-title">46-workplace</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/46-workplace"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/46-workplace/career"><button class="folder-button"><span class="folder-title">career</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/46-workplace/career"><li><a href="../../40-professional/46-workplace/career/01-新手村ai速通法" data-for="40-professional/46-workplace/career/01-新手村ai速通法">01-新手村ai速通法</a></li><li><a href="../../40-professional/46-workplace/career/02-构建ai代理军团" data-for="40-professional/46-workplace/career/02-构建ai代理军团">02-构建ai代理军团</a></li><li><a href="../../40-professional/46-workplace/career/03-从隐形人到行业kol" data-for="40-professional/46-workplace/career/03-从隐形人到行业kol">03-从隐形人到行业kol</a></li><li><a href="../../40-professional/46-workplace/career/04-硬核维权铁律" data-for="40-professional/46-workplace/career/04-硬核维权铁律">04-硬核维权铁律</a></li><li><a href="../../40-professional/46-workplace/career/05-反内卷终极形态" data-for="40-professional/46-workplace/career/05-反内卷终极形态">05-反内卷终极形态</a></li><li><a href="../../40-professional/46-workplace/career/06-复利人生商业闭环" data-for="40-professional/46-workplace/career/06-复利人生商业闭环">06-复利人生商业闭环</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/46-workplace/offer"><button class="folder-button"><span class="folder-title">offer</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/46-workplace/offer"><li><a href="../../40-professional/46-workplace/offer/01-面试理念与原则" data-for="40-professional/46-workplace/offer/01-面试理念与原则">01-面试理念与原则</a></li><li><a href="../../40-professional/46-workplace/offer/02-简历原则与实践" data-for="40-professional/46-workplace/offer/02-简历原则与实践">02-简历原则与实践</a></li><li><a href="../../40-professional/46-workplace/offer/03-面试流程全解析" data-for="40-professional/46-workplace/offer/03-面试流程全解析">03-面试流程全解析</a></li><li><a href="../../40-professional/46-workplace/offer/04-面试10大经典问题" data-for="40-professional/46-workplace/offer/04-面试10大经典问题">04-面试10大经典问题</a></li><li><a href="../../40-professional/46-workplace/offer/05-技术面试核心点" data-for="40-professional/46-workplace/offer/05-技术面试核心点">05-技术面试核心点</a></li><li><a href="../../40-professional/46-workplace/offer/06-反向面试要点" data-for="40-professional/46-workplace/offer/06-反向面试要点">06-反向面试要点</a></li><li><a href="../../40-professional/46-workplace/offer/07-薪资谈判艺术" data-for="40-professional/46-workplace/offer/07-薪资谈判艺术">07-薪资谈判艺术</a></li><li><a href="../../40-professional/46-workplace/offer/08-offer评估决策" data-for="40-professional/46-workplace/offer/08-offer评估决策">08-offer评估决策</a></li><li><a href="../../40-professional/46-workplace/offer/09-入职准备" data-for="40-professional/46-workplace/offer/09-入职准备">09-入职准备</a></li><li><a href="../../40-professional/46-workplace/offer/10-试用期生存" data-for="40-professional/46-workplace/offer/10-试用期生存">10-试用期生存</a></li><li><a href="../../40-professional/46-workplace/offer/11-持续成长" data-for="40-professional/46-workplace/offer/11-持续成长">11-持续成长</a></li></ul></div></li></ul></div></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing"><button class="folder-button"><span class="folder-title">60-writing</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog"><button class="folder-button"><span class="folder-title">61-blog</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2018"><button class="folder-button"><span class="folder-title">2018</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2018"><li><a href="../../60-writing/61-blog/2018/11月28日晚-星期三-霾" data-for="60-writing/61-blog/2018/11月28日晚-星期三-霾">11月28日 晚 星期三 霾</a></li><li><a href="../../60-writing/61-blog/2018/BombSquad-炸弹人小分队" data-for="60-writing/61-blog/2018/BombSquad-炸弹人小分队">BombSquad-炸弹人小分队</a></li><li><a href="../../60-writing/61-blog/2018/如何免费创建一个属于自己的网站" data-for="60-writing/61-blog/2018/如何免费创建一个属于自己的网站">如何免费创建一个属于自己的网站</a></li><li><a href="../../60-writing/61-blog/2018/英雄联盟-S8-全球总决赛" data-for="60-writing/61-blog/2018/英雄联盟-S8-全球总决赛">英雄联盟 S8 全球总决赛</a></li><li><a href="../../60-writing/61-blog/2018/螺蛳粉" data-for="60-writing/61-blog/2018/螺蛳粉">螺蛳粉</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2020"><button class="folder-button"><span class="folder-title">2020</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2020"><li><a href="../../60-writing/61-blog/2020/Don`t-Starve-饥荒" data-for="60-writing/61-blog/2020/Don`t-Starve-饥荒">Don't Starve-饥荒</a></li><li><a href="../../60-writing/61-blog/2020/中国传统历法" data-for="60-writing/61-blog/2020/中国传统历法">中国传统历法</a></li><li><a href="../../60-writing/61-blog/2020/初号机，起飞！" data-for="60-writing/61-blog/2020/初号机，起飞！">初号机，起飞！</a></li><li><a href="../../60-writing/61-blog/2020/吉普赛满天星" data-for="60-writing/61-blog/2020/吉普赛满天星">吉普赛满天星</a></li><li><a href="../../60-writing/61-blog/2020/夏日花记" data-for="60-writing/61-blog/2020/夏日花记">夏日花记</a></li><li><a href="../../60-writing/61-blog/2020/幸福的事情都是需要等待的" data-for="60-writing/61-blog/2020/幸福的事情都是需要等待的">幸福的事情都是需要等待的</a></li><li><a href="../../60-writing/61-blog/2020/开源软件之道" data-for="60-writing/61-blog/2020/开源软件之道">开源软件之道</a></li><li><a href="../../60-writing/61-blog/2020/我的小羊肖恩" data-for="60-writing/61-blog/2020/我的小羊肖恩">我的小羊肖恩</a></li><li><a href="../../60-writing/61-blog/2020/数据恢复杂谈" data-for="60-writing/61-blog/2020/数据恢复杂谈">数据恢复杂谈</a></li><li><a href="../../60-writing/61-blog/2020/注定不平凡的一年" data-for="60-writing/61-blog/2020/注定不平凡的一年">注定不平凡的一年</a></li><li><a href="../../60-writing/61-blog/2020/浅谈个人服务器架构" data-for="60-writing/61-blog/2020/浅谈个人服务器架构">浅谈个人服务器架构</a></li><li><a href="../../60-writing/61-blog/2020/球鞋日记" data-for="60-writing/61-blog/2020/球鞋日记">球鞋日记</a></li><li><a href="../../60-writing/61-blog/2020/記拾月" data-for="60-writing/61-blog/2020/記拾月">記拾月</a></li><li><a href="../../60-writing/61-blog/2020/长安游记" data-for="60-writing/61-blog/2020/长安游记">长安游记</a></li><li><a href="../../60-writing/61-blog/2020/骑行在路上" data-for="60-writing/61-blog/2020/骑行在路上">骑行在路上</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2021"><button class="folder-button"><span class="folder-title">2021</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2021"><li><a href="../../60-writing/61-blog/2021/2021" data-for="60-writing/61-blog/2021/2021">2021</a></li><li><a href="../../60-writing/61-blog/2021/VIVO-IQOO-Neo3-开箱测评" data-for="60-writing/61-blog/2021/VIVO-IQOO-Neo3-开箱测评">VIVO IQOO Neo3 开箱测评</a></li><li><a href="../../60-writing/61-blog/2021/上有天堂、下有苏杭" data-for="60-writing/61-blog/2021/上有天堂、下有苏杭">上有天堂、下有苏杭</a></li><li><a href="../../60-writing/61-blog/2021/我开发的第一款软件" data-for="60-writing/61-blog/2021/我开发的第一款软件">我开发的第一款软件</a></li><li><a href="../../60-writing/61-blog/2021/我站立的地方是中国" data-for="60-writing/61-blog/2021/我站立的地方是中国">我站立的地方是中国</a></li><li><a href="../../60-writing/61-blog/2021/我还在……" data-for="60-writing/61-blog/2021/我还在……">我还在……</a></li><li><a href="../../60-writing/61-blog/2021/星光不问赶路人" data-for="60-writing/61-blog/2021/星光不问赶路人">星光不问赶路人</a></li><li><a href="../../60-writing/61-blog/2021/济南呀济南的泰山之旅" data-for="60-writing/61-blog/2021/济南呀济南的泰山之旅">济南呀济南的泰山之旅</a></li><li><a href="../../60-writing/61-blog/2021/涝疫结合" data-for="60-writing/61-blog/2021/涝疫结合">涝疫结合</a></li><li><a href="../../60-writing/61-blog/2021/申请-Jetbrains-开源项目授权" data-for="60-writing/61-blog/2021/申请-Jetbrains-开源项目授权">申请 Jetbrains 开源项目授权</a></li><li><a href="../../60-writing/61-blog/2021/真·长安游记" data-for="60-writing/61-blog/2021/真·长安游记">真·长安游记</a></li><li><a href="../../60-writing/61-blog/2021/记拾月" data-for="60-writing/61-blog/2021/记拾月">记拾月</a></li><li><a href="../../60-writing/61-blog/2021/贰号机、落幕" data-for="60-writing/61-blog/2021/贰号机、落幕">贰号机、落幕</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2022"><button class="folder-button"><span class="folder-title">2022</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2022"><li><a href="../../60-writing/61-blog/2022/「引用」博客的本质是电线杆子" data-for="60-writing/61-blog/2022/「引用」博客的本质是电线杆子">「引用」博客的本质是电线杆子</a></li><li><a href="../../60-writing/61-blog/2022/2022" data-for="60-writing/61-blog/2022/2022">2022</a></li><li><a href="../../60-writing/61-blog/2022/Halo-主题-Redemption-首发版" data-for="60-writing/61-blog/2022/Halo-主题-Redemption-首发版">Halo 主题 Redemption 首发版</a></li><li><a href="../../60-writing/61-blog/2022/Redemption" data-for="60-writing/61-blog/2022/Redemption">Redemption</a></li><li><a href="../../60-writing/61-blog/2022/Redemption-主题-0.2.1-版本" data-for="60-writing/61-blog/2022/Redemption-主题-0.2.1-版本">Redemption 主题 0.2.1 版本</a></li><li><a href="../../60-writing/61-blog/2022/一线城市拥有一亩三分地是什么体验" data-for="60-writing/61-blog/2022/一线城市拥有一亩三分地是什么体验">一线城市拥有一亩三分地是什么体验</a></li><li><a href="../../60-writing/61-blog/2022/三步为你博客文章分析情感关键字" data-for="60-writing/61-blog/2022/三步为你博客文章分析情感关键字">三步为你博客文章分析情感关键字</a></li><li><a href="../../60-writing/61-blog/2022/不要在饿的时候吃螺蛳粉！" data-for="60-writing/61-blog/2022/不要在饿的时候吃螺蛳粉！">不要在饿的时候吃螺蛳粉！</a></li><li><a href="../../60-writing/61-blog/2022/习惯养成第一步" data-for="60-writing/61-blog/2022/习惯养成第一步">习惯养成第一步</a></li><li><a href="../../60-writing/61-blog/2022/人在囧途——青海湖" data-for="60-writing/61-blog/2022/人在囧途——青海湖">人在囧途——青海湖</a></li><li><a href="../../60-writing/61-blog/2022/人格类型测试" data-for="60-writing/61-blog/2022/人格类型测试">人格类型测试</a></li><li><a href="../../60-writing/61-blog/2022/你还记得曾经的梦想么？" data-for="60-writing/61-blog/2022/你还记得曾经的梦想么？">你还记得曾经的梦想么？</a></li><li><a href="../../60-writing/61-blog/2022/使用-Docusaurus-搭建优秀个人wiki" data-for="60-writing/61-blog/2022/使用-Docusaurus-搭建优秀个人wiki">使用 Docusaurus 搭建优秀个人wiki</a></li><li><a href="../../60-writing/61-blog/2022/关于感情的事情" data-for="60-writing/61-blog/2022/关于感情的事情">关于感情的事情</a></li><li><a href="../../60-writing/61-blog/2022/关于花" data-for="60-writing/61-blog/2022/关于花">关于花</a></li><li><a href="../../60-writing/61-blog/2022/关于郑州的互联网记忆" data-for="60-writing/61-blog/2022/关于郑州的互联网记忆">关于郑州的互联网记忆</a></li><li><a href="../../60-writing/61-blog/2022/再游嵩山" data-for="60-writing/61-blog/2022/再游嵩山">再游嵩山</a></li><li><a href="../../60-writing/61-blog/2022/最近在折腾什么……" data-for="60-writing/61-blog/2022/最近在折腾什么……">最近在折腾什么……</a></li><li><a href="../../60-writing/61-blog/2022/最近的生活" data-for="60-writing/61-blog/2022/最近的生活">最近的生活</a></li><li><a href="../../60-writing/61-blog/2022/写十万字的博客是一种什么感觉" data-for="60-writing/61-blog/2022/写十万字的博客是一种什么感觉">写十万字的博客是一种什么感觉</a></li><li><a href="../../60-writing/61-blog/2022/写博客的正确姿势---先行版" data-for="60-writing/61-blog/2022/写博客的正确姿势---先行版">写博客的正确姿势 - 先行版</a></li><li><a href="../../60-writing/61-blog/2022/写博客的正确姿势---测试版" data-for="60-writing/61-blog/2022/写博客的正确姿势---测试版">写博客的正确姿势 - 测试版</a></li><li><a href="../../60-writing/61-blog/2022/原点" data-for="60-writing/61-blog/2022/原点">原点</a></li><li><a href="../../60-writing/61-blog/2022/如何免费获得-Jetbrains-正版授权" data-for="60-writing/61-blog/2022/如何免费获得-Jetbrains-正版授权">如何免费获得 Jetbrains 正版授权</a></li><li><a href="../../60-writing/61-blog/2022/我是关系户" data-for="60-writing/61-blog/2022/我是关系户">我是关系户</a></li><li><a href="../../60-writing/61-blog/2022/我要拔智齿！！！" data-for="60-writing/61-blog/2022/我要拔智齿！！！">我要拔智齿！！！</a></li><li><a href="../../60-writing/61-blog/2022/数字文化遗产" data-for="60-writing/61-blog/2022/数字文化遗产">数字文化遗产</a></li><li><a href="../../60-writing/61-blog/2022/新冠笔记" data-for="60-writing/61-blog/2022/新冠笔记">新冠笔记</a></li><li><a href="../../60-writing/61-blog/2022/新手村村长" data-for="60-writing/61-blog/2022/新手村村长">新手村村长</a></li><li><a href="../../60-writing/61-blog/2022/是微风、是晚霞、是来日方长" data-for="60-writing/61-blog/2022/是微风、是晚霞、是来日方长">是微风、是晚霞、是来日方长</a></li><li><a href="../../60-writing/61-blog/2022/月季到了" data-for="60-writing/61-blog/2022/月季到了">月季到了</a></li><li><a href="../../60-writing/61-blog/2022/浅谈一下自己折腾的网站" data-for="60-writing/61-blog/2022/浅谈一下自己折腾的网站">浅谈一下自己折腾的网站</a></li><li><a href="../../60-writing/61-blog/2022/番茄开花啦-~" data-for="60-writing/61-blog/2022/番茄开花啦-~">番茄开花啦 ~</a></li><li><a href="../../60-writing/61-blog/2022/种下了一些瓜果蔬菜" data-for="60-writing/61-blog/2022/种下了一些瓜果蔬菜">种下了一些瓜果蔬菜</a></li><li><a href="../../60-writing/61-blog/2022/罪恶应该被遗传么" data-for="60-writing/61-blog/2022/罪恶应该被遗传么">罪恶应该被遗传么？</a></li><li><a href="../../60-writing/61-blog/2022/自律的痛苦······" data-for="60-writing/61-blog/2022/自律的痛苦······">自律的痛苦······</a></li><li><a href="../../60-writing/61-blog/2022/论成年人的睡眠" data-for="60-writing/61-blog/2022/论成年人的睡眠">论成年人的睡眠</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」">谈谈我的「数字文具盒」</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---NextCloud" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---NextCloud">谈谈我的「数字文具盒」 - NextCloud</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---Obsidian" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---Obsidian">谈谈我的「数字文具盒」 - Obsidian</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---心得体会" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---心得体会">谈谈我的「数字文具盒」 - 心得体会</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---数字基建" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---数字基建">谈谈我的「数字文具盒」 - 数字基建</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（上）" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（上）">谈谈我的「数字文具盒」 - 生产力工具（上）</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（下）" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（下）">谈谈我的「数字文具盒」 - 生产力工具（下）</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---番外篇" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---番外篇">谈谈我的「数字文具盒」 - 番外篇</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---运行平台" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---运行平台">谈谈我的「数字文具盒」 - 运行平台</a></li><li><a href="../../60-writing/61-blog/2022/这个周末" data-for="60-writing/61-blog/2022/这个周末">这个周末</a></li><li><a href="../../60-writing/61-blog/2022/通货膨胀的猪" data-for="60-writing/61-blog/2022/通货膨胀的猪">通货膨胀的猪</a></li><li><a href="../../60-writing/61-blog/2022/闭门锁网" data-for="60-writing/61-blog/2022/闭门锁网">闭门锁网</a></li><li><a href="../../60-writing/61-blog/2022/非黑即白" data-for="60-writing/61-blog/2022/非黑即白">非黑即白</a></li><li><a href="../../60-writing/61-blog/2022/首页加载速度优化方案" data-for="60-writing/61-blog/2022/首页加载速度优化方案">首页加载速度优化方案</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2023"><button class="folder-button"><span class="folder-title">2023</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2023"><li><a href="../../60-writing/61-blog/2023/2023-年度微信读书报告" data-for="60-writing/61-blog/2023/2023-年度微信读书报告">2023 年度微信读书报告</a></li><li><a href="../../60-writing/61-blog/2023/Docusaurus-搭建" data-for="60-writing/61-blog/2023/Docusaurus-搭建">Docusaurus 搭建</a></li><li><a href="../../60-writing/61-blog/2023/Obsidian-使用-Templater-插件的个性化脚本" data-for="60-writing/61-blog/2023/Obsidian-使用-Templater-插件的个性化脚本">Obsidian 使用 Templater 插件的个性化脚本</a></li><li><a href="../../60-writing/61-blog/2023/YubiKey-漂流记" data-for="60-writing/61-blog/2023/YubiKey-漂流记">YubiKey 历险记</a></li><li><a href="../../60-writing/61-blog/2023/不要把幸福建立在别人的痛苦之上" data-for="60-writing/61-blog/2023/不要把幸福建立在别人的痛苦之上">不要把幸福建立在别人的痛苦之上</a></li><li><a href="../../60-writing/61-blog/2023/为什么不推开那扇门？" data-for="60-writing/61-blog/2023/为什么不推开那扇门？">为什么不推开那扇门？</a></li><li><a href="../../60-writing/61-blog/2023/你愿意嫁给自己么？" data-for="60-writing/61-blog/2023/你愿意嫁给自己么？">你愿意嫁给自己么</a></li><li><a href="../../60-writing/61-blog/2023/最近半年的生活" data-for="60-writing/61-blog/2023/最近半年的生活">最近半年的生活</a></li><li><a href="../../60-writing/61-blog/2023/写博客的正确姿势" data-for="60-writing/61-blog/2023/写博客的正确姿势">写博客的正确姿势</a></li><li><a href="../../60-writing/61-blog/2023/唯有热爱可抵岁月漫长" data-for="60-writing/61-blog/2023/唯有热爱可抵岁月漫长">唯有热爱、可抵岁月漫长</a></li><li><a href="../../60-writing/61-blog/2023/回首-2022-展望-2023" data-for="60-writing/61-blog/2023/回首-2022-展望-2023">回首 2022 展望 2023</a></li><li><a href="../../60-writing/61-blog/2023/大学回忆录" data-for="60-writing/61-blog/2023/大学回忆录">大学回忆录</a></li><li><a href="../../60-writing/61-blog/2023/如何不写错别字！" data-for="60-writing/61-blog/2023/如何不写错别字！">如何不写错别字！</a></li><li><a href="../../60-writing/61-blog/2023/如何拍好一张照片" data-for="60-writing/61-blog/2023/如何拍好一张照片">如何拍好一张照片</a></li><li><a href="../../60-writing/61-blog/2023/家里的三块地" data-for="60-writing/61-blog/2023/家里的三块地">家里的三块地</a></li><li><a href="../../60-writing/61-blog/2023/岁月是把猪饲料，把我喂的嘎嘎胖" data-for="60-writing/61-blog/2023/岁月是把猪饲料，把我喂的嘎嘎胖">岁月是把猪饲料，把我喂的嘎嘎胖</a></li><li><a href="../../60-writing/61-blog/2023/拾月游记" data-for="60-writing/61-blog/2023/拾月游记">拾月游记</a></li><li><a href="../../60-writing/61-blog/2023/揭晓你的博客一年之最，尽在-EndOfYear！" data-for="60-writing/61-blog/2023/揭晓你的博客一年之最，尽在-EndOfYear！">揭晓你的博客一年之最，尽在 EndOfYear！</a></li><li><a href="../../60-writing/61-blog/2023/早起、阅读、写作、运动、冥想" data-for="60-writing/61-blog/2023/早起、阅读、写作、运动、冥想">早起、冥想、阅读、写作、运动</a></li><li><a href="../../60-writing/61-blog/2023/浅尝-Gitea-的-Actions" data-for="60-writing/61-blog/2023/浅尝-Gitea-的-Actions">浅尝 Gitea 的 Actions</a></li><li><a href="../../60-writing/61-blog/2023/独立生活能力清单" data-for="60-writing/61-blog/2023/独立生活能力清单">独立生活能力清单</a></li><li><a href="../../60-writing/61-blog/2023/电脑坏了，我换了-Ubuntu" data-for="60-writing/61-blog/2023/电脑坏了，我换了-Ubuntu">电脑坏了，我换了 Ubuntu</a></li><li><a href="../../60-writing/61-blog/2023/看-V2Ex-的-ChatGPT-老哥浅谈办公室政治" data-for="60-writing/61-blog/2023/看-V2Ex-的-ChatGPT-老哥浅谈办公室政治">看 V2Ex 的 ChatGPT 老哥浅谈办公室政治</a></li><li><a href="../../60-writing/61-blog/2023/破万卷书，行万里路！" data-for="60-writing/61-blog/2023/破万卷书，行万里路！">破万卷书，行万里路！</a></li><li><a href="../../60-writing/61-blog/2023/谈谈我的「数字文具盒」---个人工作流" data-for="60-writing/61-blog/2023/谈谈我的「数字文具盒」---个人工作流">谈谈我的「数字文具盒」 - 个人工作流</a></li><li><a href="../../60-writing/61-blog/2023/长安三万里" data-for="60-writing/61-blog/2023/长安三万里">长安三万里</a></li><li><a href="../../60-writing/61-blog/2023/黄山归来不看岳" data-for="60-writing/61-blog/2023/黄山归来不看岳">黄山归来不看岳</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2024"><button class="folder-button"><span class="folder-title">2024</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2024"><li><a href="../../60-writing/61-blog/2024/「救赎之路」更名「向阳而生」" data-for="60-writing/61-blog/2024/「救赎之路」更名「向阳而生」">「救赎之路」更名「向阳而生」</a></li><li><a href="../../60-writing/61-blog/2024/回顾-2023" data-for="60-writing/61-blog/2024/回顾-2023">2023 年终总结</a></li><li><a href="../../60-writing/61-blog/2024/2023-年终问答" data-for="60-writing/61-blog/2024/2023-年终问答">2023 年终问答</a></li><li><a href="../../60-writing/61-blog/2024/CityWalk——公车挑战" data-for="60-writing/61-blog/2024/CityWalk——公车挑战">CityWalk——公车挑战：探索未知的城市</a></li><li><a href="../../60-writing/61-blog/2024/Python-项目终极部署解决方案" data-for="60-writing/61-blog/2024/Python-项目终极部署解决方案">Python 项目终极部署解决方案</a></li><li><a href="../../60-writing/61-blog/2024/一命二运三风水" data-for="60-writing/61-blog/2024/一命二运三风水">一命二运三风水</a></li><li><a href="../../60-writing/61-blog/2024/乌兰哈达火山银河之旅" data-for="60-writing/61-blog/2024/乌兰哈达火山银河之旅">乌兰哈达火山银河之旅</a></li><li><a href="../../60-writing/61-blog/2024/冰箱，让你我错过了多少新鲜的生活？" data-for="60-writing/61-blog/2024/冰箱，让你我错过了多少新鲜的生活？">冰箱，让你我错过了多少新鲜的生活？</a></li><li><a href="../../60-writing/61-blog/2024/夜泊西湖听雨声" data-for="60-writing/61-blog/2024/夜泊西湖听雨声">夜泊西湖听雨声</a></li><li><a href="../../60-writing/61-blog/2024/如何开好一场会？" data-for="60-writing/61-blog/2024/如何开好一场会？">如何开好一场会？</a></li><li><a href="../../60-writing/61-blog/2024/如何打破信息茧房？" data-for="60-writing/61-blog/2024/如何打破信息茧房？">如何打破信息茧房？</a></li><li><a href="../../60-writing/61-blog/2024/富人的红灯与穷人的绿灯" data-for="60-writing/61-blog/2024/富人的红灯与穷人的绿灯">富人的红灯与穷人的绿灯</a></li><li><a href="../../60-writing/61-blog/2024/师从-ChatGPT" data-for="60-writing/61-blog/2024/师从-ChatGPT">师从 ChatGPT</a></li><li><a href="../../60-writing/61-blog/2024/我又从-Ubunut-换成了-Fedora" data-for="60-writing/61-blog/2024/我又从-Ubunut-换成了-Fedora">我又从 Ubunut 换成了 Fedora</a></li><li><a href="../../60-writing/61-blog/2024/我的一天" data-for="60-writing/61-blog/2024/我的一天">我的一天</a></li><li><a href="../../60-writing/61-blog/2024/打工三年记" data-for="60-writing/61-blog/2024/打工三年记">打工三年记</a></li><li><a href="../../60-writing/61-blog/2024/新奇的-HR-经历" data-for="60-writing/61-blog/2024/新奇的-HR-经历">新奇的 HR 经历</a></li><li><a href="../../60-writing/61-blog/2024/穷则独善其身，达则兼济天下" data-for="60-writing/61-blog/2024/穷则独善其身，达则兼济天下">穷则独善其身，达则兼济天下</a></li><li><a href="../../60-writing/61-blog/2024/继续开荒我那一亩三分地" data-for="60-writing/61-blog/2024/继续开荒我那一亩三分地">继续开荒我那一亩三分地</a></li><li><a href="../../60-writing/61-blog/2024/記伍月" data-for="60-writing/61-blog/2024/記伍月">記伍月</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2025"><button class="folder-button"><span class="folder-title">2025</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2025"><li><a href="../../60-writing/61-blog/2025/盲人摸象非象" data-for="60-writing/61-blog/2025/盲人摸象非象">盲人摸象非象</a></li></ul></div></li></ul></div></li></ul></div></li><li><div class="folder-outer "><ul style="padding-left:0;" class="content" data-folderul></ul></div></li></ul></div></li><li id="explorer-end"></li></ul></div></div><div class="recent-notes desktop-only"><h3>博客</h3><ul class="recent-ul"></ul></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../40-professional/">40 professional</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../40-professional/45-roadmap/">45 roadmap</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>AI 时代工程师的生存指南</a></div></nav><h1 class="article-title">AI 时代工程师的生存指南</h1><p show-comma="true" class="content-meta"><span>2025年12月15日</span><span>31分钟阅读</span></p><ul class="tags"><li><a href="../../tags/period/2025-W48" class="internal tag-link">period/2025-W48</a></li><li><a href="../../tags/topic/artificial-intelligence" class="internal tag-link">topic/artificial-intelligence</a></li><li><a href="../../tags/topic/career-development" class="internal tag-link">topic/career-development</a></li><li><a href="../../tags/topic/technology-trends" class="internal tag-link">topic/technology-trends</a></li><li><a href="../../tags/type/report" class="internal tag-link">type/report</a></li></ul></div></div><article class="popover-hint"><h2 id="前言被重构的职业生态">前言：被重构的职业生态<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#前言被重构的职业生态" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>2024 至 2025 年间，技术工程师职业市场正经历着显著的<strong>两极分化</strong>。基于对 80 余份权威数据源的整合分析，本文旨在客观呈现当前行业现状，深入探讨 AI 时代背景下技术从业者的职业决策策略。</p>
+<pre><code class="mermaid">graph LR
+    A[2024-2025技术市场] --> B[机遇]
+    A --> C[挑战]
+
+    B --> B1[AI岗位需求↑300%]
+    B --> B2[薪资溢价42-68%]
+    B --> B3[远程工作67.8%]
+
+    C --> C1[裁员14.9万人]
+    C --> C2[初级岗位消失]
+    C --> C3[技术迭代加速]
+
+    style B fill:#90EE90
+    style C fill:#FFB6C6
+</code></pre>
+<p><strong>核心数据快览</strong>: 我们正处于一个充满矛盾的数据图景中：</p>
+<ul>
+<li>当传统岗位的薪资涨幅还在 <strong>7-9%</strong> 徘徊时，AI 相关岗位的薪资溢价已高达 <strong>42-68%</strong>；</li>
+<li>行业内裁员人数达到 <strong>14.9 万人</strong> 的同时，AI 岗位的需求却逆势暴涨了 <strong>300%</strong>；</li>
+<li>尽管 Copilot 用户已突破 <strong>2000 万 +</strong>，但关于其真实效率的争议（±19%）从未停止；</li>
+<li>远程工作比例稳定在 <strong>67.8%</strong>，这意味着地理套利不再是理论，而成为了现实。</li>
+</ul>
+<p>请记住，这不是一次温和的渐进式变化，而是一场<strong>彻底的范式转移。</strong></p>
+<h2 id="一认知基础时代背景与职业逻辑">一、认知基础：时代背景与职业逻辑<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#一认知基础时代背景与职业逻辑" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="11-ai-时代的职业重构">1.1 AI 时代的职业重构<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#11-ai-时代的职业重构" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="被替代-vs-不可替代能力">被替代 vs 不可替代能力<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#被替代-vs-不可替代能力" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>在 AI 浪潮下，能力的价值天平正在剧烈倾斜。</p>
+<pre><code class="mermaid">graph TD
+    subgraph &quot;被AI替代&quot;
+        A1[简单CRUD代码]
+        A2[模板化配置]
+        A3[基础文档]
+        A4[重复测试用例]
+    end
+
+    subgraph &quot;AI无法替代&quot;
+        B1[系统架构设计]
+        B2[问题分解与抽象]
+        B3[跨域知识整合]
+        B4[代码质量把控]
+        B5[团队协作决策]
+    end
+
+    A1 -.效率提升.-> C[AI工具]
+    A2 -.效率提升.-> C
+    A3 -.效率提升.-> C
+    A4 -.效率提升.-> C
+
+    B1 --> D[核心竞争力]
+    B2 --> D
+    B3 --> D
+    B4 --> D
+    B5 --> D
+
+    style A1 fill:#FFB6C6
+    style B1 fill:#90EE90
+    style D fill:#FFD700
+</code></pre>
+<p>值得注意的是，<strong>效率数据的解读充满了复杂性</strong>。虽然麦肯锡（McKinsey）声称 AI 能带来 20-50% 的效率提升，但 METR 的研究却提出了一个反直觉的现象：<strong>经验丰富的开发者在使用 AI 后，整体速度反而慢了 19%</strong>。这主要是因为人类需要花费大量精力去审查和修正 AI 的输出。</p>
+<h4 id="范式转移从执行者到架构师">范式转移：从执行者到架构师<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#范式转移从执行者到架构师" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>职业价值的重心正在发生根本性的位移。</p>
+<pre><code class="mermaid">timeline
+    title 职业价值重心转移
+    2020年前 : 编码能力 : 算法竞赛 : 代码量
+    2020-2023 : 工程能力 : 系统设计 : 最佳实践
+    2024-2025 : 架构能力 : 问题定义 : 决策质量
+    2025+ : 战略能力 : 业务洞察 : 影响力
+</code></pre>
+<p>对比 2020 年与 2024 年的岗位描述（JD），关键词的变化趋势一目了然：</p>
+<ul>
+<li>架构能力的出现频率上升了 <strong>73%</strong>；</li>
+<li>问题解决的频率上升了 <strong>68%</strong>；</li>
+<li>而编码经验的关注度仅上升了 <strong>12%</strong>。</li>
+</ul>
+<h4 id="人机协作的正确姿势">人机协作的正确姿势<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#人机协作的正确姿势" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>Stack Overflow 2024 年的调研揭示了一个尴尬的现状：虽然有 76% 的开发者在使用 AI 工具，但只有 38% 的人完全信任其输出。因此，我们总结出了<strong>人机协作的黄金法则</strong>：</p>
+<ol>
+<li>✅ <strong>原型开发</strong>：用 AI 生成原型，再由人工进行完善；</li>
+<li>✅ <strong>审查机制</strong>：审查的重要性永远优先于盲目信任；</li>
+<li>✅ <strong>测试生成</strong>：利用 AI 生成测试用例，这通常能节省 50% 的时间；</li>
+<li>❌ <strong>核心禁区</strong>：永远不要直接使用 AI 生成核心业务逻辑而不加审核。</li>
+</ol>
+<h3 id="12-职业发展的底层逻辑">1.2 职业发展的底层逻辑<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#12-职业发展的底层逻辑" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<h4 id="能力---资源---影响力的螺旋上升">能力 - 资源 - 影响力的螺旋上升<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#能力---资源---影响力的螺旋上升" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>职业发展从来不是一条线性上升的直线，而是一个螺旋式复利增长的过程。</p>
+<pre><code class="mermaid">graph LR
+    subgraph &quot;第四阶段 10年+&quot;
+        D1[战略布局] --> D2[投资与被动收入]
+        D2 --> D3[平台级影响力]
+    end
+
+    subgraph &quot;第三阶段 7-10年&quot;
+        C1[影响力变现] --> C2[技术决策权]
+        C2 --> C3[行业话语权]
+    end
+
+    subgraph &quot;第二阶段 3-7年&quot;
+        B1[资源获取] --> B2[核心项目]
+        B2 --> B3[专业声誉]
+    end
+
+    subgraph &quot;第一阶段 0-3年&quot;
+        A1[能力积累] --> A2[技术深度]
+        A2 --> A3[AI工具熟练度]
+    end
+
+    A3 --> B1
+    B3 --> C1
+    C3 --> D1
+
+    style D1 fill:#FFD700
+    style C1 fill:#90EE90
+    style B1 fill:#87CEEB
+    style A1 fill:#DDA0DD
+</code></pre>
+<p>这里有一个<strong>关键洞察</strong>：每个阶段的核心任务截然不同，切忌用第一阶段（纯技术积累）的逻辑去指导第三阶段（影响力变现）的决策。</p>
+<h4 id="反推法则从目标倒推当下">反推法则：从目标倒推当下<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#反推法则从目标倒推当下" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>如果我们设定一个 10 年目标，例如年薪 200 万并实现财务自由，那么倒推回来的路径应该是这样的：</p>
+<pre><code class="mermaid">graph RL
+    A[当下起点] --> B[3年: 40-60万&lt;br/>资深工程师]
+    B --> C[5年: 60-100万&lt;br/>高级+AI技能]
+    C --> D[7年: 100-150万&lt;br/>L7/CTO]
+    D --> E[10年: 200万+&lt;br/>VP/成功创业]
+
+    A -.行动.-> A1[进入增长公司]
+    A -.行动.-> A2[深度学习AI]
+    A -.行动.-> A3[建立个人品牌]
+    A -.行动.-> A4[积累第一桶金]
+</code></pre>
+<h4 id="风险---收益梯度模型">风险 - 收益梯度模型<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#风险---收益梯度模型" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>我们往往对风险缺乏量化的认知，下图展示了不同路径的真实风险收益比：</p>
+<pre><code class="mermaid">quadrantChart
+    title &quot;职业路径核心决策图&quot;
+    x-axis &quot;低风险 (稳)&quot; --> &quot;高风险 (险)&quot;
+    y-axis &quot;低收益 (贫)&quot; --> &quot;高收益 (富)&quot;
+    quadrant-1 &quot;高风险高回报 (搏一搏)&quot;
+    quadrant-2 &quot;低风险高回报 (黄金区)&quot;
+    quadrant-3 &quot;低风险低回报 (避风港)&quot;
+    quadrant-4 &quot;高风险低回报 (韭菜坑)&quot;
+
+     --- 关键变量 (破局点) ---
+    &quot;副业/个人IP&quot;: [0.35, 0.6]
+
+     定义象限逻辑  象限 2：黄金赛道 (低竞争，高价值) - 这里的机会最好  象限 1：红海战场 (高竞争，高价值) - 也就是原来的 quadrant-1  象限 3：长尾/孵化 (低竞争，低价值) - 适合小团队切入  象限 4：陷阱区域 (高竞争，低价值) - 尽量避免 %%
+    &quot;套壳文案生成&quot;: [0.9, 0.3]
+    &quot;低质数字人&quot;: [0.8, 0.35]
+    &quot;简单的AI绘图站&quot;: [0.85, 0.4]
+</code></pre>
+<p>快速对比<strong>三大方向</strong>：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>方向</th><th>市场规模</th><th>竞争强度</th><th>技术壁垒</th><th>付费意愿</th></tr></thead><tbody><tr><td><strong>To B: 垂直行业 AI</strong></td><td>💰💰💰</td><td>⭐⭐</td><td>⭐⭐⭐</td><td>✅✅✅</td></tr><tr><td><strong>To D: 开发者工具</strong></td><td>💰💰</td><td>⭐⭐⭐</td><td>⭐⭐⭐⭐</td><td>✅✅</td></tr><tr><td><strong>To C: AI 原生应用</strong></td><td>💰💰💰💰</td><td>⭐⭐⭐⭐</td><td>⭐⭐</td><td>✅</td></tr></tbody></table></div>
+<p>2024 年 AI 创业数据显示，AI 项目已占 VC 总投资的 <strong>33%</strong>，平均融资额达 <strong>1500 万美元</strong>，但失败率依然维持在 95%。</p>
+<h4 id="创业时机判断清单">创业时机判断清单<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#创业时机判断清单" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>不要盲目开始，请先核对<strong>个人条件</strong>：</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>技术能力</strong>：是否能独立完成 MVP？</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>行业认知</strong>：是否有 3 年以上相关经验？</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>人脉网络</strong>：能否接触到天使投资？</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>财务储备</strong>：是否存够了至少 1 年的生活费？</li>
+<li class="task-list-item"><input type="checkbox" disabled/> <strong>心理准备</strong>：能否坦然接受失败？</li>
+</ul>
+<p>同时，市场条件、MVP 验证、合伙人以及 <strong>25-30 岁（试错成本低）</strong> 或 <strong>30-35 岁（资源最佳）</strong> 的黄金窗口期，缺一不可。</p>
+<pre><code class="mermaid">timeline
+    title 创业最佳时机
+    25-30岁 : 最佳窗口 : 精力充沛 : 试错成本低
+    30-35岁 : 资源最佳 : 行业经验 : 人脉深厚
+    35-40岁 : 谨慎期 : 失败成本高 : 需要把握
+    40岁+ : 二次创业 : 资源整合 : 战略投资
+</code></pre>
+<h3 id="34-投资路径资产增值型">3.4 投资路径（资产增值型）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#34-投资路径资产增值型" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>当你积累了 100-500 万的<strong>第一桶金</strong>，投资便成为了必须考虑的路径。</p>
+<h4 id="天使投资的技术优势">天使投资的技术优势<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#天使投资的技术优势" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>技术人在做天使投资时拥有独特的优势：</p>
+<ul>
+<li><strong>技术判断力</strong>：能一眼看穿技术的可行性与团队含金量。</li>
+<li><strong>行业人脉</strong>：更容易接触优质项目源。</li>
+<li><strong>降维打击</strong>：比纯财务人懂技术，比纯技术人懂商业。</li>
+</ul>
+<p>然而，<strong>残酷现实</strong>在于：即使是专业的投资组合，也往往是 7 个彻底失败，2 个勉强回本，全靠那 1 个百倍回报的项目来覆盖成本。大多数天使投资人整体是亏损的，只有前 20% 能实现盈利，且通常需要投资至少 30 个项目才能看到统计学规律。</p>
+<h4 id="行业认知的价值变现">行业认知的价值变现<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#行业认知的价值变现" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>投资领域的选择</strong>应严格遵循认知边界：</p>
+<ul>
+<li><strong>高置信度 (70%+)</strong>：AI 应用层、开发者工具、技术基础设施（这都是你的主场）。</li>
+<li><strong>中等置信度</strong>：ToC 产品、新兴技术。</li>
+<li><strong>低置信度</strong>：消费品、传统行业（慎入）。</li>
+</ul>
+<p><strong>投资决策框架</strong>应侧重于：技术维度（40%）、市场维度（30%）和团队维度（30%）。</p>
+<h4 id="资产配置的多元化">资产配置的多元化<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#资产配置的多元化" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>不同财富阶段的配置策略截然不同：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="markdown" data-theme="github-light github-dark"><code data-language="markdown" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">第一阶段: 50-100万</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">配置:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 现金: 30%(应急)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 股票/基金: 40%(成长)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 房产首付: 30%(居住)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ 天使投资: 0%(太早)</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">第二阶段: 100-500万</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">配置:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 现金: 20%</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 股票/基金: 30%</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 房产: 30%</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 天使投资: 10%(试水)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ 其他: 10%(加密货币等)</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">第三阶段: 500-2000万</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">配置:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 现金: 10%</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 股票/基金: 20%</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 房产: 30%</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 天使投资: 30%(核心)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ 另类资产: 10%</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">第四阶段: 2000万+</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">配置:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 现金: 5%</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 二级市场: 15%</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 房产: 20%</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 天使/VC: 40%</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 另类资产: 10%</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ 家族信托: 10%</span></span></code></pre></figure>
+<p><strong>反常识建议</strong>：永远不要 All in；房产因流动性差已非最佳投资；天使投资要等到你有可以亏得起的钱再开始。</p>
+<h2 id="四关键决策节点">四、关键决策节点<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#四关键决策节点" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="41-毕业后-0-3-年技能积累期">4.1 毕业后 0-3 年：技能积累期<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#41-毕业后-0-3-年技能积累期" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>这是职业生涯的<strong>地基期</strong>，它将直接决定你未来的天花板高度。</p>
+<h4 id="大厂-vs-创业公司决策流程">大厂 vs 创业公司决策流程<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#大厂-vs-创业公司决策流程" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><code class="mermaid">flowchart LR
+    Start[应届毕业/初级工程师] --> Q1{我的学历背景如何?}
+
+    Q1 -->|985/211/海外名校| Q2{我追求快速成长吗?}
+    Q1 -->|普通本科| Big[优先大厂镀金]
+
+    Q2 -->|是,愿意承受风险| Q3{创业公司是否靠谱?}
+    Q2 -->|否,追求稳定| Big
+
+    Q3 -->|有明星投资人&lt;br/>CEO靠谱&lt;br/>赛道有前景| Startup[可选创业公司]
+    Q3 -->|不确定| Big
+
+    Big --> BigPros[✅ 系统培训&lt;br/>✅ 规范实践&lt;br/>✅ 职业光环&lt;br/>❌ 成长慢]
+
+    Startup --> StartupPros[✅ 快速成长&lt;br/>✅ 全栈能力&lt;br/>✅ 期权机会&lt;br/>❌ 风险高]
+
+    BigPros --> Strategy[最优策略:&lt;br/>1-2年大厂&lt;br/>然后跳槽涨薪]
+    StartupPros --> Strategy
+
+    style Big fill:#90EE90
+    style Startup fill:#FFD700
+    style Strategy fill:#87CEEB
+</code></pre>
+<p>一个公认的<strong>最优策略</strong>是：先在大厂工作 1-2 年，利用其系统培训和职业光环打底，第 3 年再通过跳槽实现 30-50% 的薪资跃升。</p>
+<h4 id="0-3-年核心任务图谱">0-3 年核心任务图谱<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#0-3-年核心任务图谱" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><code class="mermaid">mindmap
+  root((0-3年&lt;br/>核心任务))
+    技能积累
+      深入一个主流框架
+      AI工具每日使用
+      完成1-2个AI项目
+      算法基础巩固
+    个人品牌
+      开始技术博客
+      GitHub活跃度
+      技术社区参与
+      记录学习过程
+    人脉网络
+      同事关系维护
+      技术交流
+      参加Meetup
+      LinkedIn建设
+    财务准备
+      第一桶金积累
+      投资理财学习
+      控制消费
+      为跳槽准备
+</code></pre>
+<h3 id="42-工作-3-7-年路径分化期">4.2 工作 3-7 年：路径分化期<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#42-工作-3-7-年路径分化期" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>这是职业生涯的<strong>分水岭</strong>，选择正确的路径能让你的收入翻 3-5 倍。</p>
+<h4 id="专家-vs-管理决策树">专家 vs 管理：决策树<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#专家-vs-管理决策树" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><code class="mermaid">flowchart LR
+    Start[P6/L5级别面临选择] --> Q1{我享受解决技术问题吗?}
+
+    Q1 -->|非常享受| IC[走IC专家线]
+    Q1 -->|一般| Q2{我擅长人际关系吗?}
+
+    Q2 -->|是| Q3{社交后需要恢复时间吗?}
+    Q2 -->|否| IC
+
+    Q3 -->|需要长时间恢复| IC
+    Q3 -->|不需要| Mgmt[走管理线]
+
+    IC --> IC_Path[P7→P8→P9&lt;br/>薪资:80-500万&lt;br/>✅ 技术深度&lt;br/>✅ 相对自由&lt;br/>❌ 晋升慢]
+
+    Mgmt --> Mgmt_Path[TL→经理→总监&lt;br/>薪资:60-300万&lt;br/>✅ 影响力大&lt;br/>✅ 天花板高&lt;br/>❌ 时间不自由]
+
+    IC_Path --> Warning1[⚠️ 转管理可逆&lt;br/>但有成本]
+    Mgmt_Path --> Warning2[⚠️ 管理5年后&lt;br/>难回IC成功率&lt;10%]
+
+    style IC fill:#90EE90
+    style Mgmt fill:#FFD700
+</code></pre>
+<p>在这个阶段，你需要清醒地认识到：转管理 3 年后回流 IC 的比例仅 35%，且 62% 的人后悔转管理。</p>
+<h4 id="转-ai-赛道评估框架">转 AI 赛道评估框架<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#转-ai-赛道评估框架" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<pre><code class="mermaid">graph LR
+    A[当前技术栈] --> B{是否转AI?}
+
+    B -->|是| C{满足条件?}
+    C --> C1[✅ 当前技术栈衰退&lt;br/>✅ AI薪资溢价>50%&lt;br/>✅ 有真实兴趣&lt;br/>✅ 有6-12月学习时间]
+    C1 --> D[开始转型&lt;br/>预期涨薪40-60%]
+
+    B -->|否| E{为什么不转?}
+    E --> E1[当前领域仍在增长&lt;br/>OR&lt;br/>年龄>35岁家庭压力大&lt;br/>OR&lt;br/>对AI无真实兴趣]
+    E1 --> F[深耕当前方向]
+
+    style D fill:#90EE90
+    style F fill:#87CEEB
+</code></pre>
+<p>转型是有成本的，通常需要 <strong>6-12 个月</strong> 的在职学习时间。</p>
+<h4 id="副业试错窗口">副业试错窗口<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#副业试错窗口" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>3-7 年是做副业的黄金期</strong>，原因在于：此时你技术成熟、有一定积蓄、精力充沛，且有稳定工作兜底，失败成本极低。</p>
+<pre><code class="mermaid">graph TB
+    subgraph &quot;资源充足&quot;
+        A1[技术成熟] &amp; A2[有积蓄] &amp; A3[精力充沛]
+    end
+
+    subgraph &quot;风险可控&quot;
+        B1[有稳定工作] &amp; B2[失败成本低] &amp; B3[退路明确]
+    end
+
+    A1 --> C[副业成功概率高]
+    A2 --> C
+    A3 --> C
+    B1 --> C
+    B2 --> C
+    B3 --> C
+</code></pre>
+<p><strong>副业策略路线图</strong>建议：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>年度</th><th>投入</th><th>目标</th><th>预期收入</th></tr></thead><tbody><tr><td>第 1 年</td><td>5-10h/周</td><td>探索验证 PMF</td><td>0-5 万</td></tr><tr><td>第 2 年</td><td>10-15h/周</td><td>稳定收入</td><td>5-20 万</td></tr><tr><td>第 3 年</td><td>15-20h/周</td><td>决策是否 All in</td><td>20-50 万</td></tr></tbody></table></div>
+<p>只有当副业收入超过主业 50% 且趋势明确时，才考虑 All in。</p>
+<h3 id="43-工作-7-10-年价值变现期">4.3 工作 7-10 年：价值变现期<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#43-工作-7-10-年价值变现期" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>此时你已是<strong>行业老兵</strong>，到了收割前期积累价值的时候。</p>
+<h4 id="跳槽的时机与策略">跳槽的时机与策略<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#跳槽的时机与策略" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>跳槽需要捕捉<strong>信号</strong>：强信号（2 年未晋升、薪资涨幅低、公司业务下滑等）意味着必须跳；弱信号（成长停滞、想尝试新方向）则需斟酌。</p>
+<p>在<strong>谈判阶段</strong>，有几个关键技巧：</p>
+<ol>
+<li><strong>永远不先报价</strong>：把定价权留在手里；</li>
+<li><strong>竞价策略</strong>：用其他 Offer 来抬高身价；</li>
+<li><strong>关注总包 (TC)</strong>：不要只盯着基本工资；</li>
+<li><strong>争取 Sign-on bonus</strong>：弥补期权或年终奖的损失。</li>
+</ol>
+<p>数据显示，跳槽的平均涨幅可达 <strong>30-50%</strong>，远高于内部晋升的 15-20%。</p>
+<h4 id="soho创业的决策依据">SOHO/创业的决策依据<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#soho创业的决策依据" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>何时可以考虑单干？</p>
+<ul>
+<li><strong>个人层面</strong>：有 100 万 + 存款，副业月入稳定在 5 万以上。</li>
+<li><strong>市场层面</strong>：发现未被满足的需求，且处于市场窗口期。</li>
+<li><strong>风险承受</strong>：能接受 1-2 年低收入。</li>
+</ul>
+<p><strong>风险对冲</strong>非常重要：建议采用渐进式转型（先副业，再 Remote/Part-time，最后独立），并始终通过降低生活成本和维护职场人脉来保留退路。</p>
+<h4 id="资产配置的开始">资产配置的开始<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#资产配置的开始" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>在 7-10 年这个阶段，<strong>保守路径</strong>（大厂打工）通常能积累 450-800 万的总资产，而<strong>激进路径</strong>（SOHO/创业）则呈现两极分化。</p>
+<p><strong>资产配置的核心原则</strong>是：先保障后增长（预留 6-12 月应急金），分散风险，长期持有。建议现金保留 15%，稳健投资占 45%，成长投资占 30%，高风险投资控制在 10% 以内。</p>
+<h3 id="44-工作-10-年-战略转型期">4.4 工作 10 年 +：战略转型期<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#44-工作-10-年-战略转型期" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>10 年之后，你的角色需要从执行者向战略者蜕变。</p>
+<h4 id="从执行到战略">从执行到战略<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#从执行到战略" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>你的工作重心将从我来做（写代码、解决问题）转变为我来设计（定义问题、制定战略、分配资源）。这包括判断技术趋势的<strong>技术战略</strong>、计算 ROI 的<strong>业务战略</strong>，以及设计激励机制的<strong>组织战略</strong>。</p>
+<p>此时的<strong>变现方式</strong>也更加多元：除了全职的 VP/CTO 薪资，还可以通过顾问角色获得时薪或项目费，以及通过投资获得资本收益。</p>
+<h4 id="投资与被动收入">投资与被动收入<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#投资与被动收入" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p>构建被动收入是通往自由的关键：</p>
+<ul>
+<li><strong>Level 1</strong>：内容/产品（在线课程、SaaS），一次劳动，多次销售。</li>
+<li><strong>Level 2</strong>：投资收益（股票分红、房租），钱生钱。</li>
+<li><strong>Level 3</strong>：股权/投资退出，复利增长的爆发。</li>
+</ul>
+<p>在一线城市，财务自由通常意味着被动收入需达到 <strong>50-100 万/年</strong>。</p>
+<h4 id="个人影响力的建设">个人影响力的建设<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#个人影响力的建设" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h4>
+<p><strong>行业影响力 = 持续输出 × 时间 × 质量</strong>。</p>
+<p>这是一种无需边际成本的复利资产。通过长期（10 年 +）的高质量输出（技术博客、开源项目、演讲），你可以建立起专业形象，进而转化为高薪 Offer、投资机会等隐性财富。头部技术 KOL 年收入可达 <strong>100-500 万</strong>，这便是影响力的直接变现。</p>
+<h2 id="五ai-时代的特殊变量">五、AI 时代的特殊变量<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#五ai-时代的特殊变量" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="51-职业周期的压缩">5.1 职业周期的压缩<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#51-职业周期的压缩" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>技术迭代正在疯狂加速：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="markdown" data-theme="github-light github-dark"><code data-language="markdown" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">过去(2010年代):</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 技术周期: 5-7年</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 框架更替: 10年</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ 职业安全期: 10年+</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">现在(2020年代):</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 技术周期: 2-3年</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 框架更替: 5年</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ 职业安全期: 5年</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">未来(2030年代):</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 技术周期: 1-2年</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 框架更替: 3年</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ 职业安全期: 3年</span></span></code></pre></figure>
+<p>面对这种压缩，唯有学习<strong>元技能</strong>（快速学习、问题分解、系统思维），建立稳固的底层知识体系，并保持终身学习的习惯，方能以不变应万变。</p>
+<h3 id="52-供需关系的变化">5.2 供需关系的变化<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#52-供需关系的变化" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>初级岗位的消失</strong>已成定局，预计 2025 年占比将跌破 20%。原因很简单：AI 替代了简单工作，且企业更注重效率。</p>
+<p>与此同时，<strong>高级人才</strong>却极度稀缺。AI 架构师的需求年增长 62.8%，供需比达到悬殊的 1:5。</p>
+<p><strong>职业策略</strong>：</p>
+<ul>
+<li><strong>初级工程师</strong>：必须在 1-2 年内利用 AI 技能快速成长为高级，否则面临淘汰。</li>
+<li><strong>高级工程师</strong>：拥抱 AI，深耕专长，利用稀缺性去谈判薪资。</li>
+</ul>
+<h3 id="53-新兴机会窗口">5.3 新兴机会窗口<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#53-新兴机会窗口" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>AI 应用层</strong>正在迎来爆发期（2024-2025），无论是垂直行业的 AI 改造（医疗、法律、金融），还是企业 AI 改造，都蕴含着巨大的机会。这些领域通常行业壁垒高、付费意愿强。</p>
+<p>此外，<strong>个人 IP 的价值</strong>也在飙升。在信息过载的时代，人们需要过滤器，而 AI 降低了创作成本，使得个人品牌溢价大幅提升。知识付费市场预计将持续增长，通过 Newsletter、课程、咨询等方式变现已成常态。</p>
+<h2 id="六实践工具箱">六、实践工具箱<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#六实践工具箱" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="61-能力自检清单">6.1 能力自检清单<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#61-能力自检清单" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>这是一份<strong>技术能力矩阵</strong>，请以 1-5 分进行自评：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="markdown" data-theme="github-light github-dark"><code data-language="markdown" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">基础能力:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 编程语言深度 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 算法与数据结构 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 系统设计 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 数据库 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ [ ] 网络协议 ___/5</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">现代能力:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] AI工具使用 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] Prompt工程 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] LLM API集成 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 向量数据库 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ [ ] RAG/Agent开发 ___/5</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">工程能力:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 代码质量把控 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] CI/CD ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 性能优化 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 安全意识 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ [ ] 文档能力 ___/5</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">业务能力:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 需求分析 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 产品思维 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 数据分析 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] ROI计算 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ [ ] 用户体验 ___/5</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">软技能:</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 沟通表达 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 团队协作 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 项目管理 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ [ ] 领导力 ___/5</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ [ ] 学习能力 ___/5</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">总分: ___/125</span></span></code></pre></figure>
+<p><strong>评级参考</strong>：31-60 分为中级（正常），61-90 分为高级（优秀），91 分以上为专家。<strong>市场价值</strong>：基础薪资叠加 AI 技能（+20 万）、架构能力（+20 万）等加分项，再扣除技术过时等减分项，即为你当前的市场公允价值。</p>
+<h3 id="62-决策框架">6.2 决策框架<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#62-决策框架" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>这份<strong>路径选择决策树</strong>能帮你理清思路：</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="markdown" data-theme="github-light github-dark"><code data-language="markdown" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">开始: 我当前处于哪个阶段?</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 0-3年(新人期)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   ├─ 我学习能力强吗?</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   │   ├─ 是 → 选择大厂,快速成长</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   │   └─ 否 → 选择创业公司,多尝试</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   └─ 我追求稳定吗?</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│       ├─ 是 → 大厂</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│       └─ 否 → 创业公司</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 3-7年(成长期)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   ├─ 我喜欢技术还是管理?</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   │   ├─ 技术 → IC路线</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   │   └─ 管理 → 管理路线</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   ├─ 我有副业吗?</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   │   ├─ 有且赚钱 → 考虑SOHO</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   │   └─ 无或不赚钱 → 继续打工</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   └─ 我想切换赛道吗?</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│       ├─ 是 → 评估成本后决定</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│       └─ 否 → 深耕当前方向</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">├─ 7-10年(收获期)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   ├─ 我财务自由了吗?</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   │   ├─ 是 → 自由选择</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   │   └─ 否 → 继续努力</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   ├─ 我想创业吗?</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   │   ├─ 是 → 评估条件</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   │   └─ 否 → 大厂高位or顾问</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│   └─ 我有影响力吗?</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│       ├─ 有 → 多种选择</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│       └─ 无 → 建立品牌</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">│</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">└─ 10年+(成熟期)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    ├─ 战略角色(大厂VP/CTO)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    ├─ 投资人(天使投资)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    ├─ 顾问(多家公司)</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    └─ 创业(第二次创业)</span></span></code></pre></figure>
+<p>同时，请使用<strong>风险评估模型</strong>（财务、职业、心理、机会成本）和<strong>时机判断 Checklist</strong> 来辅助你的每一次重大决策。</p>
+<h3 id="63-资源积累清单">6.3 资源积累清单<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#63-资源积累清单" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>在<strong>技术储备</strong>（必会 AI 工具）、<strong>人脉网络</strong>（特别是大厂 Leader 和投资人）、<strong>财务准备</strong>（6-12 月应急金）和<strong>个人品牌</strong>（博客、GitHub）这四个维度上，请对照清单持续积累。</p>
+<h2 id="六反常识洞察">六、反常识洞察<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#六反常识洞察" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<pre><code class="mermaid">mindmap
+  root((打破&lt;br/>传统认知))
+    稳定≠安全
+      技能市场化
+      多元收入
+      应变能力
+    35岁≠危机
+      能力危机
+      持续学习
+      不可替代性
+    技术深度≠职业高度
+      影响力>技术
+      π型人才
+      跨界能力
+    专才→复合型
+      AI替代单一技能
+      技术+业务+AI
+      溢价35%
+    个人品牌>公司光环
+      持续终身
+      复利资产
+      KOL年入100-500万
+</code></pre>
+<p>我们总结了五个打破传统认知的<strong>核心洞察</strong>：</p>
+<ol>
+<li><strong>” 稳定 ” 是最大风险</strong>：真正的稳定不是在大公司待着，而是技能的市场化；</li>
+<li><strong>35 岁是能力危机</strong>：不要怪年龄，怪能力增长停滞；</li>
+<li><strong>影响力 > 技术深度</strong>：纯技术的变现有天花板，而影响力没有；</li>
+<li><strong>AI 时代呼唤π型人才</strong>：跨界能力的溢价正在攀升；</li>
+<li><strong>个人品牌是复利资产</strong>：公司光环是暂时的，个人品牌是终身的。</li>
+</ol>
+<h2 id="结语">结语<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#结语" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>技术工程师的职业发展，从来就不是一条预设好的直线，而是一个需要不断调整的<strong>动态决策过程</strong>。</p>
+<pre><code class="mermaid">graph LR
+    A[2025 AI时代] --> B[持续学习]
+    A --> C[保持灵活]
+    A --> D[建立影响力]
+    A --> E[务实决策]
+
+    B --> F[职业自由]
+    C --> F
+    D --> F
+    E --> F
+
+    F --> G[财务自由]
+
+    style F fill:#FFD700
+    style G fill:#90EE90
+</code></pre>
+<p>最后，送给所有技术人几条<strong>核心原则</strong>：持续学习是唯一的不变法则，保持灵活以应对变化，建立影响力积累资产，并始终基于数据做出务实决策。</p>
+<p>请记住：<strong>这个时代属于那些拥抱变化、持续学习、建立影响力、务实决策的人。</strong></p>
+<p>祝你在技术之路上越走越远，最终实现职业自由和财务自由。</p>
+<h2 id="附录">附录<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#附录" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="a-薪资数据速查表">A. 薪资数据速查表<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#a-薪资数据速查表" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>中国一线互联网 (2025)</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>职级</th><th>年限</th><th>字节</th><th>腾讯</th><th>阿里</th></tr></thead><tbody><tr><td>初级</td><td>0-3 年</td><td>30-60 万</td><td>25-50 万</td><td>20-45 万</td></tr><tr><td>高级</td><td>3-5 年</td><td>50-100 万</td><td>45-80 万</td><td>40-70 万</td></tr><tr><td>资深</td><td>5-7 年</td><td>80-150 万</td><td>70-120 万</td><td>60-110 万</td></tr><tr><td>专家</td><td>7-10 年</td><td>120-250 万</td><td>100-200 万</td><td>90-180 万</td></tr><tr><td>高级专家</td><td>10 年 +</td><td>200-500 万 +</td><td>180-400 万 +</td><td>150-350 万 +</td></tr></tbody></table></div>
+<p><strong>美国 FAANG(2025)</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>职级</th><th>Google</th><th>Meta</th><th>Amazon</th></tr></thead><tbody><tr><td>L4/E4</td><td>$289K</td><td>$250K</td><td>$220K</td></tr><tr><td>L5/E5</td><td>$403K</td><td>$500K</td><td>$360K</td></tr><tr><td>L6/E6</td><td>$551K</td><td>$900K+</td><td>$390K</td></tr><tr><td>L7/E7</td><td>$729K</td><td>$1M+</td><td>$663K</td></tr></tbody></table></div>
+<h3 id="b-ai-工具清单-2025">B. AI 工具清单 (2025)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#b-ai-工具清单-2025" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>代码辅助</strong>: GitHub Copilot, Cursor, Claude Code, Codeium <strong>LLM API</strong>: OpenAI GPT-4, Anthropic Claude, Google Gemini <strong>RAG 开发</strong>: LangChain, LlamaIndex, Weaviate, Pinecone</p>
+<h3 id="c-学习资源">C. 学习资源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#c-学习资源" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>AI 课程</strong>:</p>
+<ul>
+<li>DeepLearning.AI: Prompt Engineering</li>
+<li>Coursera: AI for Everyone</li>
+<li>吴恩达: Machine Learning Specialization</li>
+</ul>
+<p><strong>职业发展</strong>:</p>
+<ul>
+<li>Pragmatic Engineer Newsletter</li>
+<li>Staff Engineer Book</li>
+<li>The Software Engineer’s Guidebook</li>
+</ul>
+<p><strong>版本</strong>: v2.0 | <strong>更新日期</strong>: 2025-11-23</p>
+<p><strong>数据来源</strong>: 80+ 权威数据源 | <strong>时效</strong>: 2024-2025 年</p>
+<p><em>免责声明: 所有数据基于公开来源,仅供参考。个人职业决策需结合自身情况综合判断。</em></p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>关系图谱</h3><div class="graph-outer"><div id="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false}"></div><button id="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div id="global-graph-outer"><div id="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" id="toc" class aria-controls="toc-content" aria-expanded="true"><h3>目录</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="toc-content" class><ul class="overflow"><li class="depth-0"><a href="#前言被重构的职业生态" data-for="前言被重构的职业生态">前言：被重构的职业生态</a></li><li class="depth-0"><a href="#一认知基础时代背景与职业逻辑" data-for="一认知基础时代背景与职业逻辑">一、认知基础：时代背景与职业逻辑</a></li><li class="depth-1"><a href="#11-ai-时代的职业重构" data-for="11-ai-时代的职业重构">1.1 AI 时代的职业重构</a></li><li class="depth-1"><a href="#12-职业发展的底层逻辑" data-for="12-职业发展的底层逻辑">1.2 职业发展的底层逻辑</a></li><li class="depth-1"><a href="#34-投资路径资产增值型" data-for="34-投资路径资产增值型">3.4 投资路径（资产增值型）</a></li><li class="depth-0"><a href="#四关键决策节点" data-for="四关键决策节点">四、关键决策节点</a></li><li class="depth-1"><a href="#41-毕业后-0-3-年技能积累期" data-for="41-毕业后-0-3-年技能积累期">4.1 毕业后 0-3 年：技能积累期</a></li><li class="depth-1"><a href="#42-工作-3-7-年路径分化期" data-for="42-工作-3-7-年路径分化期">4.2 工作 3-7 年：路径分化期</a></li><li class="depth-1"><a href="#43-工作-7-10-年价值变现期" data-for="43-工作-7-10-年价值变现期">4.3 工作 7-10 年：价值变现期</a></li><li class="depth-1"><a href="#44-工作-10-年-战略转型期" data-for="44-工作-10-年-战略转型期">4.4 工作 10 年 +：战略转型期</a></li><li class="depth-0"><a href="#五ai-时代的特殊变量" data-for="五ai-时代的特殊变量">五、AI 时代的特殊变量</a></li><li class="depth-1"><a href="#51-职业周期的压缩" data-for="51-职业周期的压缩">5.1 职业周期的压缩</a></li><li class="depth-1"><a href="#52-供需关系的变化" data-for="52-供需关系的变化">5.2 供需关系的变化</a></li><li class="depth-1"><a href="#53-新兴机会窗口" data-for="53-新兴机会窗口">5.3 新兴机会窗口</a></li><li class="depth-0"><a href="#六实践工具箱" data-for="六实践工具箱">六、实践工具箱</a></li><li class="depth-1"><a href="#61-能力自检清单" data-for="61-能力自检清单">6.1 能力自检清单</a></li><li class="depth-1"><a href="#62-决策框架" data-for="62-决策框架">6.2 决策框架</a></li><li class="depth-1"><a href="#63-资源积累清单" data-for="63-资源积累清单">6.3 资源积累清单</a></li><li class="depth-0"><a href="#六反常识洞察" data-for="六反常识洞察">六、反常识洞察</a></li><li class="depth-0"><a href="#结语" data-for="结语">结语</a></li><li class="depth-0"><a href="#附录" data-for="附录">附录</a></li><li class="depth-1"><a href="#a-薪资数据速查表" data-for="a-薪资数据速查表">A. 薪资数据速查表</a></li><li class="depth-1"><a href="#b-ai-工具清单-2025" data-for="b-ai-工具清单-2025">B. AI 工具清单 (2025)</a></li><li class="depth-1"><a href="#c-学习资源" data-for="c-学习资源">C. 学习资源</a></li></ul></div></div><div class="explorer mobile-only"><button type="button" id="explorer" data-behavior="collapse" data-collapsed="collapsed" data-savestate="true" data-tree="[{&quot;path&quot;:&quot;40-professional&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/41-roles&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/42-timeline&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/44-skills&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/45-roadmap&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/46-workplace&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/46-workplace/career&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;40-professional/46-workplace/offer&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2018&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2020&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2021&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2022&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2023&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2024&quot;,&quot;collapsed&quot;:true},{&quot;path&quot;:&quot;60-writing/61-blog/2025&quot;,&quot;collapsed&quot;:true}]" aria-controls="explorer-content" aria-expanded="false"><h2>探索</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-content"><ul class="overflow" id="explorer-ul"><li><div class="folder-outer open"><ul style="padding-left:0;" class="content" data-folderul><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional"><button class="folder-button"><span class="folder-title">40-professional</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/41-roles"><button class="folder-button"><span class="folder-title">41-roles</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/41-roles"><li><a href="../../40-professional/41-roles/周中平" data-for="40-professional/41-roles/周中平">周中平</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/42-timeline"><button class="folder-button"><span class="folder-title">42-timeline</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/42-timeline"><li><a href="../../40-professional/42-timeline/2017.09-2019.07-河南牧业经济学院-软件技术" data-for="40-professional/42-timeline/2017.09-2019.07-河南牧业经济学院-软件技术">2017.09-2019.07-河南牧业经济学院-软件技术</a></li><li><a href="../../40-professional/42-timeline/2019.07-2020.01-杭州好橙-Java开发实习" data-for="40-professional/42-timeline/2019.07-2020.01-杭州好橙-Java开发实习">2019.07-2020.01-杭州好橙-Java开发实习</a></li><li><a href="../../40-professional/42-timeline/2020.02-2021.02-艳阳牧业-饲养员" data-for="40-professional/42-timeline/2020.02-2021.02-艳阳牧业-饲养员">2020.02-2021.02-艳阳牧业-饲养员</a></li><li><a href="../../40-professional/42-timeline/2021.03-2023.03-九州通-技术支持工程师" data-for="40-professional/42-timeline/2021.03-2023.03-九州通-技术支持工程师">2021.03-2023.03-九州通-技术支持工程师</a></li><li><a href="../../40-professional/42-timeline/2022.03-2024.07-河南财经政法大学-计算机科学与技术" data-for="40-professional/42-timeline/2022.03-2024.07-河南财经政法大学-计算机科学与技术">2022.03-2024.07-河南财经政法大学-计算机科学与技术</a></li><li><a href="../../40-professional/42-timeline/2023.03-至今-九州通-运维开发工程师" data-for="40-professional/42-timeline/2023.03-至今-九州通-运维开发工程师">2023.03-至今-九州通-运维开发工程师</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/44-skills"><button class="folder-button"><span class="folder-title">44-skills</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/44-skills"><li><a href="../../40-professional/44-skills/技能矩阵" data-for="40-professional/44-skills/技能矩阵">技能矩阵</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/45-roadmap"><button class="folder-button"><span class="folder-title">45-roadmap</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/45-roadmap"><li><a href="../../40-professional/45-roadmap/AI时代工程师的生存指南" data-for="40-professional/45-roadmap/AI时代工程师的生存指南">AI 时代工程师的生存指南</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/46-workplace"><button class="folder-button"><span class="folder-title">46-workplace</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/46-workplace"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/46-workplace/career"><button class="folder-button"><span class="folder-title">career</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/46-workplace/career"><li><a href="../../40-professional/46-workplace/career/01-新手村ai速通法" data-for="40-professional/46-workplace/career/01-新手村ai速通法">01-新手村ai速通法</a></li><li><a href="../../40-professional/46-workplace/career/02-构建ai代理军团" data-for="40-professional/46-workplace/career/02-构建ai代理军团">02-构建ai代理军团</a></li><li><a href="../../40-professional/46-workplace/career/03-从隐形人到行业kol" data-for="40-professional/46-workplace/career/03-从隐形人到行业kol">03-从隐形人到行业kol</a></li><li><a href="../../40-professional/46-workplace/career/04-硬核维权铁律" data-for="40-professional/46-workplace/career/04-硬核维权铁律">04-硬核维权铁律</a></li><li><a href="../../40-professional/46-workplace/career/05-反内卷终极形态" data-for="40-professional/46-workplace/career/05-反内卷终极形态">05-反内卷终极形态</a></li><li><a href="../../40-professional/46-workplace/career/06-复利人生商业闭环" data-for="40-professional/46-workplace/career/06-复利人生商业闭环">06-复利人生商业闭环</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="40-professional/46-workplace/offer"><button class="folder-button"><span class="folder-title">offer</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="40-professional/46-workplace/offer"><li><a href="../../40-professional/46-workplace/offer/01-面试理念与原则" data-for="40-professional/46-workplace/offer/01-面试理念与原则">01-面试理念与原则</a></li><li><a href="../../40-professional/46-workplace/offer/02-简历原则与实践" data-for="40-professional/46-workplace/offer/02-简历原则与实践">02-简历原则与实践</a></li><li><a href="../../40-professional/46-workplace/offer/03-面试流程全解析" data-for="40-professional/46-workplace/offer/03-面试流程全解析">03-面试流程全解析</a></li><li><a href="../../40-professional/46-workplace/offer/04-面试10大经典问题" data-for="40-professional/46-workplace/offer/04-面试10大经典问题">04-面试10大经典问题</a></li><li><a href="../../40-professional/46-workplace/offer/05-技术面试核心点" data-for="40-professional/46-workplace/offer/05-技术面试核心点">05-技术面试核心点</a></li><li><a href="../../40-professional/46-workplace/offer/06-反向面试要点" data-for="40-professional/46-workplace/offer/06-反向面试要点">06-反向面试要点</a></li><li><a href="../../40-professional/46-workplace/offer/07-薪资谈判艺术" data-for="40-professional/46-workplace/offer/07-薪资谈判艺术">07-薪资谈判艺术</a></li><li><a href="../../40-professional/46-workplace/offer/08-offer评估决策" data-for="40-professional/46-workplace/offer/08-offer评估决策">08-offer评估决策</a></li><li><a href="../../40-professional/46-workplace/offer/09-入职准备" data-for="40-professional/46-workplace/offer/09-入职准备">09-入职准备</a></li><li><a href="../../40-professional/46-workplace/offer/10-试用期生存" data-for="40-professional/46-workplace/offer/10-试用期生存">10-试用期生存</a></li><li><a href="../../40-professional/46-workplace/offer/11-持续成长" data-for="40-professional/46-workplace/offer/11-持续成长">11-持续成长</a></li></ul></div></li></ul></div></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing"><button class="folder-button"><span class="folder-title">60-writing</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog"><button class="folder-button"><span class="folder-title">61-blog</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2018"><button class="folder-button"><span class="folder-title">2018</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2018"><li><a href="../../60-writing/61-blog/2018/11月28日晚-星期三-霾" data-for="60-writing/61-blog/2018/11月28日晚-星期三-霾">11月28日 晚 星期三 霾</a></li><li><a href="../../60-writing/61-blog/2018/BombSquad-炸弹人小分队" data-for="60-writing/61-blog/2018/BombSquad-炸弹人小分队">BombSquad-炸弹人小分队</a></li><li><a href="../../60-writing/61-blog/2018/如何免费创建一个属于自己的网站" data-for="60-writing/61-blog/2018/如何免费创建一个属于自己的网站">如何免费创建一个属于自己的网站</a></li><li><a href="../../60-writing/61-blog/2018/英雄联盟-S8-全球总决赛" data-for="60-writing/61-blog/2018/英雄联盟-S8-全球总决赛">英雄联盟 S8 全球总决赛</a></li><li><a href="../../60-writing/61-blog/2018/螺蛳粉" data-for="60-writing/61-blog/2018/螺蛳粉">螺蛳粉</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2020"><button class="folder-button"><span class="folder-title">2020</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2020"><li><a href="../../60-writing/61-blog/2020/Don`t-Starve-饥荒" data-for="60-writing/61-blog/2020/Don`t-Starve-饥荒">Don't Starve-饥荒</a></li><li><a href="../../60-writing/61-blog/2020/中国传统历法" data-for="60-writing/61-blog/2020/中国传统历法">中国传统历法</a></li><li><a href="../../60-writing/61-blog/2020/初号机，起飞！" data-for="60-writing/61-blog/2020/初号机，起飞！">初号机，起飞！</a></li><li><a href="../../60-writing/61-blog/2020/吉普赛满天星" data-for="60-writing/61-blog/2020/吉普赛满天星">吉普赛满天星</a></li><li><a href="../../60-writing/61-blog/2020/夏日花记" data-for="60-writing/61-blog/2020/夏日花记">夏日花记</a></li><li><a href="../../60-writing/61-blog/2020/幸福的事情都是需要等待的" data-for="60-writing/61-blog/2020/幸福的事情都是需要等待的">幸福的事情都是需要等待的</a></li><li><a href="../../60-writing/61-blog/2020/开源软件之道" data-for="60-writing/61-blog/2020/开源软件之道">开源软件之道</a></li><li><a href="../../60-writing/61-blog/2020/我的小羊肖恩" data-for="60-writing/61-blog/2020/我的小羊肖恩">我的小羊肖恩</a></li><li><a href="../../60-writing/61-blog/2020/数据恢复杂谈" data-for="60-writing/61-blog/2020/数据恢复杂谈">数据恢复杂谈</a></li><li><a href="../../60-writing/61-blog/2020/注定不平凡的一年" data-for="60-writing/61-blog/2020/注定不平凡的一年">注定不平凡的一年</a></li><li><a href="../../60-writing/61-blog/2020/浅谈个人服务器架构" data-for="60-writing/61-blog/2020/浅谈个人服务器架构">浅谈个人服务器架构</a></li><li><a href="../../60-writing/61-blog/2020/球鞋日记" data-for="60-writing/61-blog/2020/球鞋日记">球鞋日记</a></li><li><a href="../../60-writing/61-blog/2020/記拾月" data-for="60-writing/61-blog/2020/記拾月">記拾月</a></li><li><a href="../../60-writing/61-blog/2020/长安游记" data-for="60-writing/61-blog/2020/长安游记">长安游记</a></li><li><a href="../../60-writing/61-blog/2020/骑行在路上" data-for="60-writing/61-blog/2020/骑行在路上">骑行在路上</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2021"><button class="folder-button"><span class="folder-title">2021</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2021"><li><a href="../../60-writing/61-blog/2021/2021" data-for="60-writing/61-blog/2021/2021">2021</a></li><li><a href="../../60-writing/61-blog/2021/VIVO-IQOO-Neo3-开箱测评" data-for="60-writing/61-blog/2021/VIVO-IQOO-Neo3-开箱测评">VIVO IQOO Neo3 开箱测评</a></li><li><a href="../../60-writing/61-blog/2021/上有天堂、下有苏杭" data-for="60-writing/61-blog/2021/上有天堂、下有苏杭">上有天堂、下有苏杭</a></li><li><a href="../../60-writing/61-blog/2021/我开发的第一款软件" data-for="60-writing/61-blog/2021/我开发的第一款软件">我开发的第一款软件</a></li><li><a href="../../60-writing/61-blog/2021/我站立的地方是中国" data-for="60-writing/61-blog/2021/我站立的地方是中国">我站立的地方是中国</a></li><li><a href="../../60-writing/61-blog/2021/我还在……" data-for="60-writing/61-blog/2021/我还在……">我还在……</a></li><li><a href="../../60-writing/61-blog/2021/星光不问赶路人" data-for="60-writing/61-blog/2021/星光不问赶路人">星光不问赶路人</a></li><li><a href="../../60-writing/61-blog/2021/济南呀济南的泰山之旅" data-for="60-writing/61-blog/2021/济南呀济南的泰山之旅">济南呀济南的泰山之旅</a></li><li><a href="../../60-writing/61-blog/2021/涝疫结合" data-for="60-writing/61-blog/2021/涝疫结合">涝疫结合</a></li><li><a href="../../60-writing/61-blog/2021/申请-Jetbrains-开源项目授权" data-for="60-writing/61-blog/2021/申请-Jetbrains-开源项目授权">申请 Jetbrains 开源项目授权</a></li><li><a href="../../60-writing/61-blog/2021/真·长安游记" data-for="60-writing/61-blog/2021/真·长安游记">真·长安游记</a></li><li><a href="../../60-writing/61-blog/2021/记拾月" data-for="60-writing/61-blog/2021/记拾月">记拾月</a></li><li><a href="../../60-writing/61-blog/2021/贰号机、落幕" data-for="60-writing/61-blog/2021/贰号机、落幕">贰号机、落幕</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2022"><button class="folder-button"><span class="folder-title">2022</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2022"><li><a href="../../60-writing/61-blog/2022/「引用」博客的本质是电线杆子" data-for="60-writing/61-blog/2022/「引用」博客的本质是电线杆子">「引用」博客的本质是电线杆子</a></li><li><a href="../../60-writing/61-blog/2022/2022" data-for="60-writing/61-blog/2022/2022">2022</a></li><li><a href="../../60-writing/61-blog/2022/Halo-主题-Redemption-首发版" data-for="60-writing/61-blog/2022/Halo-主题-Redemption-首发版">Halo 主题 Redemption 首发版</a></li><li><a href="../../60-writing/61-blog/2022/Redemption" data-for="60-writing/61-blog/2022/Redemption">Redemption</a></li><li><a href="../../60-writing/61-blog/2022/Redemption-主题-0.2.1-版本" data-for="60-writing/61-blog/2022/Redemption-主题-0.2.1-版本">Redemption 主题 0.2.1 版本</a></li><li><a href="../../60-writing/61-blog/2022/一线城市拥有一亩三分地是什么体验" data-for="60-writing/61-blog/2022/一线城市拥有一亩三分地是什么体验">一线城市拥有一亩三分地是什么体验</a></li><li><a href="../../60-writing/61-blog/2022/三步为你博客文章分析情感关键字" data-for="60-writing/61-blog/2022/三步为你博客文章分析情感关键字">三步为你博客文章分析情感关键字</a></li><li><a href="../../60-writing/61-blog/2022/不要在饿的时候吃螺蛳粉！" data-for="60-writing/61-blog/2022/不要在饿的时候吃螺蛳粉！">不要在饿的时候吃螺蛳粉！</a></li><li><a href="../../60-writing/61-blog/2022/习惯养成第一步" data-for="60-writing/61-blog/2022/习惯养成第一步">习惯养成第一步</a></li><li><a href="../../60-writing/61-blog/2022/人在囧途——青海湖" data-for="60-writing/61-blog/2022/人在囧途——青海湖">人在囧途——青海湖</a></li><li><a href="../../60-writing/61-blog/2022/人格类型测试" data-for="60-writing/61-blog/2022/人格类型测试">人格类型测试</a></li><li><a href="../../60-writing/61-blog/2022/你还记得曾经的梦想么？" data-for="60-writing/61-blog/2022/你还记得曾经的梦想么？">你还记得曾经的梦想么？</a></li><li><a href="../../60-writing/61-blog/2022/使用-Docusaurus-搭建优秀个人wiki" data-for="60-writing/61-blog/2022/使用-Docusaurus-搭建优秀个人wiki">使用 Docusaurus 搭建优秀个人wiki</a></li><li><a href="../../60-writing/61-blog/2022/关于感情的事情" data-for="60-writing/61-blog/2022/关于感情的事情">关于感情的事情</a></li><li><a href="../../60-writing/61-blog/2022/关于花" data-for="60-writing/61-blog/2022/关于花">关于花</a></li><li><a href="../../60-writing/61-blog/2022/关于郑州的互联网记忆" data-for="60-writing/61-blog/2022/关于郑州的互联网记忆">关于郑州的互联网记忆</a></li><li><a href="../../60-writing/61-blog/2022/再游嵩山" data-for="60-writing/61-blog/2022/再游嵩山">再游嵩山</a></li><li><a href="../../60-writing/61-blog/2022/最近在折腾什么……" data-for="60-writing/61-blog/2022/最近在折腾什么……">最近在折腾什么……</a></li><li><a href="../../60-writing/61-blog/2022/最近的生活" data-for="60-writing/61-blog/2022/最近的生活">最近的生活</a></li><li><a href="../../60-writing/61-blog/2022/写十万字的博客是一种什么感觉" data-for="60-writing/61-blog/2022/写十万字的博客是一种什么感觉">写十万字的博客是一种什么感觉</a></li><li><a href="../../60-writing/61-blog/2022/写博客的正确姿势---先行版" data-for="60-writing/61-blog/2022/写博客的正确姿势---先行版">写博客的正确姿势 - 先行版</a></li><li><a href="../../60-writing/61-blog/2022/写博客的正确姿势---测试版" data-for="60-writing/61-blog/2022/写博客的正确姿势---测试版">写博客的正确姿势 - 测试版</a></li><li><a href="../../60-writing/61-blog/2022/原点" data-for="60-writing/61-blog/2022/原点">原点</a></li><li><a href="../../60-writing/61-blog/2022/如何免费获得-Jetbrains-正版授权" data-for="60-writing/61-blog/2022/如何免费获得-Jetbrains-正版授权">如何免费获得 Jetbrains 正版授权</a></li><li><a href="../../60-writing/61-blog/2022/我是关系户" data-for="60-writing/61-blog/2022/我是关系户">我是关系户</a></li><li><a href="../../60-writing/61-blog/2022/我要拔智齿！！！" data-for="60-writing/61-blog/2022/我要拔智齿！！！">我要拔智齿！！！</a></li><li><a href="../../60-writing/61-blog/2022/数字文化遗产" data-for="60-writing/61-blog/2022/数字文化遗产">数字文化遗产</a></li><li><a href="../../60-writing/61-blog/2022/新冠笔记" data-for="60-writing/61-blog/2022/新冠笔记">新冠笔记</a></li><li><a href="../../60-writing/61-blog/2022/新手村村长" data-for="60-writing/61-blog/2022/新手村村长">新手村村长</a></li><li><a href="../../60-writing/61-blog/2022/是微风、是晚霞、是来日方长" data-for="60-writing/61-blog/2022/是微风、是晚霞、是来日方长">是微风、是晚霞、是来日方长</a></li><li><a href="../../60-writing/61-blog/2022/月季到了" data-for="60-writing/61-blog/2022/月季到了">月季到了</a></li><li><a href="../../60-writing/61-blog/2022/浅谈一下自己折腾的网站" data-for="60-writing/61-blog/2022/浅谈一下自己折腾的网站">浅谈一下自己折腾的网站</a></li><li><a href="../../60-writing/61-blog/2022/番茄开花啦-~" data-for="60-writing/61-blog/2022/番茄开花啦-~">番茄开花啦 ~</a></li><li><a href="../../60-writing/61-blog/2022/种下了一些瓜果蔬菜" data-for="60-writing/61-blog/2022/种下了一些瓜果蔬菜">种下了一些瓜果蔬菜</a></li><li><a href="../../60-writing/61-blog/2022/罪恶应该被遗传么" data-for="60-writing/61-blog/2022/罪恶应该被遗传么">罪恶应该被遗传么？</a></li><li><a href="../../60-writing/61-blog/2022/自律的痛苦······" data-for="60-writing/61-blog/2022/自律的痛苦······">自律的痛苦······</a></li><li><a href="../../60-writing/61-blog/2022/论成年人的睡眠" data-for="60-writing/61-blog/2022/论成年人的睡眠">论成年人的睡眠</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」">谈谈我的「数字文具盒」</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---NextCloud" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---NextCloud">谈谈我的「数字文具盒」 - NextCloud</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---Obsidian" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---Obsidian">谈谈我的「数字文具盒」 - Obsidian</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---心得体会" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---心得体会">谈谈我的「数字文具盒」 - 心得体会</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---数字基建" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---数字基建">谈谈我的「数字文具盒」 - 数字基建</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（上）" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（上）">谈谈我的「数字文具盒」 - 生产力工具（上）</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（下）" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---生产力工具（下）">谈谈我的「数字文具盒」 - 生产力工具（下）</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---番外篇" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---番外篇">谈谈我的「数字文具盒」 - 番外篇</a></li><li><a href="../../60-writing/61-blog/2022/谈谈我的「数字文具盒」---运行平台" data-for="60-writing/61-blog/2022/谈谈我的「数字文具盒」---运行平台">谈谈我的「数字文具盒」 - 运行平台</a></li><li><a href="../../60-writing/61-blog/2022/这个周末" data-for="60-writing/61-blog/2022/这个周末">这个周末</a></li><li><a href="../../60-writing/61-blog/2022/通货膨胀的猪" data-for="60-writing/61-blog/2022/通货膨胀的猪">通货膨胀的猪</a></li><li><a href="../../60-writing/61-blog/2022/闭门锁网" data-for="60-writing/61-blog/2022/闭门锁网">闭门锁网</a></li><li><a href="../../60-writing/61-blog/2022/非黑即白" data-for="60-writing/61-blog/2022/非黑即白">非黑即白</a></li><li><a href="../../60-writing/61-blog/2022/首页加载速度优化方案" data-for="60-writing/61-blog/2022/首页加载速度优化方案">首页加载速度优化方案</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2023"><button class="folder-button"><span class="folder-title">2023</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2023"><li><a href="../../60-writing/61-blog/2023/2023-年度微信读书报告" data-for="60-writing/61-blog/2023/2023-年度微信读书报告">2023 年度微信读书报告</a></li><li><a href="../../60-writing/61-blog/2023/Docusaurus-搭建" data-for="60-writing/61-blog/2023/Docusaurus-搭建">Docusaurus 搭建</a></li><li><a href="../../60-writing/61-blog/2023/Obsidian-使用-Templater-插件的个性化脚本" data-for="60-writing/61-blog/2023/Obsidian-使用-Templater-插件的个性化脚本">Obsidian 使用 Templater 插件的个性化脚本</a></li><li><a href="../../60-writing/61-blog/2023/YubiKey-漂流记" data-for="60-writing/61-blog/2023/YubiKey-漂流记">YubiKey 历险记</a></li><li><a href="../../60-writing/61-blog/2023/不要把幸福建立在别人的痛苦之上" data-for="60-writing/61-blog/2023/不要把幸福建立在别人的痛苦之上">不要把幸福建立在别人的痛苦之上</a></li><li><a href="../../60-writing/61-blog/2023/为什么不推开那扇门？" data-for="60-writing/61-blog/2023/为什么不推开那扇门？">为什么不推开那扇门？</a></li><li><a href="../../60-writing/61-blog/2023/你愿意嫁给自己么？" data-for="60-writing/61-blog/2023/你愿意嫁给自己么？">你愿意嫁给自己么</a></li><li><a href="../../60-writing/61-blog/2023/最近半年的生活" data-for="60-writing/61-blog/2023/最近半年的生活">最近半年的生活</a></li><li><a href="../../60-writing/61-blog/2023/写博客的正确姿势" data-for="60-writing/61-blog/2023/写博客的正确姿势">写博客的正确姿势</a></li><li><a href="../../60-writing/61-blog/2023/唯有热爱可抵岁月漫长" data-for="60-writing/61-blog/2023/唯有热爱可抵岁月漫长">唯有热爱、可抵岁月漫长</a></li><li><a href="../../60-writing/61-blog/2023/回首-2022-展望-2023" data-for="60-writing/61-blog/2023/回首-2022-展望-2023">回首 2022 展望 2023</a></li><li><a href="../../60-writing/61-blog/2023/大学回忆录" data-for="60-writing/61-blog/2023/大学回忆录">大学回忆录</a></li><li><a href="../../60-writing/61-blog/2023/如何不写错别字！" data-for="60-writing/61-blog/2023/如何不写错别字！">如何不写错别字！</a></li><li><a href="../../60-writing/61-blog/2023/如何拍好一张照片" data-for="60-writing/61-blog/2023/如何拍好一张照片">如何拍好一张照片</a></li><li><a href="../../60-writing/61-blog/2023/家里的三块地" data-for="60-writing/61-blog/2023/家里的三块地">家里的三块地</a></li><li><a href="../../60-writing/61-blog/2023/岁月是把猪饲料，把我喂的嘎嘎胖" data-for="60-writing/61-blog/2023/岁月是把猪饲料，把我喂的嘎嘎胖">岁月是把猪饲料，把我喂的嘎嘎胖</a></li><li><a href="../../60-writing/61-blog/2023/拾月游记" data-for="60-writing/61-blog/2023/拾月游记">拾月游记</a></li><li><a href="../../60-writing/61-blog/2023/揭晓你的博客一年之最，尽在-EndOfYear！" data-for="60-writing/61-blog/2023/揭晓你的博客一年之最，尽在-EndOfYear！">揭晓你的博客一年之最，尽在 EndOfYear！</a></li><li><a href="../../60-writing/61-blog/2023/早起、阅读、写作、运动、冥想" data-for="60-writing/61-blog/2023/早起、阅读、写作、运动、冥想">早起、冥想、阅读、写作、运动</a></li><li><a href="../../60-writing/61-blog/2023/浅尝-Gitea-的-Actions" data-for="60-writing/61-blog/2023/浅尝-Gitea-的-Actions">浅尝 Gitea 的 Actions</a></li><li><a href="../../60-writing/61-blog/2023/独立生活能力清单" data-for="60-writing/61-blog/2023/独立生活能力清单">独立生活能力清单</a></li><li><a href="../../60-writing/61-blog/2023/电脑坏了，我换了-Ubuntu" data-for="60-writing/61-blog/2023/电脑坏了，我换了-Ubuntu">电脑坏了，我换了 Ubuntu</a></li><li><a href="../../60-writing/61-blog/2023/看-V2Ex-的-ChatGPT-老哥浅谈办公室政治" data-for="60-writing/61-blog/2023/看-V2Ex-的-ChatGPT-老哥浅谈办公室政治">看 V2Ex 的 ChatGPT 老哥浅谈办公室政治</a></li><li><a href="../../60-writing/61-blog/2023/破万卷书，行万里路！" data-for="60-writing/61-blog/2023/破万卷书，行万里路！">破万卷书，行万里路！</a></li><li><a href="../../60-writing/61-blog/2023/谈谈我的「数字文具盒」---个人工作流" data-for="60-writing/61-blog/2023/谈谈我的「数字文具盒」---个人工作流">谈谈我的「数字文具盒」 - 个人工作流</a></li><li><a href="../../60-writing/61-blog/2023/长安三万里" data-for="60-writing/61-blog/2023/长安三万里">长安三万里</a></li><li><a href="../../60-writing/61-blog/2023/黄山归来不看岳" data-for="60-writing/61-blog/2023/黄山归来不看岳">黄山归来不看岳</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2024"><button class="folder-button"><span class="folder-title">2024</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2024"><li><a href="../../60-writing/61-blog/2024/「救赎之路」更名「向阳而生」" data-for="60-writing/61-blog/2024/「救赎之路」更名「向阳而生」">「救赎之路」更名「向阳而生」</a></li><li><a href="../../60-writing/61-blog/2024/回顾-2023" data-for="60-writing/61-blog/2024/回顾-2023">2023 年终总结</a></li><li><a href="../../60-writing/61-blog/2024/2023-年终问答" data-for="60-writing/61-blog/2024/2023-年终问答">2023 年终问答</a></li><li><a href="../../60-writing/61-blog/2024/CityWalk——公车挑战" data-for="60-writing/61-blog/2024/CityWalk——公车挑战">CityWalk——公车挑战：探索未知的城市</a></li><li><a href="../../60-writing/61-blog/2024/Python-项目终极部署解决方案" data-for="60-writing/61-blog/2024/Python-项目终极部署解决方案">Python 项目终极部署解决方案</a></li><li><a href="../../60-writing/61-blog/2024/一命二运三风水" data-for="60-writing/61-blog/2024/一命二运三风水">一命二运三风水</a></li><li><a href="../../60-writing/61-blog/2024/乌兰哈达火山银河之旅" data-for="60-writing/61-blog/2024/乌兰哈达火山银河之旅">乌兰哈达火山银河之旅</a></li><li><a href="../../60-writing/61-blog/2024/冰箱，让你我错过了多少新鲜的生活？" data-for="60-writing/61-blog/2024/冰箱，让你我错过了多少新鲜的生活？">冰箱，让你我错过了多少新鲜的生活？</a></li><li><a href="../../60-writing/61-blog/2024/夜泊西湖听雨声" data-for="60-writing/61-blog/2024/夜泊西湖听雨声">夜泊西湖听雨声</a></li><li><a href="../../60-writing/61-blog/2024/如何开好一场会？" data-for="60-writing/61-blog/2024/如何开好一场会？">如何开好一场会？</a></li><li><a href="../../60-writing/61-blog/2024/如何打破信息茧房？" data-for="60-writing/61-blog/2024/如何打破信息茧房？">如何打破信息茧房？</a></li><li><a href="../../60-writing/61-blog/2024/富人的红灯与穷人的绿灯" data-for="60-writing/61-blog/2024/富人的红灯与穷人的绿灯">富人的红灯与穷人的绿灯</a></li><li><a href="../../60-writing/61-blog/2024/师从-ChatGPT" data-for="60-writing/61-blog/2024/师从-ChatGPT">师从 ChatGPT</a></li><li><a href="../../60-writing/61-blog/2024/我又从-Ubunut-换成了-Fedora" data-for="60-writing/61-blog/2024/我又从-Ubunut-换成了-Fedora">我又从 Ubunut 换成了 Fedora</a></li><li><a href="../../60-writing/61-blog/2024/我的一天" data-for="60-writing/61-blog/2024/我的一天">我的一天</a></li><li><a href="../../60-writing/61-blog/2024/打工三年记" data-for="60-writing/61-blog/2024/打工三年记">打工三年记</a></li><li><a href="../../60-writing/61-blog/2024/新奇的-HR-经历" data-for="60-writing/61-blog/2024/新奇的-HR-经历">新奇的 HR 经历</a></li><li><a href="../../60-writing/61-blog/2024/穷则独善其身，达则兼济天下" data-for="60-writing/61-blog/2024/穷则独善其身，达则兼济天下">穷则独善其身，达则兼济天下</a></li><li><a href="../../60-writing/61-blog/2024/继续开荒我那一亩三分地" data-for="60-writing/61-blog/2024/继续开荒我那一亩三分地">继续开荒我那一亩三分地</a></li><li><a href="../../60-writing/61-blog/2024/記伍月" data-for="60-writing/61-blog/2024/記伍月">記伍月</a></li></ul></div></li><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div data-folderpath="60-writing/61-blog/2025"><button class="folder-button"><span class="folder-title">2025</span></button></div></div><div class="folder-outer "><ul style="padding-left:1.4rem;" class="content" data-folderul="60-writing/61-blog/2025"><li><a href="../../60-writing/61-blog/2025/盲人摸象非象" data-for="60-writing/61-blog/2025/盲人摸象非象">盲人摸象非象</a></li></ul></div></li></ul></div></li></ul></div></li><li><div class="folder-outer "><ul style="padding-left:0;" class="content" data-folderul></ul></div></li></ul></div></li><li id="explorer-end"></li></ul></div></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.3.1</a> © 2025</p><ul><li><a href="https://zopiya.com">文辑</a></li><li><a href="https://memos.zopiya.com">片语</a></li><li><a href="https://github.com/zopiya">GitHub</a></li></ul></footer></div></body><script type="application/javascript">function c(){let t=this.parentElement;t.classList.toggle("is-collapsed");let l=t.classList.contains("is-collapsed")?this.scrollHeight:t.scrollHeight;t.style.maxHeight=l+"px";let o=t,e=t.parentElement;for(;e;){if(!e.classList.contains("callout"))return;let n=e.classList.contains("is-collapsed")?e.scrollHeight:e.scrollHeight+o.scrollHeight;e.style.maxHeight=n+"px",o=e,e=e.parentElement}}function i(){let t=document.getElementsByClassName("callout is-collapsible");for(let s of t){let l=s.firstElementChild;if(l){l.addEventListener("click",c),window.addCleanup(()=>l.removeEventListener("click",c));let e=s.classList.contains("is-collapsed")?l.scrollHeight:s.scrollHeight;s.style.maxHeight=e+"px"}}}document.addEventListener("nav",i);window.addEventListener("resize",i);
+</script><script type="module">
+          let mermaidImport = undefined
+          document.addEventListener('nav', async () => {
+            if (document.querySelector("code.mermaid")) {
+              mermaidImport ||= await import('https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs')
+              const mermaid = mermaidImport.default
+              const darkMode = document.documentElement.getAttribute('saved-theme') === 'dark'
+              mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: darkMode ? 'dark' : 'default'
+              })
+
+              await mermaid.run({
+                querySelector: '.mermaid'
+              })
+            }
+          });
+          </script><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../../postscript.js" type="module"></script></html>
