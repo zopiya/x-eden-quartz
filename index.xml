@@ -10,61 +10,61 @@
     <link>https://x-eden.zopiya.com/</link>
     <guid>https://x-eden.zopiya.com/</guid>
     <description> 永远为自由而思考与创造。 一个热衷于构建知识体系的探索者。 在此整理、沉淀多学科、多维度的知识与思考，愿对你有所启发。 🗂️ 目录 X·Eden 是一个以「知识架构化、学习系统化、思维模型化」为核心目标的多学科知识库。它汇聚了从形式科学到社会科学、从计算机科学到个人成长 的知识体系。 . ├── 00-knowledge/ # 🧠 元知识 ├── 10-formal-sciences/ # 📐 形式科学 ├── 16-computer-science/ # 💻 计算机科学 ├── 20-natural-sciences/ # 🌱 自然科学 ├── 30-social-sciences/ # 🌍 社会科学 ├── 40-professional/ # 💼 职业发展 ├── 50-personal/ # 👤 个人空间 ├── 60-writing/ # ✍️ 写作区 ├── 70-future/ # 🔮 前沿探索 ├── 80-project/ # 🗂️ 项目实践 ├── 90-obsidian/ # 🧩 工具与模板 ├── 91-attachments/ # 📦 外部附件 ├── 92-archive/ # 🗄️ 历史归档 └── 99-inbox/ # 📥 临时收集箱 ⚖️ 许可证 内容类型许可证原创代码GPL-3.0原创非代码CC BY-SA 4.0引用资料仅供学术研究使用，版权归原作者。如涉侵权请 邮件联系 处理。 🙏 特别致谢 感谢所有知识创作者、开源贡献者与社区同行。 正是你们的无私分享，构筑了这个不断演化的知识宇宙。.</description>
-    <pubDate>Mon, 02 Feb 2026 06:23:52 GMT</pubDate>
-  </item><item>
-    <title>Python 项目终极部署解决方案</title>
-    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/Python-%E9%A1%B9%E7%9B%AE%E7%BB%88%E6%9E%81%E9%83%A8%E7%BD%B2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88</link>
-    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/Python-%E9%A1%B9%E7%9B%AE%E7%BB%88%E6%9E%81%E9%83%A8%E7%BD%B2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88</guid>
-    <description>Python 作为一门历史悠久的编程语言，起初角色定位于 Liunx 下的脚本语言。最初作为 Linux 下的脚本语言诞生。随着时间推移，Python 不断引入新特性，逐步演变成一种功能强大、用途广泛的语言。目前被广泛应用于数据科学、Web 应用开发等多个领域。 特别是自 2019 年 6 月起，Python 采用了 PEP 602——Python ...</description>
-    <pubDate>Mon, 02 Feb 2026 06:23:52 GMT</pubDate>
-  </item><item>
-    <title>「救赎之路」更名「向阳而生」</title>
-    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E3%80%8C%E6%95%91%E8%B5%8E%E4%B9%8B%E8%B7%AF%E3%80%8D%E6%9B%B4%E5%90%8D%E3%80%8C%E5%90%91%E9%98%B3%E8%80%8C%E7%94%9F%E3%80%8D</link>
-    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E3%80%8C%E6%95%91%E8%B5%8E%E4%B9%8B%E8%B7%AF%E3%80%8D%E6%9B%B4%E5%90%8D%E3%80%8C%E5%90%91%E9%98%B3%E8%80%8C%E7%94%9F%E3%80%8D</guid>
-    <description>2018 年创建博客时，我最开始想注册 dons.com（Dream of night sky），却发现被一家书店注册了。后在于朋友聊天寻找新的域名时，一句无心的玩笑话——你脑子瓦特了吗？整天想这些干嘛，随便找一个不就行了？ 意外地给了我灵感——瓦特，好名字。 我就立刻去查 wate.com 被注册了没，结果也被人注册了。这时，另一个朋友建议我：要不加个数字试试？于是我选择了 ...</description>
-    <pubDate>Mon, 02 Feb 2026 06:23:52 GMT</pubDate>
-  </item><item>
-    <title>一命二运三风水</title>
-    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E4%B8%80%E5%91%BD%E4%BA%8C%E8%BF%90%E4%B8%89%E9%A3%8E%E6%B0%B4</link>
-    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E4%B8%80%E5%91%BD%E4%BA%8C%E8%BF%90%E4%B8%89%E9%A3%8E%E6%B0%B4</guid>
-    <description>一命 万物负阴而抱阳 现如今，大部分人们对于「命」的理解呈现出鲜明的对立。一方面，有些人坚信我命由我不由天，认为人的意志和努力能够改变「命」。但是同时也存在着过度强调主观能力，从而忽视客观条件的风险。 例如，在历史上大跃进时期就曾试图利用群众热情，在农业，工业等多个领域盲目追求脱离现实的「跃进」，其过度乐观和盲目自信就是一个极端表现。 ...</description>
-    <pubDate>Mon, 02 Feb 2026 06:23:52 GMT</pubDate>
-  </item><item>
-    <title>乌兰哈达火山银河之旅</title>
-    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E4%B9%8C%E5%85%B0%E5%93%88%E8%BE%BE%E7%81%AB%E5%B1%B1%E9%93%B6%E6%B2%B3%E4%B9%8B%E6%97%85</link>
-    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E4%B9%8C%E5%85%B0%E5%93%88%E8%BE%BE%E7%81%AB%E5%B1%B1%E9%93%B6%E6%B2%B3%E4%B9%8B%E6%97%85</guid>
-    <description>可谓念念不忘，必有回响。 2022 年《再游嵩山》的时候，**就一直心心念念能和爱人拥在银河下，看一场流星雨。**现在 24 年了，疫情都结束了，小雅我俩在一块也两年多了，正好端午节三天加上年假，说走就走，看银河去！ 如果想看银河，必须满足两个条件：**万里无云 + 零光污染。**因为小雅是不愿意爬山的，而且更不愿意晚上爬山，所以就只能选择开车可达，且没有光污染的地方。大西北虽然满足，但是太远开车的累死，最后决定 ...</description>
-    <pubDate>Mon, 02 Feb 2026 06:23:52 GMT</pubDate>
-  </item><item>
-    <title>冰箱，让你我错过了多少新鲜的生活？</title>
-    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%86%B0%E7%AE%B1%EF%BC%8C%E8%AE%A9%E4%BD%A0%E6%88%91%E9%94%99%E8%BF%87%E4%BA%86%E5%A4%9A%E5%B0%91%E6%96%B0%E9%B2%9C%E7%9A%84%E7%94%9F%E6%B4%BB%EF%BC%9F</link>
-    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%86%B0%E7%AE%B1%EF%BC%8C%E8%AE%A9%E4%BD%A0%E6%88%91%E9%94%99%E8%BF%87%E4%BA%86%E5%A4%9A%E5%B0%91%E6%96%B0%E9%B2%9C%E7%9A%84%E7%94%9F%E6%B4%BB%EF%BC%9F</guid>
-    <description>下班后逛超市，买了些水果和面包回到家里，发现冰箱早已被老妈塞满，一包不知道几天前的蔬菜，还有四处散落着的剩饭。整个人瞬间都不好了，老妈，冰箱真的不是万能永久保鲜的…… 不过，如果世界没有冰箱，我们每天吃的岂不都是新鲜蔬菜？细细一想，却不无道理。 生活中，我们经常把新鲜蔬菜放进冰箱，这些新鲜蔬菜则期待着某天被我们吃掉，而实际情况是大多数新鲜蔬菜都难逃冻僵、腐烂的结局。 ...</description>
-    <pubDate>Mon, 02 Feb 2026 06:23:52 GMT</pubDate>
-  </item><item>
-    <title>2023 年终总结</title>
-    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%9B%9E%E9%A1%BE-2023</link>
-    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%9B%9E%E9%A1%BE-2023</guid>
-    <description>我喜欢在农历新年后总结一年的收获，因此，我又一次地写下了年终总结。今年的总结较往年更加客观，并回顾了是否完成了之前设定的年度目标。 2021 年度目标完成度：80% 2022 年度目标完成度：60% 2023 年度虽未设立具体目标，但有明确方向，自评 60 分，勉强算是及格。 关于 2023 年没有设立具体目标的原因，主要是因为以往年度目标的打脸，以及不可预测的因素实在太多。因此，从 ...</description>
-    <pubDate>Mon, 02 Feb 2026 06:23:52 GMT</pubDate>
-  </item><item>
-    <title>夜泊西湖听雨声</title>
-    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%A4%9C%E6%B3%8A%E8%A5%BF%E6%B9%96%E5%90%AC%E9%9B%A8%E5%A3%B0</link>
-    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%A4%9C%E6%B3%8A%E8%A5%BF%E6%B9%96%E5%90%AC%E9%9B%A8%E5%A3%B0</guid>
-    <description>自从姐姐在杭州定居后，我每年都会往返这里。而这次是为了迎接我们家的新成员——团子 ~ 每次独坐湖边的长椅上，都会陷入过往与未来的思绪之中。从三年前我第一次来杭州，至今，经历了诸多的变化和成长。每一次来到西湖，仿佛都能倾诉我的情感。 任由灵魂随着湖面荡漾的涟漪远飘，听雨、观湖、抚风。 上有天堂、下有苏杭 ─ 2021 ...</description>
-    <pubDate>Mon, 02 Feb 2026 06:23:52 GMT</pubDate>
-  </item><item>
-    <title>如何开好一场会？</title>
-    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%A6%82%E4%BD%95%E5%BC%80%E5%A5%BD%E4%B8%80%E5%9C%BA%E4%BC%9A%EF%BC%9F</link>
-    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%A6%82%E4%BD%95%E5%BC%80%E5%A5%BD%E4%B8%80%E5%9C%BA%E4%BC%9A%EF%BC%9F</guid>
-    <description>如今，作为打工人的我们经常需要主持和参加各种类型的会议。然而，由于有些人并不擅长这方面的工作，导致参与者的「生命」被浪费。那么，我们究竟应该如何才能有效地开好一场会议，避免浪费「生命」呢？ 什么类型的会议值得开？ 头脑风暴和决策会议是最有价值的会议类型，也是最应该开的类型。 其他类型的会议如果可以避免参加的话，就尽量避免吧。毕竟有时候，一场本应只需要 ...</description>
-    <pubDate>Mon, 02 Feb 2026 06:23:52 GMT</pubDate>
+    <pubDate>Mon, 09 Feb 2026 06:25:32 GMT</pubDate>
   </item><item>
     <title>如何打破信息茧房？</title>
     <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%A6%82%E4%BD%95%E6%89%93%E7%A0%B4%E4%BF%A1%E6%81%AF%E8%8C%A7%E6%88%BF%EF%BC%9F</link>
     <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%A6%82%E4%BD%95%E6%89%93%E7%A0%B4%E4%BF%A1%E6%81%AF%E8%8C%A7%E6%88%BF%EF%BC%9F</guid>
     <description>现如今信息茧房的概念，大家已经非常熟悉了，但我也想再啰嗦一遍。 信息茧房是指个体由于个人偏好，仅接触到限定范围内的信息，这种现象会导致个体的视野逐渐缩窄。这个概念由凯斯·桑斯坦提出，与回声室效应和过滤泡泡有相似之处，主要关注信息多样性的缺失问题。信息茧房的形成受到大数据、用户行为及推荐算法的共同影响，虽然这增加了用户粘性，却同时限制了信息的多样性，进而可能催生群体之间的极化现象。 ...</description>
-    <pubDate>Mon, 02 Feb 2026 06:23:52 GMT</pubDate>
+    <pubDate>Mon, 09 Feb 2026 06:25:32 GMT</pubDate>
+  </item><item>
+    <title>富人的红灯与穷人的绿灯</title>
+    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%AF%8C%E4%BA%BA%E7%9A%84%E7%BA%A2%E7%81%AF%E4%B8%8E%E7%A9%B7%E4%BA%BA%E7%9A%84%E7%BB%BF%E7%81%AF</link>
+    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%AF%8C%E4%BA%BA%E7%9A%84%E7%BA%A2%E7%81%AF%E4%B8%8E%E7%A9%B7%E4%BA%BA%E7%9A%84%E7%BB%BF%E7%81%AF</guid>
+    <description>在这个社会中，存在一种神奇的社会实验，名为「自由流动」或者更贴切的说，是「生死由命」。在一个不起眼的城市角落，有一个十字路口，每天都在上演着一出生死交响曲。这里，车流如织，人流如潮，每个奔跑的生命都在这个无红绿灯的舞台上，翩翩起舞。 是的，您没听错，这个十字路口没有红绿灯。 政府显然是采取了一种创新的交通管理策略——不干预。这是不是意味着，要等到十字路口出现足够的悲剧，政府才会发现投放一个红绿灯的经济效益和人命价值？ ...</description>
+    <pubDate>Mon, 09 Feb 2026 06:25:32 GMT</pubDate>
+  </item><item>
+    <title>师从 ChatGPT</title>
+    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%B8%88%E4%BB%8E-ChatGPT</link>
+    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E5%B8%88%E4%BB%8E-ChatGPT</guid>
+    <description>我最近遇见的很多问题处理起来感觉效率太低，总认为是因为没有熟练掌握方法论的具体应用——思维模型，才导致效率不高。所以就想系统全面地学习一下常见的思维模型。可是却又无从下手，毕竟思维模型实在是太多了。遂去问了问 ChatGPT，但又感觉 ChatGPT 的答案总是没有灵魂，似是非是的回答让我头大。然后几乎每天都在带着这个问题思考，不过也是功夫不负有心人。最终串联起来许多在书中读到的内容，并且进一步领悟到了最核心的点在于——元认知。 ...</description>
+    <pubDate>Mon, 09 Feb 2026 06:25:32 GMT</pubDate>
+  </item><item>
+    <title>我又从 Ubunut 换成了 Fedora</title>
+    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E6%88%91%E5%8F%88%E4%BB%8E-Ubunut-%E6%8D%A2%E6%88%90%E4%BA%86-Fedora</link>
+    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E6%88%91%E5%8F%88%E4%BB%8E-Ubunut-%E6%8D%A2%E6%88%90%E4%BA%86-Fedora</guid>
+    <description>去年我从 Windows 换到了 Linux，并选择了新手友好发行版——Ubuntu，并介绍了一些关于 Linux 桌面使用中的坑和解决方法。尽管现在我仍更推荐使用 MacOS或 Windows，但既然你点开了这篇文章，那就坚定地接受 Linux 的缺点吧哈哈哈。 至于为什么我又从 Ubuntu 换成了 Fedora，纯粹是为了学习。期间除了 ...</description>
+    <pubDate>Mon, 09 Feb 2026 06:25:32 GMT</pubDate>
+  </item><item>
+    <title>我的一天</title>
+    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E6%88%91%E7%9A%84%E4%B8%80%E5%A4%A9</link>
+    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E6%88%91%E7%9A%84%E4%B8%80%E5%A4%A9</guid>
+    <description>[7:00 am] 睡醒，迷迷瞪瞪地洗漱完。 [7:30 am] 可能会尝试稀奇古怪的早饭，出门前会一直听书。 [8:00 am] 出门上班，大约 20 分钟到公司。 [8:30 am] 来到工位，开始浏览 RSS、X、Telegram、Youtube 等了解世界发生了什么。 [9:30 am] 阅读结束，活动一下泡壶茶，顺带所里办个事。💩 ...</description>
+    <pubDate>Mon, 09 Feb 2026 06:25:32 GMT</pubDate>
+  </item><item>
+    <title>打工三年记</title>
+    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E6%89%93%E5%B7%A5%E4%B8%89%E5%B9%B4%E8%AE%B0</link>
+    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E6%89%93%E5%B7%A5%E4%B8%89%E5%B9%B4%E8%AE%B0</guid>
+    <description>不知不觉在九州通工作三年，捎带收获了一份纪念品哈哈。简单介绍一下九州通，九州通医药集团股份有限公司是一家以西药、中药和医疗器械批发、物流配送、零售连锁以及电子商务为核心业务的大型股份制企业。 省级公司不如集团总部，个人负责的真是又多又杂。我在省级公司信息部门作为基层员工，前期负责核心业务系统的数据维护、数据分析及技术支持，偏平台服务和应用服务。后内部主动转岗负责本地数据中心的管理及运维，偏基础服务和平台服务。 ...</description>
+    <pubDate>Mon, 09 Feb 2026 06:25:32 GMT</pubDate>
+  </item><item>
+    <title>新奇的 HR 经历</title>
+    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E6%96%B0%E5%A5%87%E7%9A%84-HR-%E7%BB%8F%E5%8E%86</link>
+    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E6%96%B0%E5%A5%87%E7%9A%84-HR-%E7%BB%8F%E5%8E%86</guid>
+    <description>前段时间，好友让我在招聘软件上帮他找几个财务方面的人员，主要涉及财务助理和财务经理两个岗位。虽然从没有担任过面试官，但我恰巧阅读了一些与人力资源相关的书籍，遂想尝试尝试体验一下。 一开始我借助 ChatGPT 快速学习了解面试的基本流程，并且一起制定了精简的招聘方案。主要是涉及岗位职责，面试题目，薪资待遇。然后我在网上下载了一些常见的招聘软件，就开始 ...</description>
+    <pubDate>Mon, 09 Feb 2026 06:25:32 GMT</pubDate>
+  </item><item>
+    <title>穷则独善其身，达则兼济天下</title>
+    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E7%A9%B7%E5%88%99%E7%8B%AC%E5%96%84%E5%85%B6%E8%BA%AB%EF%BC%8C%E8%BE%BE%E5%88%99%E5%85%BC%E6%B5%8E%E5%A4%A9%E4%B8%8B</link>
+    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E7%A9%B7%E5%88%99%E7%8B%AC%E5%96%84%E5%85%B6%E8%BA%AB%EF%BC%8C%E8%BE%BE%E5%88%99%E5%85%BC%E6%B5%8E%E5%A4%A9%E4%B8%8B</guid>
+    <description>每个人成长的路上都曾铺满过梦想，或成为探索宇宙的宇航员，或成为传授智慧的老师，或许还有那些伟大的科学家。这些年幼时的梦想，是我们最初对人生意义的探索。 从小，我就好奇学习究竟是为了什么？好好学习，天天向上成为了每个大人的口头禅，可是身边的大人一个个也都没有上过所谓的大学。可是在成长的路上，老师和家长们的期望像接力棒一样递给了我——先是一个好高中，然后是一个好大学，仿佛只要踏入那扇门，人生就有了意义，更会一帆风顺。 ...</description>
+    <pubDate>Mon, 09 Feb 2026 06:25:32 GMT</pubDate>
+  </item><item>
+    <title>继续开荒我那一亩三分地</title>
+    <link>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E7%BB%A7%E7%BB%AD%E5%BC%80%E8%8D%92%E6%88%91%E9%82%A3%E4%B8%80%E4%BA%A9%E4%B8%89%E5%88%86%E5%9C%B0</link>
+    <guid>https://x-eden.zopiya.com/60-writing/61-blog/2024/%E7%BB%A7%E7%BB%AD%E5%BC%80%E8%8D%92%E6%88%91%E9%82%A3%E4%B8%80%E4%BA%A9%E4%B8%89%E5%88%86%E5%9C%B0</guid>
+    <description>家里的梨树园长期闲置导致杂草重生，在 2022 年初经过开荒种下了一些瓜果蔬菜，最后因为疫情原因，还有无法浇水导致停摆了。 关于浇水我是真 TMD 的无语，那个浇地的机井需要刷卡才可以开机。当时负责人说暂时没有卡了，需要等一段时间， 然后我就借用村里人的卡，然后冲了 50 元，寻思下次继续用（每次大概 5-10 元）。结果，第二次不让用了，导致瓜果蔬菜差点死完，最后还是我开着小三轮一车一车地拉水，搞了整整一下午…… ...</description>
+    <pubDate>Mon, 09 Feb 2026 06:25:32 GMT</pubDate>
   </item>
     </channel>
   </rss>
